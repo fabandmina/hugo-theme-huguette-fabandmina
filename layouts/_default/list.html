@@ -5,7 +5,10 @@
 {{$paginator := .Paginate $p}}
 <!--list-->
 	{{range $paginator.Pages}}
-  <h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
+  <h2><a href="{{.RelPermalink}}">
+	{{- partial "thumbnail.html" . -}}
+	{{.Title}}
+	</a></h2>
 	<small><em>{{.PublishDate.Format "2 January 2006"}}</em></small>
 	<div>
     {{- partial "introduction.html" . -}}

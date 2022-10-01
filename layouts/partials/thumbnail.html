@@ -1,0 +1,4 @@
+<!--This partial only gets written when you have thumbnail url set in your frontmatter-->
+{{ with .Params.thumbnail }}
+<img src="{{- . -}}">
+{{ end }}
