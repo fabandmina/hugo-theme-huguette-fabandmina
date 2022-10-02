@@ -1,0 +1,10 @@
+<!--This partiol only gets written when you have introduction set in your frontmatter-->
+{{ with .Params.map }}
+<iframe width="100%" 
+    height="300px" 
+    frameborder="0" 
+    allowfullscreen 
+    src="{{- . -}}"
+    >
+</iframe>
+{{ end }}
