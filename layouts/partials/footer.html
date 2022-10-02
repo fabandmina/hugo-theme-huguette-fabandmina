@@ -4,6 +4,6 @@
 	<div>{{- partial "media.html" . -}}</div>
 
   {{with .Site.Copyright}}
-  {{ replace . ":CURRENTYEAR:" (string (now.Year)) }}
+  {{ replace . "{year}" (string (now.Year)) }}
   {{end}}
 </footer>
