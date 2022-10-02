@@ -1,18 +1,7 @@
 
 <!-- This example only includes a header image (with inline styling - sorry!) 
 when you have 'header' set in the frontmatter of your .md file -->
-{{ if .Params.header }}
-<header 
-  style="
-  background-image: url({{ .Params.header | safeCSS }}); 
-  width: 100vw; 
-  position: relative; 
-  left: 50%; 
-  right: 50%; 
-  margin-left: -50vw; 
-  margin-right: -50vw; 
-  height: 50vh; 
-  background-position: center;
-  ">&nbsp;
-</header>
-{{ end }}
+<div id="banner">
+  <h1>{{ .Title }}</h1>
+  <h3>{{ .Params.subtitle }}</h3>
+</div>

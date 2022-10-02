@@ -6,7 +6,11 @@ links to CSS and the javascript for NetlifyCMS. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8" />
   {{ with .Site.Params.css }}
-  <link rel="stylesheet" type="text/css" href="/css/classless.css">
+  {{/*  <link rel="stylesheet" type="text/css" href="/css/classless.css">  */}}
+  {{/*  <link rel="stylesheet" type="text/css" href="{{ "css/classless.css" | relURL}}">  */}}
+  {{ $templateStyle := resources.Get "css/main.css" }}
+  {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   {{ end }}
   <title>{{- .Title -}} - {{ .Site.Title }}</title>
