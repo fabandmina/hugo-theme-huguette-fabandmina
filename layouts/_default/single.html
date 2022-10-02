@@ -2,7 +2,7 @@
 {{define "main"}}
 <h1>{{.Title}}</h1>
 {{- partial "subtitle.html" . -}}
-{{- partial "introduction.html" . -}}
+<p>{{- partial "introduction.html" . -}}</p>
 <div>{{- partial "toc.html" . -}}
 {{- partial "map.html" . -}}
 {{.Content}}
