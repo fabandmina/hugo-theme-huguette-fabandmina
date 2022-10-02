@@ -6,7 +6,11 @@
 <div>{{- partial "toc.html" . -}}
 {{- partial "map.html" . -}}
 {{.Content}}
-{{- partial "thumbnail.html" . -}}
-{{- partial "postfooter.html" . -}}
 </div>
+<hr>
+<div>{{- partial "share-buttons.html" . -}}</div>
+<hr>
+<div>{{- partial "thumbnail.html" . -}}</div>
+<div>{{- partial "postfooter.html" . -}}</div>
+
 {{end}}

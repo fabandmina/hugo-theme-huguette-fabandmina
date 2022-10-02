@@ -1,6 +1,8 @@
 
 <!--This footer example shows how to replace :CURRENTYEAR: from the copyright statement in config.toml with the current year.-->
 <footer>
+	<div>{{- partial "media.html" . -}}</div>
+
   {{with .Site.Copyright}}
   {{ replace . ":CURRENTYEAR:" (string (now.Year)) }}
   {{end}}

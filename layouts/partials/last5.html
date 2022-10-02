@@ -1,7 +1,7 @@
 
 <!--This partial links the last 5 articles from the "trip" section -->
 <div>
-<h2>A few trips</h2>
+<h2>The last articles</h2>
 {{range last 5 (where .Site.RegularPages.ByTitle "Section" "trip" )}}
 <h4><a href="{{.RelPermalink}}">{{- .Title -}}</a></h4>
 {{ end }}  
