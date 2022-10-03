@@ -204,7 +204,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("https://live.staticflickr.com/65535/52397221771_6e12984b48_z.jpg");
+    background-image: url("{{ $.Site.Params.banner }}");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
