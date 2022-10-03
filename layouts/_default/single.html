@@ -4,9 +4,11 @@
 {{- partial "subtitle.html" . -}}
 <p>{{- partial "introduction.html" . -}}</p>
 <div>{{- partial "toc.html" . -}}
-<div>{{- partial "thumbnail.html" . -}}</div>
+<div class="thumbnail-single">{{- partial "thumbnail.html" . -}}</div>
 {{- partial "map.html" . -}}
-{{.Content}}
+    <div class="content">
+    {{.Content}}
+    </div>
 </div>
 <hr>
 <div>{{- partial "share-buttons.html" . -}}</div>
