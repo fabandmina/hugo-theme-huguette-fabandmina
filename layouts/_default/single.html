@@ -6,12 +6,10 @@
 <div>{{- partial "toc.html" . -}}
 <div class="thumbnail-single">{{- partial "thumbnail.html" . -}}</div>
 {{- partial "map.html" . -}}
-    <div class="content">
     {{.Content}}
-    </div>
 </div>
 <hr>
-<div>{{- partial "share-buttons.html" . -}}</div>
+<div class="share-button">{{- partial "share-buttons.html" . -}}</div>
 <hr>
 <div>{{- partial "postfooter.html" . -}}</div>
 
