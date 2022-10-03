@@ -145,14 +145,14 @@
   HEADER
   ---------------------------------------- */
   header{
-    background: rgba(0, 0, 0, .8);
+    background: rgba(14, 105, 180, 0.9);
     position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
     color: #fff;
-    padding: 15px 20px;
+    padding: 0px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,9 +162,6 @@
     color: white;
     opacity: 1;
     cursor: pointer;
-  }
-  
-  header a{
     float: left;
     width: 100%;
     padding: 30px 15px;
@@ -173,10 +170,10 @@
 
   header a:hover{
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgb(7, 80, 163);
     border-bottom: solid orange;
-    transition: 0.2s;
-    margin-bottom: -5px;
+    transition: 0.15s;
+    margin-bottom: -15px;
   }
   
   header ul li {
@@ -216,7 +213,7 @@
       top: 60px;
       width: 100%;
       margin: auto;
-      background-color: rgba(0, 0, 0, 1);
+      background-color: rgb(7, 80, 163);
       flex-direction: column;
       width: 100%;
       align-items: center;
@@ -232,9 +229,15 @@
       transition: 280ms ease-out 120ms;
     }
 
-    #open, .undoer{
+
+    #open {
       display: flex;
-      font-size: 120%;
+    }
+
+    #open, .undoer {
+      font-size: 150%;
+      justify-content: center;
+      height: 5vh;
     }
 
     #open:target {
@@ -255,20 +258,17 @@
     }
     header a{
       font-size: 90%;
-      padding: 15px 45vw;
-      background-color: rgba(0, 0, 0, .75);
+      background-color: rgba(0, 0, 0, 0);
     }
     header a:hover{
       opacity: 1;
       background-color: rgba(255, 255, 255, .25);
       border-bottom: none;
-      margin-top: 0px;
-      margin-bottom: 0px;
+      margin: auto;
     }
     header img {
       height: 65px;
       width: auto;
-      margin: -15px 0 -8px 0;
     }
   }
 
