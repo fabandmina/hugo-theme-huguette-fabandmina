@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+   
   html{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -33,11 +33,15 @@
     margin-top: 5px;
     margin-left: 20px;
   }
+  
+  em {
+    line-height: 100%;
+  }
+  
   h1, h2, h3, h4, h5, h6{
     font-family: 'Oswald', sans-serif;
     padding-bottom: 10px;
     padding-top: 20px;
-    border-bottom: 1px solid #333;
   }
 
   h3.title{
@@ -131,9 +135,10 @@
   }
   
   .thumbnail-single img {
-    width:70vw;
+    width:60vw;
     height: auto;
-    border-style: groove; 
+    border-style: dotted; 
+    border-radius: 20px;
   }
 
   @media(max-width:800px){
@@ -145,7 +150,7 @@
   HEADER
   ---------------------------------------- */
   header{
-    background: rgba(14, 105, 180, 0.9);
+    background: rgba(4, 39, 78, 0.9);
     position: fixed;
     z-index: 10;
     top: 0;
@@ -213,10 +218,11 @@
       top: 60px;
       width: 100%;
       margin: auto;
-      background-color: rgb(7, 80, 163);
+      background-color: rgba(4, 39, 78, 1);
       flex-direction: column;
       width: 100%;
       align-items: center;
+      overflow-y: scroll;
     }
     header nav {
       width: 100%;
@@ -299,16 +305,157 @@
   }
 
   /*----------------------------------------
+  Overlay
+  ---------------------------------------- */
+  .overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 400px;
+    opacity: 0;
+    transition: .8s ease;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: black;
+    font-size: 1.1rem;
+  }
+  /*----------------------------------------
+  List Grid
+  ---------------------------------------- */
+  .list-grid {
+    display: grid;
+    gap: 5vh 10vw;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 5vw;
+    justify-items: center;
+  }
+
+  .list-item + img{
+    border-radius: 20px;
+  }
+
+  .list-grid > div {
+    position: relative;
+  }
+
+  .list-thumbnail img, .list-item {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    min-height: 300px;
+    min-width: 400px;
+    max-width: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  .caption {
+    color: #fff;
+    transform: translate(0%, -10rem);
+    font-size: 120%;
+    text-align: center;
+    transition: .5s ease;
+    padding: 5px 5px;
+    margin: 0% 10%;
+    background-color: #404040b4;
+    border-radius: 10px;
+  }
+
+  .list-grid .date{
+    padding-left: .1rem;
+    margin-top: 1rem;
+    text-align: left;
+    font-style: oblique 15deg;
+  }
+
+  .list-item:hover .overlay {
+    opacity: .75;
+  }
+
+  .list-item:hover .caption {
+    opacity: 0;
+  }
+
+  .list-grid a {
+    text-decoration: none;
+  }
+
+  .list-grid > div {
+    height: 200px;
+    min-width: 300px;
+  }
+
+
+  @media(max-width:800px){
+    .overlay {
+      position: relative;
+      top: -50%;
+      height: 100%;
+      width: 400px;
+      opacity: 1;
+      transition: .8s ease;
+      background-color: #f8c8a1;
+      text-align: center;
+      padding: 5rem 1rem;
+      color: black;
+      font-size: 1.1rem;
+      z-index: -3;
+      border-radius: 10px;
+
+    }
+    .list-item{
+      margin-bottom: 25%;
+    }
+    .list-grid {
+      row-gap: 2%;
+      grid-template-columns: 1fr;
+    }
+    .caption {
+      transform: translate(0%, -15rem);
+    }
+    .list-item:hover .caption {
+      opacity: 1;
+    }
+  }
+
+  /*----------------------------------------
+  Pagination
+  ---------------------------------------- */
+  .pagination{
+    position: relative;
+    bottom: -100%;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  .page-item{
+    font-size: 1.5rem;
+    list-style: none;
+    display: inline-block;
+    padding: 5% 2%;
+  }
+  @media(max-width:800px){
+    .pagination {
+      bottom: 0;
+    }
+  }
+  /*----------------------------------------
   FOOTER
   ---------------------------------------- */
   
   footer{
+    margin-top: auto;
     background-color: #404040;
     color: white;
     padding: 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
   }
   
   footer p{
@@ -341,7 +488,10 @@
   }
   @media(max-width: 800px){
     footer {
+      position: relative;
       padding: 80px 15px;
+      bottom: -120vh;
+      width: 100%;
     }
   }
   

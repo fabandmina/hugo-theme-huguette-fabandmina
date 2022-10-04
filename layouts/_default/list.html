@@ -4,16 +4,29 @@
 {{$p := .Pages}}
 {{$paginator := .Paginate $p}}
 <!--list-->
+<div class="list-grid">
 	{{range $paginator.Pages}}
-  <h2><a href="{{.RelPermalink}}">
-	{{- partial "thumbnail.html" . -}}
-	{{.Title}}
-	</a></h2>
-	<small><em>{{.PublishDate.Format "2 January 2006"}}</em></small>
-	<div>
-    {{- partial "introduction.html" . -}}
+	<div class="list-item">
+		<a href="{{.RelPermalink}}">
+		<div class="list-thumbnail">
+			{{- partial "thumbnail.html" . -}}
+		</div>
+		<div class="caption">
+			<h2>{{.Title}}</h2>
+		</div>
+			<div class="overlay">
+				{{- partial "introduction.html" . -}}
+				<div class="date">
+					~ {{.PublishDate.Format "2 January 2006"}}
+				</div>
+			</div>
+		</a>
 	</div>
 	{{end}}
+	{{template "_internal/pagination.html" .}}
+</div>
 <!--pagination-->
-{{template "_internal/pagination.html" .}}
+
 {{end}}
+
+
