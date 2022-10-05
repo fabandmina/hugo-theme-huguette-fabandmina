@@ -4,6 +4,7 @@
 {{ with .PrevInSection }}
   <a href="{{ .Permalink }}">{{ .Title }}</a> << &nbsp;
 {{ end }}
+  <a href="{{ .Page.Permalink }}">.</a>
 {{ with .NextInSection }}
   &nbsp; >> <a href="{{ .Permalink }}">{{ .Title }}</a>
 {{ end }}

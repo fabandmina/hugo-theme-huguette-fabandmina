@@ -1,16 +1,24 @@
 
 {{define "main"}}
-<h1>{{.Title}}</h1>
-{{- partial "subtitle.html" . -}}
-<p>{{- partial "introduction.html" . -}}</p>
+<div class="title">
+    <h1>{{.Title}}</h1>
+</div>
 <div>{{- partial "toc.html" . -}}
-<div class="thumbnail-single">{{- partial "thumbnail.html" . -}}</div>
-{{- partial "map.html" . -}}
-    {{.Content}}
+<div class="thumbnail-single">
+    {{- partial "thumbnail.html" . -}}
+</div>
+<div class="subtitle">
+    {{- partial "subtitle.html" . -}}
+    <p>{{- partial "introduction.html" . -}}</p>
+</div>
+<div class="map">
+    {{- partial "map.html" . -}}
+</div>
+    <div class="content">
+        {{.Content}}
+    </div>
 </div>
 <hr>
 <div class="share-button">{{- partial "share-buttons.html" . -}}</div>
-<hr>
-<div>{{- partial "postfooter.html" . -}}</div>
-
+<div class="postfooter">{{- partial "postfooter.html" . -}}</div>
 {{end}}
