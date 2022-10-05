@@ -1,13 +1,10 @@
 
 <!-- Create a menu from the "Fixed Pages" and "Menu Pages" (identified by "" and "p",
   respectively) sections in Netlify CMS -->
-  
   <a href="#open" id="open">☰</a>
   <a href="#close" class="undoer">✕</a>
-  
 <nav>
   <ul>
-    
     <li><a href="/">Home</a></li>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
