@@ -5,8 +5,7 @@ links to CSS and the javascript for NetlifyCMS. -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta charset="utf-8" />
-  {{/*  <link rel="stylesheet" type="text/css" href="/css/classless.css">  */}}
-  {{/*  <link rel="stylesheet" type="text/css" href="{{ "css/classless.css" | relURL}}">  */}}
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16">
   {{ $templateStyle := resources.Get "css/main.css" | toCSS | minify }}
   {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">

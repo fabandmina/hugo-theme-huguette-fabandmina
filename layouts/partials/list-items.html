@@ -1,0 +1,16 @@
+<div class="list-item">
+    <a href="{{.RelPermalink}}">
+    <div class="list-thumbnail">
+        {{- partial "thumbnail.html" . -}}
+    </div>
+    <div class="caption">
+        <h2>{{.Title}}</h2>
+    </div>
+        <div class="overlay">
+            {{- partial "introduction.html" . -}}
+            <div class="date">
+                ~ {{.PublishDate.Format "2 January 2006"}}
+            </div>
+        </div>
+    </a>
+</div>

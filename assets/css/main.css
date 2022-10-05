@@ -47,6 +47,7 @@
     font-family: 'Oswald', sans-serif;
     padding-bottom: 10px;
     padding-top: 20px;
+    margin: 1rem auto;
   }
 
   h3.title{
@@ -94,7 +95,7 @@
 
   .content{
     margin: 1rem auto;
-    width: 75vw;
+    width: 60vw;
     padding: 5px 15px;
   }
   
@@ -163,7 +164,7 @@
   }
   
   .thumbnail-single img {
-    width:70vw;
+    width: 100%;
     height: auto;
     border-style: none; 
     border-radius: 20px;
@@ -398,7 +399,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-bottom: 5vw;
     justify-items: center;
-    justify-content: center;
+    justify-content: stretch;
   }
 
   .list-item + img{
