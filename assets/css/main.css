@@ -239,14 +239,15 @@
       flex-basis: 50%;
       justify-content: space-between;
       padding: 8px 8px;
+      height: 10vh;
     }
   
     header nav ul {
       right: 18px;
       display: flex;
       position: absolute;
-      font-size: 20px;
-      top: 60px;
+      font-size: 1.2rem;
+      top: 10vh;
       width: 100%;
       margin: auto;
       background-color: rgba(4, 39, 78, 1);
@@ -259,7 +260,7 @@
       width: 100%;
       opacity: 1;
       position: absolute;
-      top: 28px;
+      top: 0vh;
       background: #333;
       visibility: hidden;
       transform: translateX(-100%);
@@ -297,11 +298,14 @@
       font-size: 90%;
       background-color: rgba(0, 0, 0, 0);
     }
-    header a:hover{
-      opacity: 1;
-      background-color: rgba(255, 255, 255, .25);
+    header a:active, header a:hover{
+      opacity: .75;
+      background-color: rgba(4, 39, 78, 0.75);;
       border-bottom: none;
       margin: auto;
+      margin: 0 auto;
+      /* padding: 0 0; */
+      transition: none;
     }
     header img {
       height: 65px;
@@ -360,6 +364,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-bottom: 5vw;
     justify-items: center;
+    justify-content: center;
   }
 
   .list-item + img{
@@ -422,10 +427,10 @@
     .overlay {
       position: relative;
       top: -50%;
-      height: 100%;
-      width: 400px;
+      /* height: 100%;
+      width: 90vw; */
       opacity: 1;
-      transition: .8s ease;
+      transition: none;
       background-color: #f8c8a1;
       text-align: center;
       padding: 5rem 1rem;
@@ -433,18 +438,30 @@
       font-size: 1.1rem;
       z-index: -3;
       border-radius: 10px;
-
+      margin-bottom: 10vh;
     }
     .list-item{
-      margin-bottom: 25%;
+      margin-bottom: 10vh;
     }
     .list-grid {
-      row-gap: 10rem;
+      row-gap: 13rem;
       grid-template-columns: 1fr;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 10vh;
     }
-    .caption {
-      transform: translate(0%, -15rem);
+
+    .list-thumbnail img, .overlay {
+      /* width: 90vw;
+      height: 50vh; */
+      max-height: none;
+      min-height: none;
+      min-width: 100%;
+      max-width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
     }
+
     .list-item:hover .caption {
       opacity: 1;
     }
@@ -488,7 +505,7 @@
   @media(max-width:800px){
     .pagination {
       bottom: 0;
-      margin-top: 20vh;
+      margin-top: 50vh;
     }
   }
   /*----------------------------------------
@@ -578,7 +595,7 @@
       position: relative;
       padding: 80px 15px;
       bottom: 0;
-      width: 100%;
+      width: 100vw;
     }
   }
   
