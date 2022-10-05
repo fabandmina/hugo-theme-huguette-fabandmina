@@ -408,7 +408,7 @@
       margin-bottom: 25%;
     }
     .list-grid {
-      row-gap: 2%;
+      row-gap: 10rem;
       grid-template-columns: 1fr;
     }
     .caption {
@@ -424,7 +424,7 @@
   ---------------------------------------- */
   .pagination{
     position: relative;
-    bottom: -100%;
+    bottom: -90%;
     margin: 0 auto;
     text-align: center;
     width: 100%;
@@ -435,6 +435,21 @@
     display: inline-block;
     padding: 5% 2%;
   }
+
+  .pagination a {
+    color: #333;
+  }
+
+  .pagination .page-item:hover a{
+    background-color: orange;
+    border-radius: 50px;
+  }
+
+  .pagination .active {
+    background-color: orange;
+    border-radius: 50px;
+  } 
+
   @media(max-width:800px){
     .pagination {
       bottom: 0;
