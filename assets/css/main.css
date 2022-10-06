@@ -379,7 +379,7 @@
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .8s ease;
+    transition: .4s ease;
     background-color: #ffffff;
     text-align: center;
     padding: 25% 1rem;
