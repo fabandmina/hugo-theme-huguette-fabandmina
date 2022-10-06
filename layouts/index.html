@@ -1,15 +1,10 @@
 
 {{define "main"}}
-<!--Title-->
-{{/*  <h1>{{.Title}}</h1>
-{{- partial "subtitle.html" . -}}  */}}
 {{- partial "introduction.html" . -}}
-<!--Content-->
 {{- partial "map.html" . -}}
 <div>
 {{.Content}}
 </div>
-
 <div>
 {{- partial "last5.html" . -}}
 </div>

@@ -5,21 +5,11 @@
   <a href="#close" class="undoer">✕</a>
 <nav>
   <ul>
-    <li><a href="/">Home</a></li>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
-<!--    <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" 
-    -->
-    <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}" 
-      href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+    <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}"
+      href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
     {{ end }}
-    <!-- <li><a href="/a">Articles</a></li>
-    {{range (where .Site.RegularPages.ByTitle "Section" "p" )}}
-    <li><a href="{{.RelPermalink}}">{{- .Title -}}</a></li>
-    {{end}}
-    {{range (where .Site.RegularPages.ByTitle "Section" "" )}}
-    <li><a href="{{.RelPermalink}}">{{- .Title -}}</a></li>
-    {{end}} -->
     <li>{{- partial "language-switcher.html" . -}}</li>
   </ul>
 </nav>

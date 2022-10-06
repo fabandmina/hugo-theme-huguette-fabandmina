@@ -296,6 +296,11 @@
       transition: 280ms ease-out 120ms;
     }
 
+    header .active {
+      border-bottom: solid white;
+      font-size: 3rem;
+    }
+
     .other-language {
       display: flex;
       visibility: visible;
