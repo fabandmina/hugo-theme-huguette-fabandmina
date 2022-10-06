@@ -20,5 +20,6 @@
     {{range (where .Site.RegularPages.ByTitle "Section" "" )}}
     <li><a href="{{.RelPermalink}}">{{- .Title -}}</a></li>
     {{end}} -->
+    <li>{{- partial "language-switcher.html" . -}}</li>
   </ul>
 </nav>
