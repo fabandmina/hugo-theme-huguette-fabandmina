@@ -344,6 +344,9 @@
     background-color: rgba(54, 139, 236, 0.8);
     border-radius: 15px;
   }
+  .logo:hover img, .logo:active img {
+    background-color: rgba(163, 195, 231, 0.8);
+  }
 
   @media only screen and (max-width:800px){
     #banner{
@@ -550,13 +553,15 @@
 
   .postfooter a {
     text-decoration: underline;
-    color: black;
+    color: white;
     border-radius: 10px;
     padding: .5rem .5rem;
+    background-color: #f38322;
   }
 
-  .postfooter a:hover {
-    background-color: #f8c8a1;
+  .postfooter a:hover, .postfooter a:active {
+    background-color: #f38322;
+    opacity: .7;
   }
 
   @media only screen and (max-width:800px){
@@ -565,7 +570,6 @@
     }
     .postfooter a {
       font-size: 3vw;
-      background-color: #f8c8a1;
       text-decoration: none;
     }
   }
