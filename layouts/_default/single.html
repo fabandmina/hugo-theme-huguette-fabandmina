@@ -3,20 +3,21 @@
 <div class="title">
     <h1>{{.Title}}</h1>
 </div>
-<div>{{- partial "toc.html" . -}}
+<div class="subtitle">
+    {{- partial "subtitle.html" . -}}
+</div>
+{{- partial "toc.html" . -}}
 <div class="thumbnail-single">
     {{- partial "thumbnail.html" . -}}
 </div>
-<div class="subtitle">
-    {{- partial "subtitle.html" . -}}
-    <p>{{- partial "introduction.html" . -}}</p>
+<div class="introduction">
+    {{- partial "introduction.html" . -}}
 </div>
 <div class="map">
     {{- partial "map.html" . -}}
 </div>
-    <div class="content">
-        {{.Content}}
-    </div>
+<div class="content">
+    {{.Content}}
 </div>
 <hr>
 <div class="share-button">{{- partial "share-buttons.html" . -}}</div>

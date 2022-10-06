@@ -16,10 +16,6 @@
   body {
     background-color: white;
     width:100vw;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
     justify-content: left;
     align-items: center;
     text-align: left;
@@ -68,27 +64,34 @@
   Title
   ---------------------------------------- */
   .title {
-    background-color: #f8c8a1;
+    background-color: #f38322;
     text-align: center;
     border-radius: 15px;
-    color: black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
     width: 100%;
   }
   .subtitle {
     width: 100%;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
     text-align: center;
-    font-size: 1.5rem;
-    padding: 3px 10px;
-    margin-bottom: 3%;
-    align-self: center;
-    clear: both;
+    font-size: 1rem;
+    padding: 1rem auto;
+    margin: 1rem auto;
   }
   .subtitle p {
     font-style: oblique 15deg;
   }
+  /*----------------------------------------
+  Introduction
+  ---------------------------------------- */
+  .introduction {
+    position: relative;
+    font-style: oblique 15deg;
+    text-align: center;
+    margin: 1rem auto;
+    min-height: 10vw;
+  }
+
   /*----------------------------------------
   Content
   ---------------------------------------- */
@@ -114,9 +117,11 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
   }
   .share-button a {
     display: inline-flex;
+
   }
 
   /*----------------------------------------
@@ -154,10 +159,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 1rem auto;
     background-size: contain;
     height: auto; 
     width: auto;
@@ -181,16 +183,14 @@
   ---------------------------------------- */
   header{
     background: rgba(4, 39, 78, 0.9);
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     color: #fff;
     padding: 0px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
   }
 
 
@@ -220,7 +220,7 @@
     visibility: visible;
     flex-direction: row;
     justify-content: flex-end;
-    margin: -15px 10px;
+    /* margin: -15px 10px; */
   }
   
   header img {
@@ -235,19 +235,16 @@
 
   @media only screen and (max-width:800px){
     header{
-      flex-direction: row;
+      flex-direction: column;
       flex-basis: 50%;
       justify-content: space-between;
-      padding: 8px 8px;
-      height: 10vh;
+      height: 15vw;
     }
   
     header nav ul {
-      right: 18px;
       display: flex;
-      position: absolute;
+      position: relative;
       font-size: 1.2rem;
-      top: 10vh;
       width: 100%;
       margin: auto;
       background-color: rgba(4, 39, 78, 1);
@@ -259,8 +256,7 @@
     header nav {
       width: 100%;
       opacity: 1;
-      position: absolute;
-      top: 0vh;
+      position: relative;
       background: #333;
       visibility: hidden;
       transform: translateX(-100%);
@@ -275,7 +271,7 @@
     #open, .undoer {
       font-size: 150%;
       justify-content: center;
-      height: 5vh;
+      height: 15vw;
     }
 
     #open:target {
@@ -306,10 +302,6 @@
       margin: 0 auto;
       transition: none;
     }
-    header img {
-      height: 65px;
-      width: auto;
-    }
   }
 
   /*----------------------------------------
@@ -317,11 +309,10 @@
   ---------------------------------------- */
   #banner{
     position: relative;
-    top: 2.5rem;
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10vw;
+    margin-bottom: 1rem;
     font-size: 300%;
     background-color: white;
     color: rgba(255, 255, 255, 0);
@@ -334,17 +325,16 @@
     background-repeat: repeat-x;
     background-size: contain;
     background-attachment: local;
-    max-height: 300px;
+    max-height: 20vw;
   }
 
   .logo {
     position: absolute;
     height: auto;
-    width: 20vw;
-    min-width: 100px;
-    max-width: 230px;
-    max-height: 100px;
-    margin-top: -100px;
+    width: 10vw;
+    top: 0;
+    min-width: 150px;
+    margin-top: 1rem;
     margin-left: .5vw;
     align-self: flex-start;
   }
@@ -359,17 +349,19 @@
     #banner{
       font-size: 150%;
       background-size: cover;
+      min-height: 30vw;
     }
     .logo {
-      position: relative;
-      height: 5vw;
-      min-width: 30%;
-      margin-top: 30px;
+      position: absolute;
+      top: -.7rem;
+      height: auto;
+      min-width: 60%;
+      /* margin: 10vw  auto; */
+      align-self: center;
     }
     .logo img {
       height: auto;
-      width: 300%;
-      max-width: 300px;
+      width: 100%;
     }
 
   }
@@ -381,25 +373,36 @@
     position: absolute;
     top: 0;
     height: 100%;
-    width: 400px;
+    width: 100%;
     opacity: 0;
     transition: .8s ease;
     background-color: #ffffff;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 25% 1rem;
     color: black;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   /*----------------------------------------
   List Grid
   ---------------------------------------- */
   .list-grid {
     display: grid;
-    gap: 5vh 10vw;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-bottom: 5vw;
+    gap: 1rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin-bottom: 1vw;
     justify-items: center;
-    justify-content: stretch;
+    justify-content: center;
+  }
+
+  .list-item {
+    height: auto;
+    width: 100%;
+    min-width: 350px;    
+  }
+
+  .list-item a {
+    height: 100%;
+    width: 100%;
   }
 
   .list-item + img{
@@ -407,41 +410,43 @@
   }
 
   .list-item:last-child {
-    margin-bottom: 30vh;
+    margin-bottom: 3vw;
   }
 
   .list-grid > div {
     position: relative;
   }
 
-  .list-thumbnail img, .list-item {
+  .list-thumbnail img {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    min-height: 300px;
-    min-width: 400px;
-    max-width: 400px;
     border-radius: 20px;
     object-fit: cover;
   }
   
   .caption {
+    top: 0;
     color: #fff;
-    transform: translate(0%, -10rem);
     font-size: 120%;
     text-align: center;
     transition: .5s ease;
     padding: 5px 5px;
-    margin: 0% 10%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .caption h2 {
     background-color: #404040b4;
-    border-radius: 10px;
   }
 
   .list-grid .date{
     padding-left: .1rem;
-    margin-top: 1rem;
-    text-align: left;
+    margin: 2rem auto;
+    text-align: right;
     font-style: oblique 15deg;
+    position: absolute;
+    top: 0;
   }
 
   .list-item:hover .overlay {
@@ -456,47 +461,31 @@
     text-decoration: none;
   }
 
-  .list-grid > div {
-    height: 200px;
-    min-width: 300px;
-  }
-
-
   @media only screen and (max-width:800px){
+    .caption {
+      height: 100%;
+    }
+
     .overlay {
       position: relative;
-      top: -50%;
-      /* height: 100%;
-      width: 90vw; */
       opacity: 1;
       transition: none;
       background-color: #f8c8a1;
       text-align: center;
-      padding: 5rem 1rem;
+      padding: auto auto;
       color: black;
       font-size: 1.1rem;
       z-index: -3;
       border-radius: 10px;
-      margin-bottom: 10vh;
+      height: 25vw;
     }
     .list-item{
-      margin-bottom: 10vh;
+      margin: 5vw auto;
+      height: 100%;
     }
     .list-grid {
-      row-gap: 13rem;
       grid-template-columns: 1fr;
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 10vh;
-    }
-
-    .list-thumbnail img, .overlay {
-      max-height: none;
-      min-height: none;
-      min-width: 100%;
-      max-width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
+      margin: 3vw 0;
     }
 
     .list-item:hover .caption {
@@ -509,8 +498,7 @@
   ---------------------------------------- */
   .pagination{
     position: relative;
-    bottom: -0%;
-    margin-top: 5vh;
+    margin-top: 1vw;
     text-align: center;
     width: 100%;
 
@@ -542,7 +530,6 @@
   @media only screen and (max-width:800px){
     .pagination {
       bottom: 0;
-      margin-top: 50vh;
     }
   }
   /*----------------------------------------
@@ -557,11 +544,12 @@
     font-size: 2vw;
     color: black;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5vw;
+    position: relative;
   }
 
   .postfooter a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     border-radius: 10px;
     padding: .5rem .5rem;
@@ -573,11 +561,12 @@
 
   @media only screen and (max-width:800px){
     .postfooter {
-      bottom: 0;
-      font-size: 2.5vw;
+      margin-top: 15vw;
     }
     .postfooter a {
+      font-size: 3vw;
       background-color: #f8c8a1;
+      text-decoration: none;
     }
   }
 
@@ -595,7 +584,7 @@
     align-items: center;
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     overflow-y: auto;
   }
   
