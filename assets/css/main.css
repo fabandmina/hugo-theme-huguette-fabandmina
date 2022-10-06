@@ -170,6 +170,7 @@
     height: auto;
     border-style: none; 
     border-radius: 20px;
+    background-color: #f38322;
   }
 
   @media only screen and (max-width:800px){
@@ -518,12 +519,12 @@
   }
 
   .pagination a:hover{
-    background-color: orange;
+    background-color: #f38322;
     border-radius: 50px;
   }
 
   .pagination .active {
-    background-color: orange;
+    background-color: #f38322;
     border-radius: 50px;
   }
   .pagination .disabled {
