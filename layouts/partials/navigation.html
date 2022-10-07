@@ -7,7 +7,8 @@
   <ul>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
-    <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}"
+    <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}
+                  {{ if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}"
       href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
     {{ end }}
     <li>{{- partial "language-switcher.html" . -}}</li>

@@ -89,7 +89,13 @@
     font-style: oblique 15deg;
     text-align: center;
     margin: 1rem auto;
-    min-height: 10vw;
+    min-height: 3rem;
+    font-size: 1.5rem;
+  }
+  @media only screen and (max-width:800px){
+    .introduction {
+      font-size: 1rem;
+    }
   }
 
   /*----------------------------------------
@@ -121,8 +127,12 @@
   }
   .share-button a {
     display: inline-flex;
-
   }
+/* 
+  .resp-sharing-button, .resp-sharing-button__icon svg{
+    width: 5rem;
+    height: 5rem;
+  } */
 
   /*----------------------------------------
   Table style
@@ -149,6 +159,28 @@
     color: #fff;
   } 
 
+  /*----------------------------------------
+  flickr style
+  ---------------------------------------- */
+  .flickr-album {
+    position:relative;
+    overflow: scroll;
+  }
+  .flickr-iframe {
+    display: flex;
+    position: relative;
+    margin: 2rem auto;
+    height: 100vh;
+    max-height: 600px;
+    width: 120vw;
+    max-width: 55vw;
+    overflow: scroll;
+  }
+  @media only screen and (max-width:800px){
+    .flickr-iframe{
+      max-height: 1200px;
+    }
+  }
 
   /*----------------------------------------
   Thumbnail style
@@ -194,6 +226,9 @@
     z-index: 10;
   }
 
+  header .active {
+    background-color: rgb(7, 80, 163);
+  }
 
   header a:not(.logo){
     text-decoration: none;
@@ -215,6 +250,7 @@
   
   header ul li {
     display: inline-block;
+    font-size: 1.3rem;
   }
 
   header nav {
@@ -297,8 +333,8 @@
     }
 
     header .active {
-      border-bottom: solid white;
-      font-size: 3rem;
+      background-color: rgb(7, 80, 163);
+      font-size: 1.2rem;
     }
 
     .other-language {
@@ -342,7 +378,7 @@
     }
     header a:active, header a:hover{
       opacity: .75;
-      background-color: rgba(4, 39, 78, 0.75);;
+      background-color: rgba(4, 39, 78, 0.75);
       border-bottom: none;
       margin: auto;
       margin: 0 auto;
@@ -470,7 +506,7 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
   }
   
   .caption {
@@ -625,7 +661,7 @@
   ---------------------------------------- */
   
   footer{
-    margin-top: auto;
+    margin-top: 3rem;
     background-color: #404040;
     color: white;
     padding: 60px 0;
