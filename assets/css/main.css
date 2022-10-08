@@ -469,6 +469,9 @@
     max-height: 20vw;
   }
 
+  body.dark-mode #banner{
+    background-image: url("{{ $.Site.Params.banner_dark }}"); 
+  }
   .logo {
     position: absolute;
     height: auto;
