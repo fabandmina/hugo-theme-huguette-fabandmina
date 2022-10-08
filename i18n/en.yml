@@ -1,17 +1,59 @@
 ### Menu ###
 - id: home
-  translation: "Home"
+  translation: Home
 - id: trips
-  translation: "Trips"
+  translation: Trips
 - id: gears
-  translation: "Gears"
+  translation: Gears
 - id: contact
-  translation: "Contact"
+  translation: Contact
 - id: about_us
-  translation: "About us"
+  translation: About us
 - id: support_us
-  translation: "Support us"
+  translation: Support us
 
 # flickr
 - id: flicker_album
   translation: " Flickr album"
+
+# Trip singles
+- id: stats
+  translation: "Stats"
+- id: way_of_travelling
+  translation: "Way of travelling:"
+- id: starting_date
+  translation: "Starting date:"
+- id: duration
+  translation: "Duration:"
+- id: distance
+  translation: "Distance:"
+- id: budget
+  translation: "Budget:"
+- id: in_details
+  translation: "In details"
+- id: road_condition
+  translation: "Road condition"
+- id: accommodations
+  translation: "Accommodations"
+- id: freedom_camping
+  translation: "Freedom camping"
+- id: facilities
+  translation: "Facilities"
+- id: food
+  translation: "Food"
+- id: vegetarian_friendly
+  translation: "Vegetarian friendly:"
+- id: what_we_eat
+  translation: "What we eat:"
+- id: fab_favourite
+  translation: "Fab's favourite:"
+- id: mina_favourite
+  translation: "Mina's favourite:"
+- id: communication_with_the_locals
+  translation: "Communication with the locals"
+- id: top_5_locations
+  translation: "5 places you should visit"
+- id: overall_feel
+  translation: "Overall feel"
+- id: travel_story
+  translation: "Travel Story"

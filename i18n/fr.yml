@@ -15,3 +15,43 @@
 # flickr
 - id: flicker_album
   translation: " Album Flickr"
+
+# Trip singles
+- id: stats
+  translation: "Statistiques"
+- id: way_of_travelling
+  translation: "Mode de voyage :"
+- id: starting_date
+  translation: "Date de début :"
+- id: duration
+  translation: "Durée :"
+- id: budget
+  translation: "Budget :"
+- id: in_details
+  translation: "En détails"
+- id: road_condition
+  translation: "État de la route"
+- id: accommodations
+  translation: "Hébergements"
+- id: freedom_camping
+  translation: "Bivouac"
+- id: facilities
+  translation: "Infrastructures"
+- id: food
+  translation: "Nourriture"
+- id: vegetarian_friendly
+  translation: "Accès à de la nourriture végétarienne :"
+- id: what_we_eat
+  translation: "Ce qu'on mange :"
+- id: fab_favourite
+  translation: "Coup de coeur de Fab :"
+- id: mina_favourite
+  translation: "Coup de coeur de Mina :"
+- id: communication_with_the_locals
+  translation: "Communication avec les locaux"
+- id: top_5_locations
+  translation: "5 endroits incontournables"
+- id: overall_feel
+  translation: "Impression globale"
+- id: travel_story
+  translation: "Histoire de route"
