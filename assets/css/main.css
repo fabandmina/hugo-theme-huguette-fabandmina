@@ -137,14 +137,20 @@
   ---------------------------------------- */
 
   .content{
-    margin: 1rem auto;
-    width: 60vw;
-    padding: 5px 15px;
+    margin: 0 auto;
+    width: 70vw;
+    padding: 1rem 8vw;
+    background-color: rgb(255, 248, 235);
+  }
+
+  body.dark-mode .content{
+    background-color: rgb(59, 59, 59);
   }
   
   @media only screen and (max-width:800px){
     .content {
       width:100vw;
+      padding: .1rem .5rem;
     }
   }
 
@@ -198,16 +204,36 @@
   .flickr-iframe {
     display: flex;
     position: relative;
-    margin: 2rem auto;
-    height: 100vh;
-    max-height: 600px;
-    width: 120vw;
-    max-width: 55vw;
+    margin: 2px auto;
+    height: auto;
+    min-height: 400px;
+    width: 100%;
     overflow: scroll;
   }
+  .fa-flickr {
+    color: black;
+    background-color: #f38322;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    margin: .6rem auto;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .fa-flickr:hover {
+    opacity: .6;
+  }
+
+  body.dark-mode .fa-flickr{
+    opacity: .8;
+  }
+  body.dark-mode .fa-flickr:hover{
+    opacity: 1;
+  }
+
   @media only screen and (max-width:800px){
     .flickr-iframe{
-      max-height: 1200px;
+      /* max-height: 300px; */
+      min-height: 50vh;
     }
   }
 
@@ -244,7 +270,7 @@
   HEADER
   ---------------------------------------- */
   header{
-    background: rgba(4, 39, 78, 0.9);
+    background: rgba(4, 39, 78, 1);
     position: relative;
     width: 100%;
     color: #fff;
@@ -253,6 +279,10 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+  }
+
+  body.dark-mode header{
+    background: rgba(4, 39, 78, 0.7);
   }
 
   header .active {
@@ -423,7 +453,7 @@
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     font-size: 300%;
     background-color: white;
     color: rgba(255, 255, 255, 0);
@@ -449,6 +479,11 @@
     margin-left: .5vw;
     align-self: flex-start;
   }
+
+  body.dark-mode .logo img{
+    background-color: rgba(54, 139, 236, 0.8);
+  }
+
   .logo img {
     height: auto;
     width: 200%;
@@ -659,7 +694,7 @@
     font-size: 2vw;
     color: black;
     text-align: center;
-    margin-top: 5vw;
+    margin: 2rem auto;
     position: relative;
   }
 
@@ -675,7 +710,9 @@
     background-color: #f38322;
     opacity: .7;
   }
-
+  body.dark-mode .postfooter {
+    color: white;
+  }
   @media only screen and (max-width:800px){
     .postfooter {
       margin-top: 15vw;
@@ -691,7 +728,7 @@
   ---------------------------------------- */
   
   footer{
-    margin-top: 3rem;
+    margin-top: 0;
     background-color: #404040;
     color: white;
     padding: 60px 0;
@@ -702,6 +739,10 @@
     bottom: 0;
     width: 100vw;
     overflow-y: auto;
+  }
+
+  body.dark-mode footer{
+    background-color: #1b1b1b;
   }
   
   footer p{
