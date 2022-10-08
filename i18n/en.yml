@@ -1,0 +1,17 @@
+### Menu ###
+- id: home
+  translation: "Home"
+- id: trips
+  translation: "Trips"
+- id: gears
+  translation: "Gears"
+- id: contact
+  translation: "Contact"
+- id: about_us
+  translation: "About us"
+- id: support_us
+  translation: "Support us"
+
+# flickr
+- id: flicker_album
+  translation: " Flickr album"
