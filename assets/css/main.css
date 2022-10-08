@@ -65,6 +65,9 @@ hr {
   margin: 20px auto;
   width: 150px;
 }
+img {
+  image-rendering: pixelated;
+}
 /*----------------------------------------
   Dark Mode
   ---------------------------------------- */
@@ -89,16 +92,6 @@ body.dark-mode img:hover {
 
 body.dark-mode .title {
   opacity: 0.8;
-}
-
-body.dark-mode tr:nth-child(even) {
-  background-color: gray;
-  color: white;
-}
-body.dark-mode tr:nth-child(even):hover,
-body.dark-mode tr:hover {
-  background-color: black;
-  color: white;
 }
 /*----------------------------------------
   Title
@@ -190,17 +183,27 @@ td {
 th {
   background-color: rgb(94, 94, 94);
   color: white;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #f2f2f2;
-}
+} */
 
 tr:hover {
   background-color: gray;
   color: #fff;
 }
-
+/* body.dark-mode tr:nth-child(even) {
+  background-color: gray;
+  color: white;
+} */
+/* body.dark-mode tr:nth-child(even):hover, */
+body.dark-mode tr:hover {
+  background-color: black;
+  color: white;
+}
 /*----------------------------------------
   flickr style
   ---------------------------------------- */
@@ -379,7 +382,6 @@ header nav {
     overflow-y: scroll;
     position: relative;
     width: 100%;
-    width: 100%;
   }
   header nav {
     background: #333;
@@ -442,7 +444,6 @@ header nav {
     background-color: rgba(4, 39, 78, 0.75);
     border-bottom: none;
     margin: 0 auto;
-    margin: auto;
     opacity: 0.75;
     transition: none;
   }
@@ -462,6 +463,7 @@ header nav {
   display: flex;
   flex-direction: column;
   font-size: 300%;
+  image-rendering: pixelated;
   justify-content: center;
   margin-bottom: 0;
   margin-left: auto;
@@ -531,6 +533,7 @@ body.dark-mode .logo img {
   height: 100%;
   opacity: 0;
   padding: 25% 1rem;
+  overflow: scroll;
   position: absolute;
   text-align: center;
   top: 0;
@@ -632,7 +635,7 @@ body.dark-mode .logo img {
     position: relative;
     text-align: center;
     transition: none;
-    z-index: -3;
+    /* z-index: 1; */
   }
   .list-item {
     height: 100%;
