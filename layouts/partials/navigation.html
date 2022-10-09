@@ -5,7 +5,7 @@
   <a href="#close" class="undoer">✕</a>
 <nav>
   <ul>
-    <li>{{- partial "dark-mode.html" . -}}</li>
+    <li title="{{ i18n "dark_mode" }}">{{- partial "dark-mode.html" . -}}</li>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
     <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}

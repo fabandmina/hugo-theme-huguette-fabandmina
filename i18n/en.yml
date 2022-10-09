@@ -68,9 +68,13 @@
 - id: Mina
   translation: "Mina"
 
-  # Language selector
+# Language selector
 - id: language_selector
   translation: "Language "
+
+# Dark mode
+- id: dark_mode
+  translation: "Dark mode"
 
 # Share buttons
 - id: please_share

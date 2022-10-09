@@ -71,6 +71,10 @@ img {
 /*----------------------------------------
   Dark Mode
   ---------------------------------------- */
+.dark-mode-caption{
+  display: none;
+  position: relative;
+}
 body.dark-mode,
 body.dark-mode main * {
   background: rgb(45, 45, 45);
@@ -88,6 +92,17 @@ body.dark-mode img {
 
 body.dark-mode img:hover {
   opacity: 1;
+}
+@media only screen and (max-width: 800px) {
+  .dark-mode-caption{
+    display: flex;
+    font-size: 1rem;
+    margin: 0 33%;
+    opacity: .7;
+    position: relative;
+    top: -.7rem;
+    width: 100%;
+  }
 }
 /*----------------------------------------
   Title
