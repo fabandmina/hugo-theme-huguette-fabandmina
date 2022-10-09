@@ -1,11 +1,11 @@
 <!--This partiol only gets written when you have introduction set in your frontmatter-->
 <ul>
     {{ with .Site.Params.instagram_link }}
-    <li><a href="{{- . -}}"><i class="fa-brands fa-instagram"></i></a>
+    <li><a href="{{- .url -}}"><i class="{{- .icon -}}"></i></a>
     </li>
     {{ end }}
-    {{ with .Site.Params.francetvinfo_link }}
-    <li><a href="{{- . -}}"><i class="fa-regular fa-newspaper"></i></a>
+    {{ with .Site.Params.flickr_link }}
+    <li><a href="{{- .url -}}"><i class="{{- .icon -}}"></i></a>
     </li>
     {{ end }}
 </ul>
