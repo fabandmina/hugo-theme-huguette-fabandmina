@@ -56,11 +56,17 @@
 - id: communication_with_the_locals
   translation: "Communication with the locals"
 - id: top_5_locations
-  translation: "5 places you should visit"
+  translation: "5 memorable places"
 - id: overall_feel
   translation: "Overall feel"
 - id: travel_story
   translation: "Travel Story"
+- id: crossing_the_border
+  translation: "Crossing the border"
+- id: fab
+  translation: "Fab"
+- id: Mina
+  translation: "Mina"
 
 # Share buttons
 - id: please_share
