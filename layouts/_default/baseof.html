@@ -9,6 +9,10 @@
 	<div class="content">
 		{{- block "main" . }}
 		{{- end }}
+		<div class="share-button title">
+			<h1 class="">Please share!</h1>
+			{{- partial "share-buttons.html" . -}}
+		</div>
 	</div>
 	{{- partial "footer.html" . -}}
 </body>

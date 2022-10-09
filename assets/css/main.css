@@ -141,9 +141,7 @@ body.dark-mode .title {
 .content {
   background-color: rgb(255, 248, 235);
   margin: 0 auto;
-  padding: 1rem 8vw;
-  /* text-align: justify;
-  text-justify: inter-word; */
+  padding: 0 8vw;
   width: 70vw;
 }
 
@@ -163,14 +161,24 @@ body.dark-mode .content {
   ---------------------------------------- */
 .share-button {
   align-items: center;
-  display: flex;
+  align-self: center;
+  background-color: rgba(243, 132, 34, 0.8);
+  color: white;
+  display: block;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
-  width: 100%;
+  opacity: 1;
+  padding: 1rem .5rem;
 }
 .share-button a {
-  display: inline-flex;
+  border-radius: 7px;
+  border: solid black 2px;
+  opacity: 1;
+}
+.share-button h1 {
+  justify-content: center;
+  margin: 0 33%;
+  padding: auto 3rem;
 }
 
 /*----------------------------------------
