@@ -47,6 +47,10 @@
   translation: "Coup de coeur de Fab :"
 - id: mina_favourite
   translation: "Coup de coeur de Mina :"
+- id: what_we_appreciate
+  translation: "Ce que l'on a apprécié"
+- id: what_we_dislike
+  translation: "Les points négatifs"
 - id: communication_with_the_locals
   translation: "Communication avec les locaux"
 - id: top_5_locations

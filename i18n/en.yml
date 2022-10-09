@@ -49,6 +49,10 @@
   translation: "Fab's favourite:"
 - id: mina_favourite
   translation: "Mina's favourite:"
+- id: what_we_appreciate
+  translation: "What we appreciate"
+- id: what_we_dislike
+  translation: "What we dislike"
 - id: communication_with_the_locals
   translation: "Communication with the locals"
 - id: top_5_locations

@@ -189,7 +189,7 @@ th {
   background-color: rgb(94, 94, 94);
   color: white;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 /* tr:nth-child(even) {
