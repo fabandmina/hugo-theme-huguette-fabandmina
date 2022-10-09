@@ -61,3 +61,7 @@
   translation: "Overall feel"
 - id: travel_story
   translation: "Travel Story"
+
+# Share buttons
+- id: please_share
+  translation: "Please share!"
