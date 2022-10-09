@@ -3,8 +3,8 @@
     {{ range .Site.Languages }}
     {{ if eq . $.Site.Language }}
     <li id="current-language">
-        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }}</a>
-        <a href="#undoer-language" class="undoer-language .undoer" title="close">{{ .LanguageName }}✕</a>
+        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">>{{ .LanguageName }}</a>
+        <a href="#undoer-language" class="undoer-language .undoer" title="close">>{{ .LanguageName | truncate 2}}</a>
     </li>
     {{ end }}
     {{ end }}

@@ -65,7 +65,11 @@
   translation: "Fab"
 - id: Mina
   translation: "Mina"
-  
+
+  # Language selector
+- id: language_selector
+  translation: "Langue "
+
   # Share buttons
 - id: please_share
   translation: "Partagez-nous !"

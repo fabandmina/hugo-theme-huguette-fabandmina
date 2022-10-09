@@ -68,6 +68,10 @@
 - id: Mina
   translation: "Mina"
 
+  # Language selector
+- id: language_selector
+  translation: "Language "
+
 # Share buttons
 - id: please_share
   translation: "Please share!"

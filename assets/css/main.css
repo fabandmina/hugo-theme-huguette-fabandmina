@@ -414,11 +414,13 @@ header nav {
   .other-language {
     display: flex;
     visibility: visible;
+    text-decoration: underline;
   }
 
   #current-language,
   .current-language {
-    display: none;
+    display: flex;
+    pointer-events: none;
   }
 
   #open {
