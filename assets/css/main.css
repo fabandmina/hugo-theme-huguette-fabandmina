@@ -89,20 +89,23 @@ body.dark-mode img {
 body.dark-mode img:hover {
   opacity: 1;
 }
-
-body.dark-mode .title {
-  opacity: 0.8;
-}
 /*----------------------------------------
   Title
   ---------------------------------------- */
 .title {
+  align-self: center;
   background-color: #f38322;
-  border-radius: 15px;
   color: white;
+  height: auto;
+  margin: auto -8vw;
+  padding: 0;
+  position: relative;
   text-align: center;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  width: 100%;
+  width: auto;
+}
+body.dark-mode .title {
+  opacity: .7;
 }
 .subtitle {
   font-size: 1rem;
