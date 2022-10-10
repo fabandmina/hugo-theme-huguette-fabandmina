@@ -679,10 +679,6 @@ body.dark-mode .overlay {
   border-radius: 20px;
 }
 
-.list-item:last-child {
-  margin-bottom: 3vw;
-}
-
 .list-grid > div {
   position: relative;
 }
