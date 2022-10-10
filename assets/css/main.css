@@ -118,8 +118,8 @@ body.dark-mode .js-toggle-track {
   background-color: #f38322;
   color: white;
   height: auto;
-  margin: auto -8vw;
-  padding: 0;
+  margin: 0 -8vw 25px -8vw;
+  padding: auto;
   position: relative;
   text-align: center;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -138,6 +138,12 @@ body.dark-mode .title {
 }
 .subtitle p {
   font-style: oblique 15deg;
+}
+
+@media only screen and (max-width: 800px) {
+  .dark-mode-caption{
+    margin: 0 0;
+  }
 }
 /*----------------------------------------
   Introduction
@@ -217,6 +223,55 @@ body.dark-mode .share-button a {
   flex-basis: 100%;
 }
 
+@media only screen and (max-width: 800px) {
+  .share-button{
+    flex-basis: 50%;
+  }
+  
+  .share-button a {
+    margin: auto 2px;
+  }
+}
+/*----------------------------------------
+  Donate button
+  ---------------------------------------- */
+  .cat-button {
+    display: inline-flex;
+    /* box-shadow: 3px 3px #6a92b4; */
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* letter-spacing: .05rem; */
+    margin: 2px auto;
+    padding: 0.5rem 3rem;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  }
+  .cat-button:hover {
+    /* opacity: 0.6; */
+    filter: contrast(200%);
+    filter: brightness(110%);
+  }
+  .cat-primary {
+    border-style: unset;
+    text-decoration: none;
+    background-color: #2292F3;
+    color: white;
+  }
+  .cat-secondary {
+    border-style: double;
+    border-color: rgba(54, 139, 236, 0.8);
+    border-width: 2px;
+    text-decoration: none;
+    background-color: white;
+    color: rgba(54, 139, 236, 0.8);
+  }
+
+  body.dark-mode .cat-button {
+    background-color: #4e5070;
+  }
+  body.dark-mode .cat-button:hover {
+    opacity: .7;
+  }
 /*----------------------------------------
   Table style
   ---------------------------------------- */
@@ -236,19 +291,12 @@ th {
   font-size: 1rem;
 }
 
-/* tr:nth-child(even) {
-  background-color: #f2f2f2;
-} */
 
 tr:hover {
   background-color: gray;
   color: #fff;
 }
-/* body.dark-mode tr:nth-child(even) {
-  background-color: gray;
-  color: white;
-} */
-/* body.dark-mode tr:nth-child(even):hover, */
+
 body.dark-mode tr:hover {
   background-color: black;
   color: white;
@@ -282,7 +330,6 @@ body.dark-mode tr:hover {
 }
 
 body.dark-mode .flickr-single {
-  /* opacity: 0.8; */
   background-color: #4e5070;
 }
 body.dark-mode .flickr-single:hover {
@@ -291,7 +338,6 @@ body.dark-mode .flickr-single:hover {
 
 @media only screen and (max-width: 800px) {
   .flickr-iframe {
-    /* max-height: 300px; */
     min-height: 50vh;
   }
 }
@@ -640,7 +686,7 @@ body.dark-mode .logo img {
   height: 100%;
   opacity: 0;
   padding: 25% 1rem;
-  overflow: scroll;
+  /* overflow: scroll; */
   position: absolute;
   text-align: center;
   top: 0;

@@ -70,10 +70,14 @@
 - id: language_selector
   translation: "Langue "
 
-# Dark mode
+  # Dark mode
 - id: dark_mode
   translation: "Mode sombre"
 
   # Share buttons
 - id: please_share
   translation: "Partagez-nous !"
+
+  # Donate button
+- id: donate
+  translation: "Faire un don"

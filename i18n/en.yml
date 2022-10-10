@@ -79,3 +79,7 @@
 # Share buttons
 - id: please_share
   translation: "Please share!"
+
+# Donate button
+- id: donate
+  translation: "Donate"
