@@ -13,7 +13,7 @@
   translation: "Aidez-nous"
 
 # flickr
-- id: flicker_album
+- id: flickr_album
   translation: " Album Flickr"
 
 # Trip singles
@@ -78,6 +78,10 @@
 - id: please_share
   translation: "Partagez-nous !"
 
-  # Donate button
+# Donate button
 - id: donate
-  translation: "Faire un don"
+  translation: "Faîtes un don ➤"
+
+# flickr
+- id: flickr_album
+  translation: " Voir plus ➤"

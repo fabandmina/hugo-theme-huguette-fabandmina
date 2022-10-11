@@ -12,10 +12,6 @@
 - id: support_us
   translation: Support us
 
-# flickr
-- id: flicker_album
-  translation: " Flickr album"
-
 # Trip singles
 - id: stats
   translation: "Stats"
@@ -82,4 +78,8 @@
 
 # Donate button
 - id: donate
-  translation: "Donate"
+  translation: "Donate ➤"
+
+# flickr
+- id: flickr_album
+  translation: "See more ➤"

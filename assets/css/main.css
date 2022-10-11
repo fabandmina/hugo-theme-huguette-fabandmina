@@ -53,13 +53,6 @@ h6 {
   padding-top: 20px;
 }
 
-h3.title {
-  color: #131633;
-  font-size: 32px;
-  margin-bottom: 35px;
-  text-align: center;
-  text-transform: capitalize;
-}
 hr {
   background-color: gray;
   border: 0;
@@ -90,9 +83,7 @@ body.dark-mode main * {
 body.dark-mode a {
   color: #8288ce;
 }
-body.dark-mode .postfooter a {
-  color: white;
-}
+
 body.dark-mode img {
   opacity: 0.7;
 }
@@ -129,13 +120,13 @@ body.dark-mode .title {
   opacity: 1;
   background-color: #4e5070;
 }
-.subtitle {
+/* .subtitle {
   font-size: 1rem;
   margin: 1rem auto;
   padding: 1rem auto;
   text-align: center;
   width: 100%;
-}
+} */
 .subtitle p {
   font-style: oblique 15deg;
 }
@@ -180,7 +171,7 @@ body.dark-mode .content {
 
 @media only screen and (max-width: 800px) {
   .content {
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 1.3rem;
     width: 100vw;
     font-size: .9rem;
   }
@@ -224,53 +215,65 @@ body.dark-mode .share-button a {
 }
 
 @media only screen and (max-width: 800px) {
-  .share-button{
-    flex-basis: 50%;
+  .share-button > a {
+    flex-basis: 20%;
   }
   
   .share-button a {
-    margin: auto 2px;
+    margin: 3px 3px;
   }
 }
 /*----------------------------------------
   Donate button
   ---------------------------------------- */
-  .cat-button {
+  .cta-button {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;   
     display: inline-flex;
-    /* box-shadow: 3px 3px #6a92b4; */
-    border-radius: 40px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    /* letter-spacing: .05rem; */
-    margin: 2px auto;
-    padding: 0.5rem 3rem;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    justify-content: center;
+    margin: 5px 5px;
+    padding: 0.5rem 1rem;
+    width: 12rem;
   }
-  .cat-button:hover {
-    /* opacity: 0.6; */
-    filter: contrast(200%);
+  .cta-button:hover {
     filter: brightness(110%);
+    filter: contrast(200%);
   }
-  .cat-primary {
-    border-style: unset;
-    text-decoration: none;
+  .cta-primary {
     background-color: #2292F3;
+    border-style: unset;
     color: white;
-  }
-  .cat-secondary {
-    border-style: double;
-    border-color: rgba(54, 139, 236, 0.8);
-    border-width: 2px;
     text-decoration: none;
+  }
+  .cta-secondary {
     background-color: white;
+    border-color: rgba(54, 139, 236, 0.8);
+    border-style: double;
+    border-width: 2px;
     color: rgba(54, 139, 236, 0.8);
+    text-decoration: none;
   }
 
-  body.dark-mode .cat-button {
-    background-color: #4e5070;
+  body.dark-mode .cta-primary{
+    background-color: #7079dd;
+    color: white;
   }
-  body.dark-mode .cat-button:hover {
-    opacity: .7;
+
+  body.dark-mode .cta-secondary{
+    background-color: #494c6b;
+    border-style: none;
+    color: white;
+  }
+
+  /* body.dark-mode .cta-button:hover {
+    opacity: 1;
+  } */
+  @media only screen and (max-width: 800px) {
+    .cta-button {
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px, rgba(0, 0, 0, .1) 0px 2px 4px, rgba(0, 0, 0, .1) 0px 4px 8px, rgba(0, 0, 0, .1) 0px 8px 16px, rgba(0, 0, 0, .1) 0px 16px 32px, rgba(0, 0, 0, .1) 0px 32px 64px;   
+    }
   }
 /*----------------------------------------
   Table style
@@ -305,8 +308,8 @@ body.dark-mode tr:hover {
   flickr style
   ---------------------------------------- */
 .flickr-album {
-  overflow: scroll;
-  position: relative;
+  margin: .3rem 0rem;
+  text-align: right;
 }
 .flickr-iframe {
   display: flex;
@@ -317,28 +320,19 @@ body.dark-mode tr:hover {
   position: relative;
   width: 100%;
 }
-.flickr-single {
-  background-color: #f38322;
-  border-radius: 20px;
-  color: white;
-  margin: 0.6rem auto;
-  padding: 0.5rem 1rem;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.flickr-single:hover {
-  opacity: 0.6;
-}
-
-body.dark-mode .flickr-single {
-  background-color: #4e5070;
-}
-body.dark-mode .flickr-single:hover {
-  opacity: .7;
-}
 
 @media only screen and (max-width: 800px) {
-  .flickr-iframe {
-    min-height: 50vh;
+  .flickr-iframe, body.dark-mode .flickr-iframe {
+    height: 50vw;
+  }
+  .flickr-album{
+    text-align: center;
+    margin: .5rem 0;
+  }
+  .flickr-album a {
+    margin: auto 0;
+    width: 100%;
+    align-self: center;
   }
 }
 
@@ -782,22 +776,22 @@ body.dark-mode .overlay {
     background-color: #f8c8a1;
     border-radius: 10px;
     color: black;
-    font-size: 1.1rem;
-    height: 25vw;
+    font-size: 1rem;
+    height: 10rem;
     opacity: 1;
     padding: auto auto;
     position: relative;
     text-align: center;
-    transition: none;
+    /* transition: none; */
     /* z-index: 1; */
   }
   .list-item {
-    height: 100%;
-    margin: 5vw auto;
+    /* height: 100%; */
+    /* margin: 0vw auto; */
   }
   .list-grid {
-    grid-template-columns: 1fr;
-    margin: 3vw 0;
+    /* grid-template-columns: 1fr; */
+    /* margin: 2vw 0; */
   }
 
   .list-item:hover .caption {
@@ -857,46 +851,28 @@ body.dark-mode .pagination a:hover {
   Post Footer
   ---------------------------------------- */
 .postfooter {
-  color: #333;
-  color: black;
-  font-size: 2vw;
-  font-weight: bold;
-  height: 2rem;
-  margin: 2rem auto;
+  font-size: 1.2rem;
+  height: auto;
+  margin: 1rem auto;
   position: relative;
   text-align: center;
-  text-align: center;
   width: 100%;
+  
 }
 
 .postfooter a {
-  background-color: #f38322;
-  border-radius: 10px;
-  color: white;
-  padding: 0.5rem 0.5rem;
+  padding: 0.2rem 0.2rem;
   text-decoration: underline;
 }
 
-.postfooter a:hover,
-.postfooter a:active {
-  background-color: #f38322;
-  opacity: 0.7;
-}
-body.dark-mode .postfooter a {
-  background-color: #4e5070;
-}
-
-body.dark-mode .postfooter {
-  color: white;
+body.dark-mode .postfooter, body.dark-mode .postfooter a {
+  color: #8288ce;
 }
 
 @media only screen and (max-width: 800px) {
   .postfooter {
-    margin-top: 15vw;
-  }
-  .postfooter a {
-    font-size: 3vw;
-    text-decoration: none;
+    margin-top: 10px;
+    font-size: 1.2rem;
   }
 }
 
@@ -907,12 +883,10 @@ body.dark-mode .postfooter {
 footer {
   align-items: center;
   background-color: #404040;
-  bottom: 0;
   color: white;
   display: flex;
   flex-direction: column;
   margin-top: 0;
-  overflow-y: auto;
   padding: 60px 0;
   position: relative;
   width: 100vw;
@@ -922,21 +896,10 @@ body.dark-mode footer {
   background-color: #1b1b1b;
 }
 
-footer p {
-  color: rgba(255, 255, 255, 6);
-  font-size: 14px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-#acknowledgement {
-  font-size: 9px;
-  font-style: italic;
-}
-
 footer ul {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
+  flex-wrap: wrap;
   list-style: none;
   margin-bottom: 25px;
 }
@@ -948,14 +911,14 @@ footer ul li {
 footer ul li a {
   color: #fff;
   cursor: pointer;
-  font-size: 36px;
+  font-size: 2rem;
 }
 @media only screen and (max-width: 800px) {
   footer {
-    bottom: 0;
-    margin-top: 0;
-    padding: 80px 15px;
+    text-align: center;
+    padding: 80px 2rem;
     position: relative;
     width: 100vw;
+    font-size: .9rem;
   }
 }
