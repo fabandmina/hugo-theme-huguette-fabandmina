@@ -85,3 +85,7 @@
 # flickr
 - id: flickr_album
   translation: " Voir plus ➤"
+
+# Map
+- id: our_route
+  translation: "Notre trajet"

@@ -83,3 +83,7 @@
 # flickr
 - id: flickr_album
   translation: "See more ➤"
+
+# Map
+- id: our_route
+  translation: "Our route"

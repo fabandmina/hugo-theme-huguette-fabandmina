@@ -660,6 +660,9 @@ body.dark-mode .logo img {
 /*----------------------------------------
   Map
   ---------------------------------------- */
+  .map {
+    margin: .5rem 0;
+  }
 
   body.dark-mode .map {
     opacity: .7;
@@ -668,7 +671,11 @@ body.dark-mode .logo img {
   body.dark-mode .map:hover {
     opacity: 1;
   }
-
+  @media only screen and (max-width: 800px) {
+    .map iframe{
+      max-height: 100%;
+    }
+  }
 /*----------------------------------------
   Overlay
   ---------------------------------------- */
