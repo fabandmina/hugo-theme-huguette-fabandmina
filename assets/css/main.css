@@ -10,7 +10,7 @@
 html {
   color: #555;
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   text-align: left;
   width: 100vw;
   line-height: 1.6;
-  font-size: 24px;
+  /* font-size: 24px; */
 }
 
 a {
@@ -47,11 +47,37 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald", sans-serif;
-  margin: 1rem auto;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  font-family: "Secular One";
+  /* src: url('/fonts/Silkscreen-Regular.ttf') format('ttf'); */
+  /* font-family: "Oswald", sans-serif; */
+  margin: 1.5rem auto .7rem auto;
+  padding-bottom: 0rem;
+  padding-top: 1rem;
+  line-height: auto;
+  font-weight: bold;
+  /* letter-spacing: .1rem; */
 }
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.7rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+
 
 hr {
   background-color: gray;
@@ -140,7 +166,8 @@ body.dark-mode .title {
   Introduction
   ---------------------------------------- */
 .introduction {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: 1rem;
   font-style: oblique 15deg;
   margin: 1rem auto;
   min-height: 3rem;
@@ -162,7 +189,7 @@ body.dark-mode .title {
   margin: 0 auto;
   padding: 0 8vw;
   width: 60vw;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 body.dark-mode .content {
@@ -173,7 +200,7 @@ body.dark-mode .content {
   .content {
     padding: 0.1rem 1.3rem;
     width: 100vw;
-    font-size: .9rem;
+    /* font-size: .9rem; */
   }
 
   body.dark-mode .content{
@@ -411,12 +438,12 @@ body.dark-mode header a:hover {
 
 header ul li {
   display: inline-block;
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
 }
 
 header nav {
   flex-direction: row;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   justify-content: flex-end;
   visibility: visible;
 }
@@ -582,14 +609,14 @@ body.dark-mode .undoer-language {
 #banner {
   align-items: center;
   background-attachment: local;
-  background-color: white;
+  background-color: none;
   background-image: url("{{ $.Site.Params.banner }}");
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: auto 300px ;
   color: rgba(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
-  font-size: 300%;
+  /* font-size: 300%; */
   image-rendering: pixelated;
   justify-content: center;
   margin-bottom: 0;
@@ -599,6 +626,7 @@ body.dark-mode .undoer-language {
   position: relative;
   text-align: center;
   width: 100vw;
+  min-height: 300px;
 }
 
 body.dark-mode #banner {
@@ -614,7 +642,7 @@ body.dark-mode #banner {
   min-width: 150px;
   position: absolute;
   top: 0;
-  width: 10vw;
+  width: 30vw;
 }
 
 body.dark-mode .logo img {
@@ -626,7 +654,7 @@ body.dark-mode .logo img {
   background-color: rgba(54, 139, 236, 0.8);
   border-radius: 15px;
   height: auto;
-  width: 200%;
+  width: 100%;
 }
 .logo:hover img,
 .logo:active img {
@@ -894,7 +922,7 @@ body.dark-mode .postfooter, body.dark-mode .postfooter a {
 @media only screen and (max-width: 800px) {
   .postfooter {
     margin-top: 10px;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
   }
 }
 
