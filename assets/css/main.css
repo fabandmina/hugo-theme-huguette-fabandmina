@@ -379,21 +379,9 @@ header {
   width: 100%;
   z-index: 10;
 }
-header .active {
-  background-color: rgb(7, 80, 163);
-  font-size: 1.2rem;
-}
-
-body.dark-mode header .active {
-  background-color: #4e5070;
-}
 
 body.dark-mode header {
   background-color: rgb(44, 44, 44);
-}
-
-body.dark-mode header .active {
-  background-color: #4e5070;
 }
 
 header a:not(.logo) {
@@ -480,7 +468,14 @@ body.dark-mode .undoer-language {
     height: 15vw;
     justify-content: space-between;
   }
-
+  header .active {
+    background-color: rgb(7, 80, 163);
+    /* font-size: 1.2rem; */
+  }
+  
+  body.dark-mode header .active {
+    background-color: #4e5070;
+  }
   header nav ul {
     align-items: center;
     background-color: rgba(4, 39, 78, 1);
@@ -657,6 +652,26 @@ body.dark-mode .logo img {
   }
 }
 
+/*----------------------------------------
+  Breadcrumb
+---------------------------------------- */
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: auto 0;
+}
+
+.breadcrumb li {
+  display: inline;
+  white-space: nowrap;
+}
+
+.breadcrumb li + li:before {
+  content: ">";
+  padding: 1rem .3rem 0rem .3rem;
+}
 /*----------------------------------------
   Map
   ---------------------------------------- */
