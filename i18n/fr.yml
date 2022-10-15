@@ -89,3 +89,9 @@
 # Map
 - id: our_route
   translation: "Notre trajet"
+
+# Collapsing section
+- id: read_more
+  translation: "[Afficher plus]"
+- id: read_less
+  translation: "[Cacher]"

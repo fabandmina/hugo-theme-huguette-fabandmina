@@ -87,3 +87,9 @@
 # Map
 - id: our_route
   translation: "Our route"
+
+# Collapsing section
+- id: read_more
+  translation: "[Show more]"
+- id: read_less
+  translation: "[Hide]"
