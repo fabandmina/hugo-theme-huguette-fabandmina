@@ -92,6 +92,6 @@
 
 # Collapsing section
 - id: read_more
-  translation: "[Afficher plus]"
+  translation: "[Afficher]"
 - id: read_less
   translation: "[Cacher]"

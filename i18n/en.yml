@@ -90,6 +90,6 @@
 
 # Collapsing section
 - id: read_more
-  translation: "[Show more]"
+  translation: "[Show]"
 - id: read_less
   translation: "[Hide]"
