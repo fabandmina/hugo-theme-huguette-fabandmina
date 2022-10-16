@@ -5,14 +5,39 @@
     <li id="current-language">
         <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">>{{ .LanguageName }}</a>
         <a href="#undoer-language" class="undoer-language .undoer" title="close">>{{ .LanguageName | truncate 2}}</a>
+        {{ range $.Translations }}
+        <ul class="dropdown-language">
+            <li class="other-language">
+                <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+            </li>
+        </ul>
+        {{ end }}
     </li>
     {{ end }}
     {{ end }}
-
-    {{ range $.Translations }}
-        <li class="other-language">
-            <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
-        </li>
-    {{ end }}
 </ul>
 {{ end }}
+
+<style>
+    #current-language {
+        display: block;
+    }
+    .undoer-language {
+        display: none;
+    }
+    .dropdown-language {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: black;
+        {{/*  left: 0;  */}}
+        margin-top: 1rem;
+        transition: all 0.5s ease;
+    }
+    #current-language:hover > .dropdown-language,
+    .dropdown-language:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+</style>

@@ -448,7 +448,7 @@ header nav {
   visibility: visible;
 }
 
-#current-language {
+/* #current-language {
   display: inline-block;
   margin: 0 0;
   position: relative;
@@ -481,7 +481,7 @@ body.dark-mode .undoer-language {
 :target ~ .other-language {
   display: inline-block;
   visibility: visible;
-}
+} */
 
 #open,
 .undoer {
