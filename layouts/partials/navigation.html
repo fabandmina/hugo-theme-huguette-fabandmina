@@ -12,6 +12,6 @@
                   {{ if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}"
       href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
     {{ end }}
-    <li>{{- partial "language-switcher.html" . -}}</li>
+    {{- partial "language-switcher.html" . -}}
   </ul>
 </nav>

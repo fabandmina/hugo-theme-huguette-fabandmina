@@ -1,43 +1,88 @@
 {{ if .Site.IsMultiLingual }}
-<ul>
     {{ range .Site.Languages }}
     {{ if eq . $.Site.Language }}
     <li id="current-language">
-        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">>{{ .LanguageName }}</a>
-        <a href="#undoer-language" class="undoer-language .undoer" title="close">>{{ .LanguageName | truncate 2}}</a>
-        {{ range $.Translations }}
+        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }} ᐅ</a>
         <ul class="dropdown-language">
+            <li class="selected-language">
+                <a class="selected-language-link" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }} ᐁ</a>
+            </li>
+            {{ range $.Translations }}
             <li class="other-language">
                 <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
             </li>
+            {{ end }}
         </ul>
-        {{ end }}
     </li>
     {{ end }}
     {{ end }}
-</ul>
 {{ end }}
 
 <style>
     #current-language {
-        display: block;
-    }
-    .undoer-language {
-        display: none;
+        display: inline-block;
     }
     .dropdown-language {
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        background-color: black;
-        {{/*  left: 0;  */}}
-        margin-top: 1rem;
-        transition: all 0.5s ease;
+        background: rgba(4, 39, 78, 1);
+        margin-left: auto;
+        display: flex;
+        top: 0;
+        z-index: 10;
+        flex-direction: column;
     }
+    body.dark-mode .dropdown-language {
+        background-color: rgba(44, 44, 44, 1);
+    }
+    .selected-language-link:hover, body.dark-mode .selected-language-link:hover{
+        background-color: rgba(0, 0, 0, 0);
+        cursor: default;
+    }
+    .other-language, .selected-language {
+        width: 100%;
+        height: auto;
+    }
+    #current-language:hover + li .dropdown-language,
     #current-language:hover > .dropdown-language,
     .dropdown-language:hover {
         visibility: visible;
         opacity: 1;
-        display: block;
+    }
+    @media only screen and (max-width: 800px) {
+        .other-language, .selected-language {
+            visibility: inherit;
+          }
+        .dropdown-language {
+            position: relative;
+            margin-left: 0;
+            visibility: inherit;
+            opacity: 1;
+            align-items: flex-start;
+        }
+        .selected-language {
+            opacity: .7;
+            pointer-events: none;
+        }
+        .selected-language-link {
+            display: flex;
+            background-color: rgba(2, 18, 37, .7);
+        }
+        body.dark-mode .selected-language-link {
+            background-color: #1a1919;
+        }
+        .current-language {
+            display: none;
+        }
+        #current-language {
+            display: flex;
+            opacity: 1;
+        }
+    
+        body.dark-mode #current-language,
+        body.dark-mode .current-language {
+            background-color: #1a1919;
+        }
     }
 </style>

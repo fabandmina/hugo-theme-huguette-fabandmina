@@ -396,7 +396,6 @@ body.dark-mode tr:hover {
   HEADER
   ---------------------------------------- */
 header {
-  align-items: center;
   background: rgba(4, 39, 78, 1);
   color: #fff;
   display: flex;
@@ -404,11 +403,11 @@ header {
   padding: 0px 20px;
   position: relative;
   width: 100%;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 body.dark-mode header {
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(44, 44, 44, 1);
 }
 
 header a:not(.logo) {
@@ -438,51 +437,14 @@ body.dark-mode header a:hover {
 
 header ul li {
   display: inline-block;
-  /* font-size: 1.3rem; */
 }
 
 header nav {
   flex-direction: row;
-  /* font-size: 1rem; */
-  justify-content: flex-end;
-  visibility: visible;
-}
-
-/* #current-language {
-  display: inline-block;
-  margin: 0 0;
-  position: relative;
-}
-
-.other-language {
-  display: none;
-  margin: 0 0;
-  position: relative;
-  visibility: hidden;
-}
-
-.undoer-language {
-  background-color: rgb(7, 80, 163);
-  display: none;
-  font-size: 1rem;
-}
-
-body.dark-mode .undoer-language {
-  background-color: #4E5070;
-}
-
-:target > .undoer-language {
-  display: flex;
-}
-:target .current-language {
-  display: none;
-}
-
-:target ~ .other-language {
+  /* justify-content: flex-end; */
   display: inline-block;
   visibility: visible;
-} */
-
+}
 #open,
 .undoer {
   display: none;
@@ -490,10 +452,10 @@ body.dark-mode .undoer-language {
 
 @media only screen and (max-width: 800px) {
   header {
-    flex-basis: 50%;
     flex-direction: column;
     height: 15vw;
     justify-content: space-between;
+    width: 100vw;
   }
   header .active {
     background-color: rgb(7, 80, 163);
@@ -509,7 +471,7 @@ body.dark-mode .undoer-language {
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
-    margin: auto;
+    margin: 0 0;
     overflow-y: scroll;
     position: relative;
     width: 100%;
@@ -523,10 +485,11 @@ body.dark-mode .undoer-language {
     background: #333;
     opacity: 1;
     position: relative;
-    transform: translateX(-100%);
-    transition: 280ms ease-out 120ms;
     visibility: hidden;
     width: 100vw;
+    align-self: center;
+    display: none;
+    z-index: 5;
   }
 
   header .active {
@@ -538,25 +501,6 @@ body.dark-mode .undoer-language {
     background-color: #1a1919;
   }
 
-  .other-language {
-    display: flex;
-    visibility: visible;
-    /* text-decoration: underline; */
-  }
-
-  #current-language,
-  .current-language {
-    display: flex;
-    pointer-events: none;
-    background-color: rgba(2, 18, 37, .7);
-    opacity: .7;
-  }
-
-  body.dark-mode #current-language,
-  body.dark-mode .current-language {
-    background-color: #1a1919;
-  }
-
   #open {
     display: flex;
   }
@@ -564,7 +508,7 @@ body.dark-mode .undoer-language {
   #open,
   .undoer {
     font-size: 150%;
-    height: 15vw;
+    height: 100%;
     justify-content: center;
   }
 
@@ -577,15 +521,12 @@ body.dark-mode .undoer-language {
   }
 
   :target ~ nav {
-    transform: none;
     visibility: visible;
+    display: block;
   }
 
   header nav ul li {
     width: 100%;
-  }
-  header a {
-    font-size: 90%;
   }
   header a:active,
   header a:hover {
