@@ -1,13 +1,27 @@
 
 <!--This footer example shows how to replace :CURRENTYEAR: from the copyright statement in config.toml with the current year.-->
 <footer>
-	<div>{{- partial "media.html" . -}}</div>
-  {{with .Site.Copyright}}
-  {{ replace . "{year}" (string (now.Year)) }}
-  {{end}}
-  <div>Powered by 
-    <a href="https://gohugo.io/" target="_blank" rel="noreferrer noopener">
-      <img src="https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"></div>
-    </a>
+	<div>
+    <h4>Follow us!</h4>
+    {{- partial "media.html" . -}}
+  </div>
+  
+  <div class="powered-by">
+    <h4 class="powered-by-text">Powered by</h4>
+    <ul> 
+    {{ range $.Site.Params.powered_by }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noreferrer noopener">
+          <img src="{{ .logo }}">
+        </a>
+      </li>
+    {{ end }}
+    </ul>
+  </div>
+  <break></break>
+  <div class="copyright">
+    {{with .Site.Copyright}}
+    {{ replace . "{year}" (string (now.Year)) }}
+    {{end}}
   </div>
 </footer>

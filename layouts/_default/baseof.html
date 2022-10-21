@@ -10,10 +10,10 @@
 		{{- partial "breadcrumbs.html" . -}}
 		{{- block "main" . }}
 		{{- end }}
-		<div class="share-button title">
-			<h1 class="">{{ i18n "please_share" }}</h1>
-			{{- partial "share-buttons.html" . -}}
-		</div>
+	</div>
+	<div class="share-button">
+		<h1 class="">{{ i18n "please_share" }}</h1>
+		{{- partial "share-buttons.html" . -}}
 	</div>
 	{{- partial "footer.html" . -}}
 </body>
