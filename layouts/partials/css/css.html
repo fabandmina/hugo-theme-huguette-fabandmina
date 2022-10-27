@@ -440,13 +440,10 @@
     header {
       position: fixed;
       flex-direction: row;
-      height: 70px;
+      height: 50px;
       justify-content: space-between;
-      width: 70px;
+      width: 100vw;
       z-index: 15;
-      bottom: 10px;
-      right: 10px;
-      border-radius: 50px;
       opacity: 1;
     }
     header .active {
@@ -478,10 +475,10 @@
       width: 100vw;
       align-self: center;
       display: none;
-      top: 0;
+      top: 50px;
       left: 0;
       z-index: 5;
-      max-height: 100%;
+      max-height: 90%;
       overflow-y: auto;
     }
   
@@ -492,21 +489,12 @@
     #open {
       display: flex;
     }
-    .undoer-container {
-      display: flex;
-      height: 40px;
-      margin-bottom: 50px;
-      margin-top: 20px;
-    }
+
     .undoer {
-      display: flex;
-      border-radius: 50px;
-      border: solid 3px;
+      display: none;
       width: auto;
-      height: 40px;
-      padding: 1px auto;
-      margin: auto auto;
-      align-self: center
+      margin: 0 auto;
+      padding: 0 0;
     }
     #open,
     .undoer {
@@ -517,11 +505,12 @@
   
     #open:target {
       display: none;
+      visibility: visible;
     }
   
-    {{/*  #open:target .undoer {
+    #open:target + .undoer {
       display: flex;
-    }  */}}
+    }
   
     :target ~ nav {
       visibility: visible;
@@ -579,6 +568,7 @@
   
   @media only screen and (max-width: 800px) {
     #banner {
+      top: 50px;
       background-size: cover;
       font-size: 150%;
       min-height: 30vw;
