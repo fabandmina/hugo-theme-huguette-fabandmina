@@ -1,13 +1,18 @@
 
 <!-- Create a menu from the "Fixed Pages" and "Menu Pages" (identified by "" and "p",
   respectively) sections in Netlify CMS -->
+  {{ with .Site.Params.favicon }}
+  <div class="logo">
+    <a href="/"><img class="favicon" src="{{- . -}}"></a>
+  </div>
+  {{ end }}
   {{ with .Site.Params.logo }}
   <div class="logo">
     <a href="/"><img src="{{- . -}}"></a>
   </div>
   {{ end }}
-  <a href="#open" id="open">☰ Menu</a>
-  <a href="#close" class="undoer">✕ Menu</a>
+  <a href="#open" id="open">☰</a>
+  <a href="#close" class="undoer">✕</a>
 <nav>
   <ul>
     <li title="{{ i18n "dark_mode" }}">{{- partial "dark-mode.html" . -}}</li>
@@ -22,48 +27,206 @@
 </nav>
 
 <style>
+  header {
+    justify-content: flex-start;
+    background: {{ $.Site.Params.theme.light.color_header }};
+    display: flex;
+    padding: 0px 20px;
+    position: relative;
+    width: 100%;
+  }
   
+  body.dark-mode header {
+    background-color: {{ $.Site.Params.theme.dark.color_header }};
+  }
+  
+  header a {
+    align-items: center;
+    color: {{ $.Site.Params.theme.light.color_header_font }};
+    cursor: pointer;
+    float: left;
+    opacity: 1;
+    padding: 30px 15px;
+    text-decoration: none;
+    width: 100%;
+  }
+  body.dark-mode a {
+    color: {{ $.Site.Params.theme.dark.color_header_font }};
+  }
+  header nav a:hover {
+    background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
+    border-radius: 50px;
+    opacity: 1;
+    transition: 0.4s;
+  }
+  
+  body.dark-mode header nav a:hover {
+    background-color: {{ $.Site.Params.theme.dark.color_header_highlight }};
+    border-radius: 50px;
+    opacity: 1;
+    transition: 0.4s;
+  }
+  
+  header ul li {
+    display: inline-block;
+  }
+  
+  header nav {
+    margin-left: auto;
+    margin-right: 5vw;
+    align-self: center;
+    flex-direction: row;
+    display: inline-block;
+    visibility: visible;
+  }
+  #open,
+  .undoer {
+    display: none;
+  }  
   .logo {
     height: 100%;
     position: relative;
     align-self: center;
   }
   header .logo a {
+    display: inline;
+    margin: 5px 0;
     padding: 0 0;
-    height: 100%;
+    height: 80%;
+    {{/*  background-color: {{ $.Site.Params.theme.light.color_logo_background }};  */}}
+    border-radius: 15px;
+    {{/*  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;     */}}
   }
 
   .logo img {
     text-align: center;
-    background-color: {{ $.Site.Params.theme.light.color_logo_background }};
-    opacity: .8;
-    border-radius: 15px;
-    max-width: 20rem;
+    opacity: 1;
+    max-width: 300px;
   }
-
   body.dark-mode .logo img {
-    background-color: {{ $.Site.Params.theme.dark.color_logo_background }};
     opacity: 1;
   }
-  .logo:hover img,
-  .logo:active img {
-    filter: brightness(150%);
-    opacity: .8;
+
+  .favicon {
+    width: 40px;
+    margin: 1px;
   }
-  @media only screen and (max-width: 800px) {
-    .logo {
-      display: none;
+
+  .logo:hover a,
+  .logo:active a,
+  .logo a:hover {
+    background-color: none;
+  }
+  @media only screen and (max-width: 830px) {
+    header {
+      position: fixed;
+      flex-direction: row;
+      height: 50px;
+      justify-content: space-between;
+      width: 100vw;
+      z-index: 15;
+      opacity: 1;
+    }
+    header .active {
+      background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
+    }
+    
+    body.dark-mode header .active {
+      background-color: {{ $.Site.Params.theme.dark.color_header_highlight }};
+    }
+    header nav ul {
+      align-items: center;
+      background-color: {{ $.Site.Params.theme.light.color_header }};
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
       margin: 0 0;
+      position: relative;
+      width: 100%;
+    }
+  
+    body.dark-mode header nav ul {
+      background-color: {{ $.Site.Params.theme.dark.color_header }};
+    }
+  
+    header nav {
+      opacity: 1;
+      position: fixed;
+      visibility: hidden;
+      width: 100vw;
+      align-self: center;
+      display: none;
+      top: 50px;
+      left: 0;
+      z-index: 5;
+      max-height: 90%;
+      overflow-y: auto;
+    }
+  
+    header .active {
+      font-size: 1.2rem;
+    }
+  
+    #open {
+      display: flex;
+    }
+
+    .undoer {
+      display: none;
+      width: auto;
+      margin: 0 auto;
       padding: 0 0;
+    }
+    #open,
+    .undoer {
+      font-size: 150%;
+      height: 100%;
+      justify-content: center;
+    }
+  
+    #open:target {
+      display: none;
+      visibility: visible;
+    }
+  
+    #open:target + .undoer {
+      display: flex;
+    }
+  
+    :target ~ nav {
+      visibility: visible;
+      display: block;
+    }
+  
+    header nav ul li {
+      width: 100%;
+    }
+    header a:active,
+    header a:hover {
+      background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
+      border-bottom: none;
+      margin: 0 auto;
+      opacity: 0.75;
+      transition: none;
+    }
+  
+    body.dark-mode header a:active,
+    body.dark-mode header a:hover {
+      background-color: {{ $.Site.Params.theme.dark.color_header_highlight }};
+    }
+    .logo {
+      display: block;
       align-self: left;
-      padding-left: 2px;
+      padding: auto auto;
     }
     .logo a {
-      width: 2rem;
+      width: auto;
     }
     .logo img {
-      height: auto;
+      max-height: 60%;
       width: auto;
+      align-self: center;
+      margin: 10px 0;
     }
   }
 

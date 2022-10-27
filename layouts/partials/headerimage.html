@@ -8,3 +8,40 @@ when you have 'header' set in the frontmatter of your .md file -->
   {{/*  <h1>{{ .Site.Title }}</h1>
   <h3>{{ .Site.Params.subtitle }}</h3>  */}}
 </div>
+<style>
+  #banner {
+    align-items: center;
+    background-attachment: local;
+    background-color: none;
+    background-image: url("{{ $.Site.Params.theme.light.banner }}");
+    background-repeat: repeat-x;
+    background-size: auto 300px ;
+    color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    image-rendering: pixelated;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 20vw;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    min-height: 300px;
+  }
+  
+  body.dark-mode #banner {
+    background-image: url("{{ $.Site.Params.theme.dark.banner }}");
+    filter: saturate(65%);
+  }
+  
+  @media only screen and (max-width: 830px) {
+    #banner {
+      top: 50px;
+      background-size: cover;
+      font-size: 150%;
+      min-height: 30vw;
+    }
+  }
+</style>

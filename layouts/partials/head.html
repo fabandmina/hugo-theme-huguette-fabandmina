@@ -6,7 +6,9 @@ links to CSS and the javascript for NetlifyCMS. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16">
+  {{ with .Site.Params.favicon }}
+  <link rel="icon" href="{{ . }}" type="image/x-icon" sizes="16x16">
+  {{ end }}
 
   {{/*  {{ $templateStyle := resources.Get "css/main.css" | toCSS | minify }}
   {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
