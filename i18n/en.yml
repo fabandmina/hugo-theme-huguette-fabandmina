@@ -78,7 +78,7 @@
 
 # Donate button
 - id: donate
-  translation: "Donate ➤"
+  translation: "Support Us"
 
 # flickr
 - id: flickr_album

@@ -1,0 +1,54 @@
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
+    
+    <style>
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 15px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          font-weight: bolder;
+          border: none;
+          outline: none;
+          background-color: {{ $.Site.Params.theme.light.color_cta_secondary }};
+          color: {{ $.Site.Params.theme.light.color_cta_psecondary_font }};
+          cursor: pointer;
+          border-radius: 10px;
+          opacity: .8;
+          width: 50px;
+          height: 50px;
+        }
+        
+        body.dark-mode #myBtn {
+          background-color: {{ $.Site.Params.theme.dark.color_cta_secondary }};
+          color: {{ $.Site.Params.theme.dark.color_cta_psecondary_font }};
+        } 
+
+        #myBtn:hover {
+          filter: brightness(120%);
+        }
+        </style>    
+
+    <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>

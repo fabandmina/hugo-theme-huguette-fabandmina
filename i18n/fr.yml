@@ -80,7 +80,7 @@
 
 # Donate button
 - id: donate
-  translation: "Faîtes un don ➤"
+  translation: "Faîtes un don"
 
 # flickr
 - id: flickr_album
