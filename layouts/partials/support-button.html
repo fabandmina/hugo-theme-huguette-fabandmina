@@ -1,19 +1,28 @@
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
-  if (body.classList.contains('darkMode') || localStorage.getItem('darkMode')) {
-    kofiWidgetOverlay.draw('fabandmina', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': '{{ i18n "donate" }}',
-        'floating-chat.donateButton.background-color': '{{ .Site.Params.theme.dark.color_cta_primary }}',
-        'floating-chat.donateButton.text-color': '{{ .Site.Params.theme.dark.color_cta_primary_font }}'
-      });
+  themed_donate_button()
+
+  switcher.addEventListener("click", function() {
+    themed_donate_button()
+    })
+    
+  function themed_donate_button() {
+    if (body.classList.contains('dark-mode')) {
+      kofiWidgetOverlay.draw('fabandmina', {
+          'type': 'floating-chat',
+          'floating-chat.donateButton.text': '{{ i18n "donate" }}',
+          'floating-chat.donateButton.background-color': '{{ .Site.Params.theme.dark.color_cta_primary }}',
+          'floating-chat.donateButton.text-color': '{{ .Site.Params.theme.dark.color_cta_primary_font }}'
+        });
+      }
+    else if (!(body.classList.contains('dark-mode'))) {
+      setTimeout(
+        kofiWidgetOverlay.draw('fabandmina', {
+          'type': 'floating-chat',
+          'floating-chat.donateButton.text': '{{ i18n "donate" }}',
+          'floating-chat.donateButton.background-color': '{{ .Site.Params.theme.light.color_cta_primary }}',
+          'floating-chat.donateButton.text-color': '{{ .Site.Params.theme.light.color_cta_primary_font }}'
+        }), 110);
     }
-  else {
-    kofiWidgetOverlay.draw('fabandmina', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': '{{ i18n "donate" }}',
-        'floating-chat.donateButton.background-color': '{{ .Site.Params.theme.light.color_cta_primary }}',
-        'floating-chat.donateButton.text-color': '{{ .Site.Params.theme.light.color_cta_primary_font }}'
-      });
-    }
+  }
 </script>
