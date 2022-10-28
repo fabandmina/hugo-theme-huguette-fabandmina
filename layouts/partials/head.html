@@ -15,6 +15,9 @@ links to CSS and the javascript for NetlifyCMS. -->
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">  */}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <title>{{- .Title -}} - {{ .Site.Title }}</title>
+  {{ with .Params.subtitle }}
+  <meta name="description" content="{{- . -}}">
+  {{ end }}
   {{ if .IsHome }}
   {{ with .Site.Params.netlifycms }}
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
