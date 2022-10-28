@@ -1,9 +1,9 @@
 
 <!--This partial links the last 5 articles from the "trip" section -->
 <div>
-<h2>The last articles</h2>
+<h2>{{ i18n "last_article"}}</h2>
     <div class="list-grid">
-    {{range last 5 (where .Site.RegularPages.ByTitle "Section" "trip" )}}
+    {{range last 1 (where .Site.RegularPages.ByTitle "Section" "trip" )}}
     {{- partial "list-items.html" . -}}
     {{ end }}  
     </div>

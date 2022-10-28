@@ -93,3 +93,7 @@
   translation: "[Show]"
 - id: read_less
   translation: "[Hide]"
+
+# Last article
+- id: last_article
+  translation: "Newest article!"

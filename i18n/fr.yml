@@ -95,3 +95,7 @@
   translation: "[Afficher]"
 - id: read_less
   translation: "[Cacher]"
+
+# Last article
+- id: last_article
+  translation: "Dernier article"

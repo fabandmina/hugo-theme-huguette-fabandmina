@@ -1,14 +1,9 @@
 
 {{define "main"}}
 {{/*  <div class="title">  */}}
-    <h1>{{.Title}}</h1>
+    {{/*  <h1>{{.Title}}</h1>  */}}
 {{/*  </div>  */}}
-{{- partial "introduction.html" . -}}
-<div>
+{{/*  {{- partial "introduction.html" . -}}  */}}
 {{.Content}}
-</div>
 {{- partial "map.html" . -}}
-<div>
-{{- partial "last5.html" . -}}
-</div>
 {{end}}
