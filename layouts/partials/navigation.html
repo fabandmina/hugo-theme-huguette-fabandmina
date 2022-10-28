@@ -164,9 +164,9 @@
       overflow-y: auto;
     }
   
-    header .active {
+    {{/*  header .active {
       font-size: 1.2rem;
-    }
+    }  */}}
   
     #open {
       display: flex;
@@ -174,15 +174,12 @@
 
     .undoer {
       display: none;
-      width: auto;
-      margin: 0 auto;
-      padding: 0 0;
     }
     #open,
     .undoer {
+      width: auto;
       font-size: 150%;
-      height: 100%;
-      justify-content: center;
+      height: auto;
     }
   
     #open:target {
@@ -196,7 +193,7 @@
   
     :target ~ nav {
       visibility: visible;
-      display: block;
+      display: flex;
     }
   
     header nav ul li {
@@ -209,7 +206,7 @@
     header a:hover {
       background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
       border-bottom: none;
-      margin: 0 auto;
+      {{/*  margin: 0 auto;  */}}
       opacity: 0.75;
       transition: none;
     }
