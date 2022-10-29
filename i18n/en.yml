@@ -97,3 +97,11 @@
 # Last article
 - id: last_article
   translation: "Newest article!"
+
+# Contact form
+- id: contact_email
+  translation: "Your E-mail address:"
+- id: contact_message
+  translation: "Your message:"
+- id: contact_send
+  translation: "Send to Fab & Mina"
