@@ -141,9 +141,13 @@
       display: flex;
       flex-direction: column;
       font-size: 1.2rem;
-      margin: 0 0;
+      margin: 0 0 10vh 0;
       position: relative;
       width: 100%;
+    }
+
+    header nav > ul {
+      overflow-y: scroll;
     }
   
     body.dark-mode header nav ul {
@@ -160,13 +164,8 @@
       top: 50px;
       left: 0;
       z-index: 1000;
-      max-height: 100vh;
-      overflow-y: auto;
+      max-height: 100%;
     }
-  
-    {{/*  header .active {
-      font-size: 1.2rem;
-    }  */}}
   
     #open {
       display: flex;
@@ -206,7 +205,6 @@
     header a:hover {
       background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
       border-bottom: none;
-      {{/*  margin: 0 auto;  */}}
       opacity: 0.75;
       transition: none;
     }
