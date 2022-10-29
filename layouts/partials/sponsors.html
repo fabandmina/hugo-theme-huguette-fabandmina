@@ -1,0 +1,41 @@
+<div class="sponsors-container">
+    {{ if not .Site.Params.sponsors }}
+    {{ i18n "first_sponsor"}}
+    {{ else }}
+    {{ with .Site.Params.sponsors }}
+    {{ range . }}
+    <div class="sponsor">
+        <a href="{{ .url }}"><img src="{{ .logo }}"></a>
+    </div>    
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    
+    </div>
+    
+    <style>
+        .sponsors-container{
+            display: grid;
+            gap: 1rem 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            justify-content: center;
+            justify-items: center;
+            margin-bottom: 1vw;
+            border: none;
+            width: 100%;
+        }
+    
+        .sponsors-container .sponsor{
+            height: auto;
+            min-width: 150px;
+            max-width: 200px;
+            border: none;
+        }
+        .sponsors-container .sponsor img {
+            border-radius: 20px;
+            height: auto;
+            object-fit: contain;
+            width: 100%;
+        }
+    
+    </style>

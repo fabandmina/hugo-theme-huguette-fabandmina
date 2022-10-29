@@ -1,6 +1,12 @@
 
 <!--This footer example shows how to replace :CURRENTYEAR: from the copyright statement in config.toml with the current year.-->
 <footer>
+  <div>
+    <h4>Sponsors</h4>
+  </div>
+    {{- partial "sponsors.html" . -}}
+  
+  <break></break>
 	<div>
     <h4>Follow us!</h4>
     {{- partial "media.html" . -}}
@@ -25,3 +31,115 @@
     {{end}}
   </div>
 </footer>
+
+<style>
+    
+  footer {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: {{ $.Site.Params.theme.light.color_footer }};
+    color: {{ $.Site.Params.theme.light.color_footer_font }};
+    display: flex;
+    flex-direction: row;
+    padding: 5px 25vw;
+    position: relative;
+    width: 100vw;
+  }
+  
+  footer > div {
+    margin: 1vw 0;
+    padding: auto auto;
+    min-width: 9vw;
+    text-align: center;
+    border: none;
+    {{/*  border-right: solid {{ $.Site.Params.theme.light.color_footer_separator }} 2px;
+    border-left: solid {{ $.Site.Params.theme.light.color_footer_separator }} 2px;  */}}
+  }
+
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer h6 {
+    margin: 5px 0;
+    padding: 0px 2vw;
+    line-height: 2rem;
+  }
+
+  body.dark-mode footer {
+    background-color: {{ $.Site.Params.theme.dark.color_footer }};
+  }
+  
+  footer ul {
+    margin: 0 0;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    align-self: center;
+  }
+  
+  footer ul li {
+    margin: 0 8px;
+  }
+  
+  footer ul li a,
+  body.dark-mode footer ul li a {
+    color: {{ $.Site.Params.theme.light.color_footer_font }};
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  footer .powered-by {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  footer .powered-by-text {
+    flex-basis: 100%;
+  }
+
+  footer .powered-by ul {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  footer .powered-by img {
+    height: 2rem;
+    margin: auto .5vw;
+  }
+  footer .copyright {
+    border: none;
+    align-self: center;
+  }
+  footer break{
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0; 
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 830px) {
+    footer {
+      text-align: center;
+      padding: 20px 2rem 100px 2rem;
+      position: relative;
+      width: 100vw;
+      font-size: .9rem;
+      flex-direction: column;
+    }
+    footer div, footer .powered-by  {
+      width: 100%;
+      border-top: none;
+      border-bottom: solid {{ $.Site.Params.theme.dark.color_footer_separator }} 2px;
+      border-right: none;
+      border-left: none;
+    }
+  }
+
+</style>
