@@ -165,7 +165,7 @@
   .content {
     background-color: {{ $.Site.Params.theme.light.color_content }};
     margin: 0 auto;
-    padding: 0 8vw;
+    padding: 30px 8vw 50px 8vw;
     width: 60vw;
     /* font-size: 20px; */
   }
@@ -176,7 +176,7 @@
   
   @media only screen and (max-width: 830px) {
     .content {
-      padding: 0.1rem 1.3rem;
+      {{/*  padding: 0.1rem 1.3rem;  */}}
       width: 100vw;
       /* font-size: .9rem; */
     }
@@ -219,9 +219,10 @@
   
   .share-button h1 {
     justify-content: center;
-    margin: 0 0;
+    margin: 0 0 20px 0;
     padding: auto 3rem;
     flex-basis: 100%;
+    font-size: 1.6rem;
   }
   
   @media only screen and (max-width: 830px) {
