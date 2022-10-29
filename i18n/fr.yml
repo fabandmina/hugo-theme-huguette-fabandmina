@@ -107,3 +107,7 @@
   translation: "Votre message :"
 - id: contact_send
   translation: "Envoyer à Fab & Mina"
+
+# Sponsors
+- id: first_sponsor
+  translation: "Contactez nous et devenez notre premier sponsor!"
