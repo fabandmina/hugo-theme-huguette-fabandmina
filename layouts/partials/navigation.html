@@ -11,11 +11,13 @@
     <a href="/"><img src="{{- . -}}"></a>
   </div>
   {{ end }}
+  {{- partial "dark-mode.html" . -}}
   <a href="#open" id="open">☰</a>
   <a href="#close" class="undoer">✕</a>
+
 <nav>
   <ul>
-    <li title="{{ i18n "dark_mode" }}">{{- partial "dark-mode.html" . -}}</li>
+    {{/*  <li title="{{ i18n "dark_mode" }}">{{- partial "dark-mode.html" . -}}</li>  */}}
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
     <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}
@@ -123,7 +125,7 @@
       position: fixed;
       flex-direction: row;
       height: 50px;
-      justify-content: space-between;
+      {{/*  justify-content: safe;  */}}
       width: 100vw;
       z-index: 1000;
       opacity: 1;
@@ -179,6 +181,8 @@
       width: auto;
       font-size: 150%;
       height: auto;
+      justify-self: flex-end;
+      margin-left: calc(100vw - 320px);
     }
   
     #open:target {

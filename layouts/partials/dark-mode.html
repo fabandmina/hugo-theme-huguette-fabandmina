@@ -13,7 +13,7 @@
         <input class="js-toggle-screenreader-only" type="checkbox" aria-label="Switch between Dark and Light mode">
     </div>
 </div>
-<div class="dark-mode-caption">{{ T "dark_mode"}}</div> 
+{{/*  <div class="dark-mode-caption">{{ T "dark_mode"}}</div>   */}}
 <style>
 
   /*
@@ -26,18 +26,21 @@
   
   .js-toggle-wrapper {
       display: table;
-      margin: 1rem auto;
+      margin: auto 0 auto 10px;
       width: 3rem;
       font-size: 1rem;
+      position: relative;
+      justify-self: flex-end;
   }
 
   .js-toggle-wrapper img {
     height: 20px;
     width: 20px;
-    padding-bottom: 3px;
+    padding: 3px auto;
   }
   
   .js-toggle {
+      margin: 10% 0;
       touch-action: pan-x;
       display: inline-block;
       position: relative;
@@ -124,7 +127,7 @@
     .js-toggle--checked .js-toggle-thumb {
       transform: translateX(39px);
     }
-    
+
   </style>
 
     <script>
