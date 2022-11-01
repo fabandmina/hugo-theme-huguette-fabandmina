@@ -7,10 +7,9 @@
         <h2>{{.Title}}</h2>
     </div>
     <div class="overlay">
-        {{- partial "subtitle.html" . -}}
-        <div class="date">
-             {{.PublishDate.Format "2 January 2006"}}
-        </div>
+          {{- partial "subtitle.html" . -}}
+          <hr>
+          {{.PublishDate.Format "2 January 2006"}}
     </div>
     </a>
 </div>
@@ -43,6 +42,10 @@
         position: relative;
       }
       
+      .list-thumbnail {
+        max-height: 300px;
+      }
+
       .list-thumbnail img {
         border-radius: 20px;
         height: auto;
