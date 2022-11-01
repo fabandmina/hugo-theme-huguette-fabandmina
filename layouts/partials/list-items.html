@@ -46,8 +46,10 @@
       .list-thumbnail img {
         border-radius: 20px;
         height: auto;
-        object-fit: contain;
+        max-height: 300px;
+        object-fit: cover;
         width: 100%;
+        overflow-y: hidden;
       }
       
       .caption {
@@ -98,6 +100,9 @@
       
         .list-item:hover .caption {
           opacity: 1;
+        }
+        .list-thumbnail img {
+          max-height: 250px;
         }
       }
       
