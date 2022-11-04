@@ -3,6 +3,8 @@
   translation: "Home"
 - id: trip
   translation: "冒険記"
+- id: trips
+  translation: "冒険記"
 - id: gears
   translation: "装備"
 - id: contact
@@ -12,6 +14,8 @@
 - id: support_us
   translation: "サポート"
 - id: blog
+  translation: "ブログ"
+- id: blogs
   translation: "ブログ"
 
 # Trip singles

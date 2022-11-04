@@ -1,7 +1,11 @@
 
 {{define "main"}}
 {{/*  <div class="title">  */}}
-    <h1>{{.Title}}</h1>
+	{{ if eq (i18n .Title) ("")}}
+	<h1>{{ .Title }}</h1>
+	{{ else }}
+	<h1>{{ i18n .Title }}</h1>
+	{{ end }}
 {{/*  </div>  */}}
     <h4>{{- partial "subtitle.html" . -}}</h4>
     {{/*  {{- partial "toc.html" . -}}  */}}

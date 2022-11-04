@@ -13,6 +13,8 @@
   translation: Support us
 - id: blog
   translation: "Blog"
+- id: blogs
+  translation: "Blog"
 
 # Trip singles
 - id: stats

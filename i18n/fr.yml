@@ -3,6 +3,8 @@
   translation: "Accueil"
 - id: trip
   translation: "Voyages"
+- id: trips
+  translation: "Voyages"
 - id: gears
   translation: "Équipements"
 - id: contact
@@ -12,6 +14,8 @@
 - id: support_us
   translation: "Aidez-nous"
 - id: blog
+  translation: "Blog"
+- id: blogs
   translation: "Blog"
 
 # flickr

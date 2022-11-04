@@ -10,10 +10,10 @@
     {{ end }}
     <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
       <a href="{{ .p1.RelPermalink }}">
-        {{ if eq (i18n .p1.Title) ("")}}
+        {{ if eq (i18n (lower (.p1.Title))) ("")}}
         {{ .p1.Title }}
         {{ else }}
-        {{ i18n .p1.Title }}
+        {{ i18n (lower (.p1.Title)) }}
         {{ end }}
       </a>
     </li>
