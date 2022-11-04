@@ -1,7 +1,7 @@
 ### Menu ###
 - id: home
   translation: "Home"
-- id: trips
+- id: trip
   translation: "冒険記"
 - id: gears
   translation: "装備"
@@ -12,89 +12,87 @@
 - id: support_us
   translation: "サポート"
 
-# flickr
-- id: flickr_album
-  translation: " Album Flickr"
-
 # Trip singles
 - id: stats
-  translation: "Statistiques"
+  translation: "Stats"
 - id: way_of_travelling
-  translation: "Mode de voyage :"
+  translation: "Way of travelling:"
 - id: starting_date
-  translation: "Date de début :"
+  translation: "Starting date:"
 - id: duration
-  translation: "Durée :"
+  translation: "Duration:"
+- id: distance
+  translation: "Distance:"
 - id: budget
-  translation: "Budget :"
+  translation: "Budget:"
 - id: in_details
-  translation: "En détails"
+  translation: "In details"
 - id: road_condition
-  translation: "État de la route"
+  translation: "Road condition"
 - id: accommodations
-  translation: "Hébergements"
+  translation: "Accommodations"
 - id: freedom_camping
-  translation: "Bivouac"
+  translation: "Freedom camping"
 - id: facilities
-  translation: "Infrastructures"
+  translation: "Facilities"
 - id: food
-  translation: "Nourriture"
+  translation: "Food"
 - id: vegetarian_friendly
-  translation: "Accès à de la nourriture végétarienne :"
+  translation: "Vegetarian friendly:"
 - id: what_we_eat
-  translation: "Ce qu'on mange :"
+  translation: "What we eat:"
 - id: fab_favourite
-  translation: "Coup de coeur de Fab :"
+  translation: "Fab's favourite:"
 - id: mina_favourite
-  translation: "Coup de coeur de Mina :"
+  translation: "Mina's favourite:"
 - id: what_we_appreciate
-  translation: "Ce que l'on a apprécié"
+  translation: "What we appreciate"
 - id: what_we_dislike
-  translation: "Les points négatifs"
+  translation: "What we dislike"
 - id: communication_with_the_locals
-  translation: "Communication avec les locaux"
+  translation: "Communication with the locals"
 - id: top_5_locations
-  translation: "5 endroits mémorables"
+  translation: "5 memorable places"
 - id: overall_feel
-  translation: "Impression globale"
+  translation: "Overall feel"
 - id: travel_story
-  translation: "Histoire de route"
+  translation: "Travel Story"
 - id: crossing_the_border
-  translation: "Traverser la frontière"
+  translation: "Crossing the border"
 - id: fab
   translation: "Fab"
 - id: Mina
   translation: "Mina"
 
-  # Language selector
+# Language selector
 - id: language_selector
-  translation: "Langue "
+  translation: "Language "
 
-  # Dark mode
+# Dark mode
 - id: dark_mode
-  translation: "Mode sombre"
+  translation: "Dark mode"
 
-  # Share buttons
+# Share buttons
 - id: please_share
-  translation: "Partagez-nous !"
+  translation: "Please share!"
 
 # Donate button
 - id: donate
-  translation: "Faîtes un don"
+  translation: "Support Us"
 
 # flickr
 - id: flickr_album
-  translation: " Voir plus ➤"
+  translation: "See more ➤"
 
 # Map
 - id: our_route
-  translation: "Notre trajet"
+  translation: "Our route"
 
 # Collapsing section
 - id: read_more
-  translation: "[Afficher]"
+  translation: "[Show]"
 - id: read_less
-  translation: "[Cacher]"
+  translation: "[Hide]"
 
 # Last article
 - id: last_article
@@ -102,12 +100,12 @@
 
 # Contact form
 - id: contact_email
-  translation: "Votre adresse E-mail :"
+  translation: "Your E-mail address:"
 - id: contact_message
-  translation: "Votre message :"
+  translation: "Your message:"
 - id: contact_send
-  translation: "Envoyer à Fab & Mina"
+  translation: "Send to Fab & Mina"
 
-# Sponsors
+  # Sponsors
 - id: first_sponsor
-  translation: "Contactez nous et devenez notre premier sponsor!"
+  translation: "Contact us and become our first sponsor!"

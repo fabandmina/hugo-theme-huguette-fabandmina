@@ -1,8 +1,8 @@
 ### Menu ###
 - id: home
   translation: "Accueil"
-- id: trips
-  translation: "voyages"
+- id: trip
+  translation: "Voyages"
 - id: gears
   translation: "Équipements"
 - id: contact

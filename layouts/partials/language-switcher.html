@@ -2,7 +2,7 @@
     {{ range .Site.Languages }}
     {{ if eq . $.Site.Language }}
     <li id="current-language">
-        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }} ᐅ</a>
+        <a href="#current-language" class="current-language" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }} ᐁ</a>
         <ul class="dropdown-language">
             <li class="selected-language">
                 <a class="selected-language-link" title="{{ i18n "ariaLanguage" }}{{ .LanguageName }}">{{ .LanguageName }} ᐁ</a>
@@ -26,20 +26,20 @@
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        background: rgba(4, 39, 78, 1);
+        background: {{ .Site.Params.theme.light.color_header }};
         margin-left: auto;
         display: flex;
-        top: 0;
+        top: calc(1rem + 70px);
         z-index: 10;
         flex-direction: column;
     }
     body.dark-mode .dropdown-language {
         background-color: rgba(44, 44, 44, 1);
     }
-    .selected-language-link:hover, body.dark-mode .selected-language-link:hover{
-        background-color: rgba(0, 0, 0, 0);
-        cursor: default;
+    .selected-language {
+        display: none;
     }
+
     .other-language, .selected-language {
         width: 100%;
         height: auto;
@@ -55,18 +55,20 @@
             visibility: inherit;
           }
         .dropdown-language {
+            top: 0;
             position: relative;
             margin-left: 0;
             visibility: inherit;
             opacity: 1;
-            align-items: flex-start;
         }
         .selected-language {
+            display: block;
             opacity: .7;
             pointer-events: none;
+            text-align: right;
         }
-        .selected-language-link {
-            display: flex;
+        .selected-language-link, .current-language {
+            display: block;
             background-color: rgba(2, 18, 37, .7);
         }
         body.dark-mode .selected-language-link {

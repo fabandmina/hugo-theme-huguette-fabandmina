@@ -17,12 +17,22 @@
 
 <nav>
   <ul>
-    {{/*  <li title="{{ i18n "dark_mode" }}">{{- partial "dark-mode.html" . -}}</li>  */}}
     {{ $currentPage := . }}
     {{ range .Site.Menus.main.ByWeight }}
     <li><a class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{end}}
                   {{ if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}"
-      href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+      href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }} {{ if .HasChildren }} <span class="arrow">ᐁ</span>{{ end }}</a>
+      {{ if .HasChildren }}
+      <ul class="sub-menu">
+        {{ range .Children }}
+          <li><a class=""
+            href="{{ .URL | absLangURL }}" title="{{ .Title }}">
+            {{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </li>
     {{ end }}
     {{- partial "language-switcher.html" . -}}
   </ul>
@@ -117,6 +127,29 @@
   .logo a:hover {
     background-color: none;
   }
+
+  header nav .sub-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background: {{ .Site.Params.theme.light.color_header }};
+    margin-left: auto;
+    display: flex;
+    top: calc(1rem + 70px);
+    z-index: 10;
+    flex-direction: column;
+  }
+  body.dark-mode header nav .sub-menu {
+    background: {{ .Site.Params.theme.dark.color_header }};
+  }
+  header nav a:hover + .sub-menu,
+  header nav a + .sub-menu:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  .arrow {
+    visibility: visible;
+  }
   @media only screen and (max-width: 830px) {
     header {
       top: 0;
@@ -200,7 +233,7 @@
     header nav ul li {
       width: 100%;
     }
-    header nav ul li a, .selected-language-link {
+    header nav ul li a {
       text-align: right;
     }
     header a:active,
@@ -218,7 +251,6 @@
     .logo {
       display: block;
       align-self: left;
-      padding: auto auto;
     }
     .logo a {
       width: auto;
@@ -228,6 +260,19 @@
       width: auto;
       align-self: center;
       margin: 10px 0;
+    }
+    .arrow {
+      visibility: hidden;
+    }
+    header nav .sub-menu {
+      display: flex;
+      position: relative;
+      visibility: visible;
+      top: 0;
+      opacity: 1;
+      margin: 0;
+      background-color: none;
+      font-size: .8em;
     }
   }
 

@@ -9,7 +9,13 @@
       {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )}}
     {{ end }}
     <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
-      <a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a>
+      <a href="{{ .p1.RelPermalink }}">
+        {{ if eq (i18n .p1.Title) ("")}}
+        {{ .p1.Title }}
+        {{ else }}
+        {{ i18n .p1.Title }}
+        {{ end }}
+      </a>
     </li>
   {{ end }}
   <style>

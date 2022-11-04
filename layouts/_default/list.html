@@ -1,8 +1,11 @@
 
 {{define "main"}}
 {{/*  <div class="title">  */}}
-    <h1>{{.Title}}</h1>
-{{/*  </div>  */}}
+	{{ if eq (i18n .Title) ("")}}
+	<h1>{{ .Title }}</h1>
+	{{ else }}
+	<h1>{{ i18n .Title }}</h1>
+	{{ end }}
 <!--$paginator-->
 {{$p := .Pages}}
 {{$paginator := .Paginate $p}}
