@@ -1,16 +1,16 @@
 ### Menu ###
 - id: home
-  translation: "ホーム"
+  translation: "Home"
 - id: trips
-  translation: "voyages"
+  translation: "冒険記"
 - id: gears
-  translation: "Équipements"
+  translation: "装備"
 - id: contact
-  translation: "Contacts"
+  translation: "コンタクト"
 - id: about_us
-  translation: "À propos"
+  translation: "About us"
 - id: support_us
-  translation: "Aidez-nous"
+  translation: "サポート"
 
 # flickr
 - id: flickr_album
