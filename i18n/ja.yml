@@ -11,88 +11,93 @@
   translation: "About us"
 - id: support_us
   translation: "サポート"
+- id: blog
+  translation: "ブログ"
 
 # Trip singles
 - id: stats
-  translation: "Stats"
+  translation: "統計"
 - id: way_of_travelling
-  translation: "Way of travelling:"
+  translation: "旅の移動手段:"
 - id: starting_date
-  translation: "Starting date:"
+  translation: "開始日:"
 - id: duration
-  translation: "Duration:"
+  translation: "日数:"
 - id: distance
-  translation: "Distance:"
+  translation: "距離:"
 - id: budget
   translation: "Budget:"
 - id: in_details
-  translation: "In details"
+  translation: "詳細情報"
 - id: road_condition
-  translation: "Road condition"
+  translation: "道路・交通情報"
 - id: accommodations
-  translation: "Accommodations"
+  translation: "宿泊施設"
 - id: freedom_camping
-  translation: "Freedom camping"
+  translation: "野宿"
 - id: facilities
-  translation: "Facilities"
+  translation: "施設・設備"
 - id: food
-  translation: "Food"
+  translation: "食べ物"
 - id: vegetarian_friendly
-  translation: "Vegetarian friendly:"
+  translation: "ベジタリアン対応:"
 - id: what_we_eat
-  translation: "What we eat:"
+  translation: "主に食べたもの:"
 - id: fab_favourite
-  translation: "Fab's favourite:"
+  translation: "Fabのお気に入り:"
 - id: mina_favourite
-  translation: "Mina's favourite:"
+  translation: "Minaのお気に入り:"
 - id: what_we_appreciate
-  translation: "What we appreciate"
+  translation: "良かったこと"
 - id: what_we_dislike
-  translation: "What we dislike"
+  translation: "苦労したこと"
 - id: communication_with_the_locals
-  translation: "Communication with the locals"
+  translation: "コミュニケーション"
 - id: top_5_locations
-  translation: "5 memorable places"
+  translation: "思い出に残る場所5選"
 - id: overall_feel
-  translation: "Overall feel"
+  translation: "全体的な印象"
 - id: travel_story
-  translation: "Travel Story"
+  translation: "トラベルストーリー"
 - id: crossing_the_border
-  translation: "Crossing the border"
+  translation: "出入国・ビザ"
 - id: fab
   translation: "Fab"
 - id: Mina
   translation: "Mina"
 
 # Language selector
+
 - id: language_selector
-  translation: "Language "
+  translation: "言語"
 
 # Dark mode
+
 - id: dark_mode
   translation: "Dark mode"
 
 # Share buttons
+
 - id: please_share
   translation: "Please share!"
 
 # Donate button
 - id: donate
-  translation: "Support Us"
+  translation: "応援する"
 
 # flickr
 - id: flickr_album
-  translation: "See more ➤"
+  translation: "写真を見る ➤"
 
 # Map
 - id: our_route
-  translation: "Our route"
+  translation: "ルート"
 
 # Collapsing section
 - id: read_more
-  translation: "[Show]"
+  translation: "[もっと]"
 - id: read_less
-  translation: "[Hide]"
+  translation: "[閉じる]"
 
 # Last article
 - id: last_article
@@ -100,12 +105,12 @@
 
 # Contact form
 - id: contact_email
-  translation: "Your E-mail address:"
+  translation: "メールアドレス:"
 - id: contact_message
-  translation: "Your message:"
+  translation: "メッセージ:"
 - id: contact_send
-  translation: "Send to Fab & Mina"
+  translation: "Fab & Minaへ送信"
 
   # Sponsors
 - id: first_sponsor
-  translation: "Contact us and become our first sponsor!"
+  translation: "お問合せお待ちしております!"

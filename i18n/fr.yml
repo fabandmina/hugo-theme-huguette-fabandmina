@@ -11,6 +11,8 @@
   translation: "À propos"
 - id: support_us
   translation: "Aidez-nous"
+- id: blog
+  translation: "Blog"
 
 # flickr
 - id: flickr_album

@@ -11,6 +11,8 @@
   translation: About us
 - id: support_us
   translation: Support us
+- id: blog
+  translation: "Blog"
 
 # Trip singles
 - id: stats
