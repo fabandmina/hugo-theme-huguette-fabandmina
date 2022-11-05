@@ -118,3 +118,7 @@
   # Sponsors
 - id: first_sponsor
   translation: "お問合せお待ちしております!"
+
+  # keywords
+- id: _all
+  translation: "全て"

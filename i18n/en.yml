@@ -113,3 +113,7 @@
   # Sponsors
 - id: first_sponsor
   translation: "Contact us and become our first sponsor!"
+
+  # keywords
+- id: _all
+  translation: "All"

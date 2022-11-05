@@ -2,7 +2,10 @@
 <h1>{{ i18n .Type }}</h1>
   <div class="taxonomy-container">
     <ul>
-      {{ range .Data.Pages.ByTitle.Reverse }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="active">{{ i18n "_all" }}</a>
+      </li>
+      {{ range .Data.Pages.ByTitle }}
         <li>
           <a href="{{ .RelPermalink }}">{{ i18n .Title }}</a>
         </li>
@@ -47,7 +50,21 @@
     text-decoration: none;
     color: {{ $.Site.Params.theme.light.color_cta_primary_font }};
   }
-
+  body.dark-mode .taxonomy-container ul li a{
+    background-color: {{ $.Site.Params.theme.dark.color_cta_primary }};
+    color: {{ $.Site.Params.theme.dark.color_cta_primary_font }};
+  }
+  .taxonomy-container ul li a.active {
+    pointer-events: none;
+    background-color: {{ $.Site.Params.theme.light.color_cta_secondary }};
+    color: {{ $.Site.Params.theme.light.color_cta_secondary_font }};
+    border: solid {{ $.Site.Params.theme.light.color_cta_secondary_font }} 1px;
+  }
+  body.dark-mode .taxonomy-container ul li a.active {
+    background-color: {{ $.Site.Params.theme.dark.color_cta_secondary }};
+    color: {{ $.Site.Params.theme.dark.color_cta_secondary_font }};
+    border: solid {{ $.Site.Params.theme.dark.color_cta_secondary_font }} 1px;
+  }
   .taxonomy-container ul li a:hover {
     filter: brightness(130%);
   }
