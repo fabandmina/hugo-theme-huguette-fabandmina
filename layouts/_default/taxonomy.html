@@ -12,17 +12,22 @@
       {{ end }}
     </ul>
   </div>
+
   <!--$paginator-->
-{{ range .Data.Pages }}
-{{$p := .Site.RegularPages.ByDate }}
+{{ $blog_items := slice}}
+{{ range $key, $value := .Data.Terms}}
+{{ $blog_items = $blog_items | append $key }}
+{{ end }}
+
+{{$p := .Site.RegularPages.ByDate.Reverse }}
 {{$paginator := .Paginate $p}}
 <!--list-->
 <div class="list-grid">
-	{{range where $paginator.Pages "Section" .Title }}
+	{{range where $paginator.Pages ".Params.blogs" "in" $blog_items }}
 	{{- partial "list-items.html" . -}}
 	{{end}}
 </div>
-{{ end }}
+
 <!--pagination-->
 {{template "_internal/pagination.html" .}}
 

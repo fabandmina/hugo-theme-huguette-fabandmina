@@ -27,7 +27,7 @@
   </div>
 
 <!--$paginator-->
-{{$p := .Data.Pages}}
+{{$p := .Data.Pages.ByDate.Reverse}}
 {{$paginator := .Paginate $p}}
 <!--list-->
 <div class="list-grid">

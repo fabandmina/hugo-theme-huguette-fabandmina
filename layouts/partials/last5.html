@@ -1,10 +1,15 @@
 
 <!--This partial links the last 5 articles from the "trip" section -->
+{{ $blog_items := slice}}
+{{ range $key, $value := .Site.Taxonomies.blogs }}
+{{ $blog_items = $blog_items | append $key }}
+{{ end }}
+
 <div>
 <h2>{{ i18n "last_article"}}</h2>
     <div class="list-grid">
-    {{range last 1 (where .Site.RegularPages.ByTitle "Section" "trip" )}}
+    {{range last 1 (where .Site.RegularPages.ByDate ".Params.blogs" "in" $blog_items )}}
     {{- partial "list-items.html" . -}}
-    {{ end }}  
+    {{end}}
     </div>
 </div>
