@@ -50,13 +50,13 @@
 	{{ end }}
 	{{$sp := $current_language_pages}}
 	{{$spaginator := .Paginate $sp}}
-	{{ range $spaginator.Pages.ByDate }}
+	{{ range $spaginator.Pages.ByDate.Reverse }}
 	{{- partial "list-items.html" . -}}
 	{{ end }}
 	{{ else }}
 	{{$p := .Pages}}
 	{{$paginator := .Paginate $p}}
-	{{range where $paginator.Pages.ByDate ".Params.tags" .Page.Title }}
+	{{range where $paginator.Pages.ByDate.Reverse ".Params.tags" .Page.Title }}
 	{{- partial "list-items.html" . -}}
 	{{end}}
 	{{end}}
