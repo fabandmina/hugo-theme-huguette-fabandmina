@@ -1,6 +1,5 @@
 
-{{define "main"}}
-{{/*  <div class="title">  */}}
+{{/*  {{define "main"}}
 	{{ if eq (i18n .Title) ("")}}
 	<h1>{{ .Title }}</h1>
 	{{ else }}
@@ -17,6 +16,97 @@
 </div>
 <!--pagination-->
 {{template "_internal/pagination.html" .}}
-{{end}}
+{{end}}  */}}
+  {{ define "main" }}
+  <h1>{{ i18n .Type }}</h1>
+  <div class="taxonomy-container">
+    <ul>
+      <li>
+		{{ if eq (.Title) ("blogs") }}
+		<a href="{{ "/blogs/" | relLangURL }}" class="active">{{ i18n "_all" }}</a>
+		{{ else }}
+		<a href="{{ "/blogs/" | relLangURL }}">{{ i18n "_all" }}</a>
+		{{ end }}
+      </li>
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      {{ if eq ($.Title) ($name)}}
+      <li><a href="{{ "/blogs/" | relLangURL }}{{ $name | urlize }}" class="active">{{ i18n $name }}</a></li>
+      {{ else }}
+      <li><a href="{{ "/blogs/" | relLangURL }}{{ $name | urlize }}">{{ i18n $name }}</a></li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+<!--$paginator-->
+{{/*  {{$p := .Data.Pages.ByDate.Reverse}}  */}}
+<!--list-->
+<div class="list-grid">
+	{{ if eq (.Name) ("blogs") }}
+	{{$current_language_pages := slice }}
+	{{ range where .Site.Pages ".Params.tags" "in" .Site.Params.blog_pages}}
+	{{ if eq (.Language) (.Site.Language) }}
+	{{ $current_language_pages = $current_language_pages | append (.) }}
+	{{ end }}
+	{{ end }}
+	{{$sp := $current_language_pages}}
+	{{$spaginator := .Paginate $sp}}
+	{{ range $spaginator.Pages.ByDate }}
+	{{- partial "list-items.html" . -}}
+	{{ end }}
+	{{ else }}
+	{{$p := .Pages}}
+	{{$paginator := .Paginate $p}}
+	{{range where $paginator.Pages.ByDate ".Params.tags" .Page.Title }}
+	{{- partial "list-items.html" . -}}
+	{{end}}
+	{{end}}
+</div>
+<!--pagination-->
+{{template "_internal/pagination.html" .}}
 
+<style>
+  .taxonomy-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-basis: 100%;
+    margin: 20px auto;
+    width: 100%;
+    flex-direction: row;
+  }
+  .taxonomy-container ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 5px;
+  }
+  .taxonomy-container ul li a{
+    padding: .4rem .7rem;
+    margin: 0 5px;
+    background-color: {{ $.Site.Params.theme.light.color_cta_primary }};
+    border-radius: 10px;
+    text-decoration: none;
+    color: {{ $.Site.Params.theme.light.color_cta_primary_font }};
+  }
+  body.dark-mode .taxonomy-container ul li a{
+    background-color: {{ $.Site.Params.theme.dark.color_cta_primary }};
+    color: {{ $.Site.Params.theme.dark.color_cta_primary_font }};
+  }
+  .taxonomy-container ul li a.active {
+    pointer-events: none;
+    background-color: {{ $.Site.Params.theme.light.color_cta_secondary }};
+    color: {{ $.Site.Params.theme.light.color_cta_secondary_font }};
+    border: solid {{ $.Site.Params.theme.light.color_cta_secondary_font }} 1px;
+  }
+  body.dark-mode .taxonomy-container ul li a.active {
+    background-color: {{ $.Site.Params.theme.dark.color_cta_secondary }};
+    color: {{ $.Site.Params.theme.dark.color_cta_secondary_font }};
+    border: solid {{ $.Site.Params.theme.dark.color_cta_secondary_font }} 1px;
+  }
+  .taxonomy-container ul li a:hover {
+    filter: brightness(130%);
+  }
 
+</style>
+{{ end}}
