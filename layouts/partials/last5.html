@@ -1,14 +1,17 @@
 
 <!--This partial links the last 5 articles from the "trip" section -->
-{{ $blog_items := slice}}
-{{ range $key, $value := .Site.Taxonomies.blogs }}
-{{ $blog_items = $blog_items | append $key }}
+
+{{$current_language_pages := slice }}
+{{ range where .Site.Pages ".Params.tags" "in" .Site.Params.blog_pages}}
+{{ if eq (.Language) (.Site.Language) }}
+{{ $current_language_pages = $current_language_pages | append (.) }}
+{{ end }}
 {{ end }}
 
 <div>
 <h2>{{ i18n "last_article"}}</h2>
     <div class="list-grid">
-    {{range last 1 (where .Site.RegularPages.ByDate ".Params.blogs" "in" $blog_items )}}
+    {{range last 1 ($current_language_pages.ByDate)}}
     {{- partial "list-items.html" . -}}
     {{end}}
     </div>
