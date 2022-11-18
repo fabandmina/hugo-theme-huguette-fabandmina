@@ -9,7 +9,7 @@
     <div class="overlay">
           {{- partial "subtitle.html" . -}}
           <hr>
-          {{.PublishDate.Format "2 January 2006"}}
+          {{.Date | time.Format ":date_full" }}
     </div>
     </a>
 </div>
