@@ -122,3 +122,7 @@
   # keywords
 - id: _all
   translation: "全て"
+
+# Camino
+- id: camino_france
+  translation: "サンティアゴ・デ・コンポステーラの巡礼路 - フランス編"

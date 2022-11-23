@@ -121,3 +121,7 @@
 # keywords
 - id: _all
   translation: "Tout"
+
+# Camino
+- id: camino_france
+  translation: "Les Chemins de Compostelle - France"

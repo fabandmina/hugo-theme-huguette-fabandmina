@@ -117,3 +117,7 @@
   # keywords
 - id: _all
   translation: "All"
+
+# Camino
+- id: camino_france
+  translation: "The Routes of Camino de Compostela - France"
