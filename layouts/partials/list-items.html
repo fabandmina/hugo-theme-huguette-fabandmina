@@ -4,12 +4,16 @@
         {{- partial "thumbnail.html" . -}}
     </div>
     <div class="caption">
-        <h2>{{.Title}}</h2>
+        {{ if eq (.Title | i18n) ("") }}
+        <h2>{{ .Title }}</h2>
+        {{ else }}
+        <h2>{{ .Title | i18n }}</h2>
+        {{ end }}
     </div>
     <div class="overlay">
           {{- partial "subtitle.html" . -}}
           <hr>
-          {{.Date | time.Format ":date_full" }}
+          {{.Date | time.Format ":date_long" }}
     </div>
     </a>
 </div>
