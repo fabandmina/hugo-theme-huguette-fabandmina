@@ -126,3 +126,6 @@
 # Camino
 - id: camino_france
   translation: "ル・ピュイの道・フランス編"
+
+- id: camino_spain
+  translation: "フランス人の道・スペイン編" 

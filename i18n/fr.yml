@@ -125,3 +125,6 @@
 # Camino
 - id: camino_france
   translation: "Compostelle - France"
+
+- id: camino_spain
+  translation: "Compostela - Espagne"
