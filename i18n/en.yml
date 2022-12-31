@@ -124,3 +124,7 @@
 
 - id: camino_spain
   translation: "Compostela - Spain"
+
+# Corsica
+- id: corsica
+  translation: Corsica
