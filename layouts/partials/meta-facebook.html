@@ -1,6 +1,6 @@
 {{/*  Thumbnail  */}}
 <meta property="og:image" content="
-{{ if .Params.thumbnail }}{{ .Params.thumbnail }}{{ else }}{{ .Site.Params.theme.light.banner }}{{ end }}" />
+{{ if .Params.thumbnail }}{{ .Params.thumbnail }}{{ else }}{{ .Params.meta_thumbnail }}{{ end }}" />
 
 {{/*  Page type (website or article)  */}}
 <meta property="og:type" content="article" /> 
