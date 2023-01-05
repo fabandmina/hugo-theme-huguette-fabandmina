@@ -9,7 +9,7 @@ links to CSS and the javascript for NetlifyCMS. -->
   {{ with .Site.Params.favicon }}
   <link rel="icon" href="{{ . }}" type="image/x-icon" sizes="16x16">
   {{ end }}
-
+  {{ partial "meta-facebook.html" . }}
   {{/*  {{ $templateStyle := resources.Get "css/main.css" | toCSS | minify }}
   {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">  */}}

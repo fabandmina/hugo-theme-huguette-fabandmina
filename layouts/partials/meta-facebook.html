@@ -1,0 +1,27 @@
+{{/*  Thumbnail  */}}
+<meta property="og:image" content="
+{{ if .Params.thumbnail }}{{ .Params.thumbnail }}{{ else }}{{ .Site.Params.theme.light.banner }}{{ end }}" />
+
+{{/*  Page type (website or article)  */}}
+<meta property="og:type" content="website" /> 
+
+{{/*  URL  */}}
+<meta property="og:url" content="{{ .Page.Permalink }}" />
+
+{{/*  Title  */}}
+<meta property="og:title" content="
+{{ if eq ( i18n (.Params.title | lower)) ("") }}
+{{- .Params.title -}}
+{{ else }}
+{{ .Params.title | lower | i18n }}
+{{ end }}
+| {{ .Site.Title }}
+" />
+
+
+{{/*  Description  */}}
+<meta property="og:description" content="
+{{ with .Params.introduction }}
+{{ . }}
+{{ end }}
+" />
