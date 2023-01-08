@@ -132,3 +132,7 @@
 # Corsica
 - id: corsica
   translation: Corse
+
+# Cotswold
+- id: cotswold_way
+  translation: "Le Cotswold Way"

@@ -133,3 +133,7 @@
 # Corsica
 - id: corsica
   translation: コルシカ
+
+# Cotswold
+- id: cotswold_way
+  translation: "コッツウォルズウェイ"
