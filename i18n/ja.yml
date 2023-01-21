@@ -17,6 +17,8 @@
   translation: "ブログ"
 - id: blogs
   translation: "ブログ"
+- id: wishlist
+  translation: "Liste de souhaits"
 
 # Trip singles
 - id: stats
