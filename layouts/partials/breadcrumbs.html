@@ -10,25 +10,27 @@
     {{ end }}
     <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
       <a href="{{ .p1.RelPermalink }}">
-        {{ if eq (i18n (lower (.p1.Title))) ("")}}
-        {{ .p1.Title }}
+        {{ if eq (lower (.p1.Title)) ("home")}}
+        <label title="{{ i18n "home" }}"><i class="fa-solid fa-house-chimney"></i></label>
+        {{ else if eq (i18n (lower (.p1.Title))) ("")}}
+        <label title="{{ .p1.Title }}">{{ .p1.Title | truncate 15 }}</label>
         {{ else }}
-        {{ i18n (lower (.p1.Title)) }}
+        <label title="{{ i18n (lower (.p1.Title)) }}">{{ i18n (lower (.p1.Title)) | truncate 15 }}</label>
         {{ end }}
       </a>
     </li>
   {{ end }}
 
   <style>
-    .breadcrumb {
+    {{/*  .breadcrumb {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       margin: auto 0;
-    }
-    
-    .breadcrumb li {
+    }  */}}
+
+    {{/*  .breadcrumb li {
       display: inline;
       white-space: nowrap;
     }
@@ -36,5 +38,112 @@
     .breadcrumb li + li:before {
       content: ">";
       padding: 1rem .3rem 0rem .3rem;
+    }  */}}
+
+    {{/*  CSS from https://css-tricks.com/triangle-breadcrumbs/  */}}
+
+    .breadcrumb { 
+      list-style: none; 
+      overflow: hidden; 
+      font: 1rem Sans-Serif;
+      margin-left: 0;
+      border-radius: 5px;
+    }
+    @media only screen and (max-width: 830px) {
+      .breadcrumb {
+      font: .8rem Sans-Serif;
+      }
+    }
+    .breadcrumb li { 
+      float: left;
+    }
+    .breadcrumb li a label {
+      cursor: pointer;
+    }
+    .breadcrumb li a {
+      color: {{ $.Site.Params.theme.light.color_breadcrumb_font }};
+      text-decoration: none; 
+      padding: 1rem 0 1rem 2.5rem;
+      background: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,35%,1); 
+      position: relative; 
+      display: block;
+      float: left;
+    }
+    @media only screen and (max-width: 830px) {
+      .breadcrumb li a {
+        padding: .5rem 0 .5rem 2rem;
+      }
+    }
+    body.dark-mode .breadcrumb li a {
+      color: {{ $.Site.Params.theme.dark.color_breadcrumb_font }};
+      background: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},5%,35%,1); 
+    }
+
+    .breadcrumb li a::after { 
+      content: " "; 
+      display: block; 
+      width: 0; 
+      height: 0;
+      border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+      border-bottom: 50px solid transparent;
+      border-left: 30px solid hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,35%,1);
+      position: absolute;
+      top: 50%;
+      margin-top: -50px; 
+      left: 100%;
+      z-index: 2; 
+    }
+
+    @media only screen and (max-width: 830px) {
+      .breadcrumb li a::after {
+        border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        border-left: 20px solid hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,35%,1);
+        position: absolute;
+        top: 50%;
+        margin-top: -50px; 
+        left: 100%;  
+        }
+    }
+
+    body.dark-mode .breadcrumb li a::after{
+      border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},5%,35%,1);
+    }
+
+    .breadcrumb li:first-child a {
+      padding-left: 10px;
+    }
+  .breadcrumb li:nth-child(2) a       { background:        hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,45%,1); }
+  .breadcrumb li:nth-child(2) a:after { border-left-color: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,45%,1); }
+  .breadcrumb li:nth-child(3) a       { background:        hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,55%,1); }
+  .breadcrumb li:nth-child(3) a:after { border-left-color: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,55%,1); }
+  .breadcrumb li:nth-child(4) a       { background:        hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,65%,1); }
+  .breadcrumb li:nth-child(4) a:after { border-left-color: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,65%,1); }
+  .breadcrumb li:nth-child(5) a       { background:        hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,75%,1); }
+  .breadcrumb li:nth-child(5) a:after { border-left-color: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }},85%,75%,1); }
+
+  body.dark-mode .breadcrumb li:nth-child(2) a       { background:        hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,25%,1); }
+  body.dark-mode .breadcrumb li:nth-child(2) a:after { border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,25%,1); }
+  body.dark-mode .breadcrumb li:nth-child(3) a       { background:        hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,35%,1); }
+  body.dark-mode .breadcrumb li:nth-child(3) a:after { border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,35%,1); }
+  body.dark-mode .breadcrumb li:nth-child(4) a       { background:        hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,45%,1); }
+  body.dark-mode .breadcrumb li:nth-child(4) a:after { border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,45%,1); }
+  body.dark-mode .breadcrumb li:nth-child(5) a       { background:        hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,55%,1); }
+  body.dark-mode .breadcrumb li:nth-child(5) a:after { border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }},15%,55%,1); }
+
+    .breadcrumb li a:hover { 
+      background: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }}, 85%, 25%, 1);
+    }
+
+    body.dark-mode .breadcrumb li a:hover { 
+      background: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }}, 5%, 25%, 1); 
+    }
+
+    .breadcrumb li a:hover:after { 
+      border-left-color: hsla({{ $.Site.Params.theme.light.color_breadcrumb_hue }}, 85%, 25%, 1) !important; 
+    }
+
+    body.dark-mode .breadcrumb li a:hover:after { 
+      border-left-color: hsla({{ $.Site.Params.theme.dark.color_breadcrumb_hue }}, 5%, 25%, 1) !important; 
     }
   </style>
