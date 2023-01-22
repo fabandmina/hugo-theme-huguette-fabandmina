@@ -138,3 +138,7 @@
 # Cotswold
 - id: cotswold_way
   translation: "Le Cotswold Way - Royaume-Uni"
+
+# Eurasia
+- id: wish_eurasia
+  translation: "L'Eurasie en tandem"

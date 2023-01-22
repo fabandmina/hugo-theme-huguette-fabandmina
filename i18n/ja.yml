@@ -134,8 +134,13 @@
 
 # Corsica
 - id: corsica
-  translation: コルシカ
+  translation: コルシカ島
 
 # Cotswold
 - id: cotswold_way
   translation: "コッツウォルズウェイ - UK"
+
+
+# Eurasia
+- id: wish_eurasia
+  translation: ユーラシア大陸横断byタンデム自転車
