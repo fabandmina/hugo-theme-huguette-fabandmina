@@ -299,6 +299,13 @@
   /*----------------------------------------
     Table style
     ---------------------------------------- */
+  table {
+    display: block;
+    overflow-x: auto;
+    width: auto;
+    max-width: content-fit;
+    white-space: nowrap;
+  }
   th,
   td {
     border-bottom: 1px solid {{ $.Site.Params.theme.light.color_table_row }};
