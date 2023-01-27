@@ -138,3 +138,38 @@
 # Eurasia
 - id: wish_eurasia
   translation: "Eurasia by tandem bicycle"
+
+
+# Countries
+- id: France
+  translation: France
+- id: Portugal
+  translation: Portugal
+- id: Spain
+  translation: Spain
+- id: Italy
+  translation: Italy
+- id: Greece
+  translation: Greece
+- id: Turkey
+  translation: Turkey
+- id: Georgia
+  translation: Georgia
+- id: Azerbaijan
+  translation: Azerbaijan
+- id: Turkmenistan
+  translation: Turkmenistan
+- id: Uzbekistan
+  translation: Uzbekistan
+- id: Tajikistan
+  translation: Tajikistan
+- id: Kyrgyzstan
+  translation: Kyrgyzstan
+- id: China
+  translation: China
+- id: Mongolia
+  translation: Mongolia
+- id: "South Korea"
+  translation: "South Korea"
+- id: Japan
+  translation: Japan

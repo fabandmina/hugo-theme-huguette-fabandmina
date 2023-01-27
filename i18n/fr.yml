@@ -142,3 +142,38 @@
 # Eurasia
 - id: wish_eurasia
   translation: "L'Eurasie en tandem"
+
+
+# Countries
+- id: France
+  translation: France
+- id: Portugal
+  translation: Portugal
+- id: Spain
+  translation: Espagne
+- id: Italy
+  translation: Italie
+- id: Greece
+  translation: Grèce
+- id: Turkey
+  translation: Turquie
+- id: Georgia
+  translation: Géorgie
+- id: Azerbaijan
+  translation: Azerbaijan
+- id: Turkmenistan
+  translation: Turkménistan
+- id: Uzbekistan
+  translation: Ouzbékistan
+- id: Tajikistan
+  translation: Tajikistan
+- id: Kyrgyzstan
+  translation: Kyrgyzstan
+- id: China
+  translation: Chine
+- id: Mongolia
+  translation: Mongolie
+- id: "South Korea"
+  translation: "Corée du Sud"
+- id: Japan
+  translation: Japon

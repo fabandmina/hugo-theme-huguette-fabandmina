@@ -144,3 +144,37 @@
 # Eurasia
 - id: wish_eurasia
   translation: ユーラシア大陸横断byタンデム自転車
+
+# Countries
+- id: France
+  translation: フランス
+- id: Portugal
+  translation: ポルトガル
+- id: Spain
+  translation: スペイン
+- id: Italy
+  translation: イタリア
+- id: Greece
+  translation: ギリシャ
+- id: Turkey
+  translation: トルコ
+- id: Georgia
+  translation: ジョージア
+- id: Azerbaijan
+  translation: アゼルバイジャン
+- id: Turkmenistan
+  translation: トルクメニスタン
+- id: Uzbekistan
+  translation: ウズベキスタン
+- id: Tajikistan
+  translation: タジキスタン
+- id: Kyrgyzstan
+  translation: キルギス
+- id: China
+  translation: 中国
+- id: Mongolia
+  translation: モンゴル
+- id: "South Korea"
+  translation: "韓国"
+- id: Japan
+  translation: 日本
