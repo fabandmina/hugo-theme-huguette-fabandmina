@@ -145,6 +145,10 @@
 - id: wish_eurasia
   translation: ユーラシア大陸横断byタンデム自転車
 
+# Bicycle
+- id: bicycle
+  translation: "自転車"
+
 # Countries
 - id: France
   translation: フランス

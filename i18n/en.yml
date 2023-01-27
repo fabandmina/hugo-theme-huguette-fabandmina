@@ -139,6 +139,9 @@
 - id: wish_eurasia
   translation: "Eurasia by tandem bicycle"
 
+# Bicycle
+- id: bicycle
+  translation: "Bicycle"
 
 # Countries
 - id: France

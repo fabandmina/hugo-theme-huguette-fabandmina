@@ -143,6 +143,9 @@
 - id: wish_eurasia
   translation: "L'Eurasie en tandem"
 
+# Bicycle
+- id: bicycle
+  translation: "Vélo"
 
 # Countries
 - id: France
