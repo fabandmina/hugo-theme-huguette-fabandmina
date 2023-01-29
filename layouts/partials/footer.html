@@ -34,6 +34,8 @@
     {{ replace . "{year}" (string (now.Year)) }}
     {{end}}
   </div>
+{{- partial "privacy-policy.html" . -}}
+{{/*  {{- partial "cookie-popup.html" . -}}  */}}
 </footer>
 
 <style>
@@ -91,7 +93,7 @@
   
   footer ul li a,
   body.dark-mode footer ul li a {
-    color: {{ $.Site.Params.theme.light.color_footer_font }};
+    color: {{ $.Site.Params.theme.dark.color_footer_font }};
     cursor: pointer;
     font-size: 2rem;
   }

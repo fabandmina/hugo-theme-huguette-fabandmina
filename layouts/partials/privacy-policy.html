@@ -1,0 +1,16 @@
+<div class="privacy-policy">
+    {{with $.Site.Params.privacy_policy_page }}
+    <a href="{{ $.Site.Params.privacy_policy_page | relURL }}">Privacy Policy</a>
+    {{end}}
+</div>
+
+<style>
+  .privacy-policy a {
+    color: {{ $.Site.Params.theme.light.color_footer_font }};
+  }
+
+  body.dark-mode .privacy-policy a {
+    color: {{ $.Site.Params.theme.dark.color_footer_font }};
+  }
+</style>
+
