@@ -140,6 +140,9 @@
 - id: cotswold_way
   translation: "コッツウォルズウェイ - UK"
 
+# cyprus
+- id: cyprus
+  translation: "キプロス"
 
 # Eurasia
 - id: wish_eurasia

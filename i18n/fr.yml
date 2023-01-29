@@ -139,6 +139,10 @@
 - id: cotswold_way
   translation: "Le Cotswold Way - Royaume-Uni"
 
+# cyprus
+- id: cyprus
+  translation: "Chypre"
+
 # Eurasia
 - id: wish_eurasia
   translation: "L'Eurasie en tandem"
