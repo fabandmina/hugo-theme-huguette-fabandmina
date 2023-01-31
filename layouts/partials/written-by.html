@@ -9,15 +9,11 @@
     {{if eq . "mina"}}
     <a title="{{ i18n "about_mina" }}" 
     href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> 
-    {{i18n .}}
     {{ end }}-
     {{ with $.Params.Date }}
     {{ . | time.Format ":date_long" }}
     {{ end }} | 
     {{- partial "media.html" $ -}}
-    
-
-
 </span>
 
 
