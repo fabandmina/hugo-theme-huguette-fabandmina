@@ -2,14 +2,14 @@
 <span class="written-by">
     — 
     {{ i18n "written_by" }}
+    <a title="
     {{if eq . "fab"}}
-    <a title="{{ i18n "about_fab" }}"
-    href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> 
+    {{ i18n "about_fab" }}
+    {{else if eq . "mina"}}
+    {{ i18n "about_mina" }} 
     {{ end }}
-    {{if eq . "mina"}}
-    <a title="{{ i18n "about_mina" }}" 
-    href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> 
-    {{ end }}-
+    "
+    href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> -
     {{ with $.Params.Date }}
     {{ . | time.Format ":date_long" }}
     {{ end }} | 
