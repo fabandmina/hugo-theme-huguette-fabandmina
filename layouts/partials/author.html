@@ -6,7 +6,7 @@
         <img src="{{ $.Site.Params.portrait_fabandmina }}" title="{{ i18n "fab_mina" }}" alt="{{ i18n "fab_mina" }}">
         </a>
         <div class="author-name">{{ i18n "fab_mina" }}
-            <span>|{{- partial "media.html" $ -}}</span>
+            <span class="media">|{{- partial "media.html" $ -}}</span>
         </div>
         </div>
         <div class="author-bio">{{ i18n "about_fab_mina"}}</div>
@@ -22,6 +22,9 @@
         width: 60%;
         align-items: center;
         justify-content: center;
+    }
+    #author span.media {
+        font-size: 1.5rem;
     }
     body.dark-mode #author {
         background-color: {{ .Site.Params.theme.dark.color_overlay }};
