@@ -1,0 +1,37 @@
+{{ with .Params.Author}}
+<span class="written-by">
+    {{ i18n "written_by" }}
+    {{if eq . "fab"}}
+    <a href="">{{i18n .}}</a> 
+    {{ end }}
+    {{if eq . "mina"}}
+    <a href="">{{i18n .}}</a> 
+    {{i18n .}}
+    {{ end }}|
+    {{- partial "media.html" $ -}}
+</span>
+
+
+<style>
+    span.written-by {
+        display: inline-block;
+        font-style: italic;
+        font-size: 1.2rem;
+        font-weight: normal;
+        font-family: "Roboto", sans-serif;
+    }
+    span.written-by a {
+        color: {{ $.Site.Params.theme.light.color_link }};
+    }
+    body.dark-mode span.written-by a {
+        color: {{ $.Site.Params.theme.dark.color_link }};
+    }
+    span.written-by ul {
+        margin-left: 0;
+        display: inline-block;
+    }
+    span.written-by ul li {
+        display: inline-block;
+    }
+</style>
+{{ end }}

@@ -1,18 +1,20 @@
 
 {{define "main"}}
-{{/*  <div class="title">  */}}
+    <h1>
 	{{ if eq (i18n .Title) ("")}}
-	<h1>{{ .Title }}</h1>
+	{{ .Title }}
 	{{ else }}
-	<h1>{{ i18n .Title }}</h1>
+	{{ i18n .Title }}
 	{{ end }}
-{{/*  </div>  */}}
+    {{- partial "written-by.html" . -}}
+    </h1> 
     <h4>{{- partial "subtitle.html" . -}}</h4>
     {{/*  {{- partial "toc.html" . -}}  */}}
 <div class="thumbnail-single">
     {{- partial "thumbnail.html" . -}}
 </div>
     {{- partial "introduction.html" . -}}
+    {{/*  {{- partial "side-column.html" . -}}  */}}
     {{.Content}}
     {{- partial "flickr.html" . -}}
     {{- partial "map.html" . -}}

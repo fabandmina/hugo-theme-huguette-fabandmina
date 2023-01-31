@@ -124,6 +124,10 @@
 - id: _all
   translation: "Tout"
 
+# Author
+- id: written_by
+  translation: "Écrit par"
+
 # Camino
 - id: camino_france
   translation: "Compostelle - France"

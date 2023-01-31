@@ -120,6 +120,10 @@
 - id: _all
   translation: "All"
 
+# Author
+- id: written_by
+  translation: "Written by"
+
 # Camino
 - id: camino_france
   translation: "Compostela - France"

@@ -125,6 +125,10 @@
 - id: _all
   translation: "全て"
 
+# Author
+- id: written_by
+  translation: "Written by"
+
 # Camino
 - id: camino_france
   translation: "コンポステーラ - フランス"
