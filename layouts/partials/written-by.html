@@ -12,8 +12,10 @@
     href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> -
     {{ with $.Params.Date }}
     {{ . | time.Format ":date_long" }}
-    {{ end }} | 
-    {{- partial "media.html" $ -}}
+    {{ end }}  
+    <span class="media">
+    | {{- partial "media.html" $ -}}
+    </span>
 </span>
 
 
@@ -24,6 +26,9 @@
         font-size: .8rem;
         font-weight: normal;
         font-family: "Roboto", sans-serif;
+    }
+    span.written-by span.media {
+        font-size: 1.2rem;
     }
     span.written-by a {
         color: {{ $.Site.Params.theme.light.color_link }};
