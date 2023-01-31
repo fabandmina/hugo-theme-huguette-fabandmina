@@ -1,22 +1,31 @@
-{{ with .Params.Author}}
+{{ with $.Params.Author }}
 <span class="written-by">
+    — 
     {{ i18n "written_by" }}
     {{if eq . "fab"}}
-    <a href="">{{i18n .}}</a> 
+    <a title="{{ i18n "about_fab" }}"
+    href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> 
     {{ end }}
     {{if eq . "mina"}}
-    <a href="">{{i18n .}}</a> 
+    <a title="{{ i18n "about_mina" }}" 
+    href="{{ absLangURL "about" }}#{{.}}" target="_blank" rel="noopener noreferrer">{{i18n .}}</a> 
     {{i18n .}}
-    {{ end }}|
+    {{ end }}-
+    {{ with $.Params.Date }}
+    {{ . | time.Format ":date_long" }}
+    {{ end }} | 
     {{- partial "media.html" $ -}}
+    
+
+
 </span>
 
 
 <style>
     span.written-by {
         display: inline-block;
-        font-style: italic;
-        font-size: 1.2rem;
+        font-style: normal;
+        font-size: .8rem;
         font-weight: normal;
         font-family: "Roboto", sans-serif;
     }

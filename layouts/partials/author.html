@@ -1,0 +1,94 @@
+{{ if eq .Type "blogs" }}
+<div id="author">
+    <div class="author-content">
+        <div class="author-portrait">
+        <a href="{{ absLangURL "about" }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ $.Site.Params.portrait_fabandmina }}" title="{{ i18n "fab_mina" }}" alt="{{ i18n "fab_mina" }}">
+        </a>
+        <div class="author-name">{{ i18n "fab_mina" }}
+            <span>|{{- partial "media.html" $ -}}</span>
+        </div>
+        </div>
+        <div class="author-bio">{{ i18n "about_fab_mina"}}</div>
+    </div>
+</div>
+
+<style>
+    #author {
+        display: flex;
+        background-color: {{ .Site.Params.theme.light.color_overlay }};
+        margin: 0 auto;
+        min-height: 200px;
+        width: 60%;
+        align-items: center;
+        justify-content: center;
+    }
+    body.dark-mode #author {
+        background-color: {{ .Site.Params.theme.dark.color_overlay }};
+    }
+    #author span a {
+        color: {{ $.Site.Params.theme.light.color_font_default }};
+    }
+    body.dark-mode #author span a {
+        color: {{ $.Site.Params.theme.dark.color_font_default }};
+    }
+    #author span ul {
+        margin-left: 0;
+        display: inline-block;
+    }
+    #author span ul li {
+        display: inline-block;
+    }
+    .author-name {
+        font-size: 1rem;
+        font-weight: bolder;
+        text-align: center;
+    }
+    .author-content {
+        color: {{ .Site.Params.theme.light.color_overlay_font }};
+        border-radius: 15px;
+        display: inline-flex;
+        align-items: center;
+        width: 80%;
+        margin: 15px;
+    }
+    body.dark-mode .author-content {
+        color: {{ .Site.Params.theme.dark.color_overlay_font }};
+    }
+    .author-bio {
+        margin: 20px;
+        border: solid 2px {{ .Site.Params.theme.light.color_overlay_font }};
+        padding: 10px;
+        border-radius: 10px;
+    }
+    body.dark-mode .author-bio {
+        border: solid 2px {{ .Site.Params.theme.dark.color_overlay_font }};
+    }
+    .author-portrait {
+        margin: 20px;
+    }
+    #author img {
+        height: 130px;
+        width: 130px;
+        border-radius: 100px;
+        object-fit: cover;
+    }
+    body.dark-mode #author img:hover {
+        filter: brightness(100%);
+    }
+    @media only screen and (max-width: 830px) {
+        #author {
+            width: 100%;
+        }
+        .author-content {
+            display: block;
+            align-items: center;
+            width: 100%;
+        }
+        #author img {
+            margin: auto;
+            display: block;
+        }
+      }
+</style>
+{{ end }}

@@ -71,8 +71,10 @@
   translation: "Traverser la frontière"
 - id: fab
   translation: "Fab"
-- id: Mina
+- id: mina
   translation: "Mina"
+- id: fab_mina
+  translation: "Fab & Mina"
 
   # Language selector
 - id: language_selector
@@ -188,3 +190,43 @@
   translation: "Corée du Sud"
 - id: Japan
   translation: Japon
+
+# About FAB
+- id: about_fab
+  translation: "Je suis née à Tokyo, Japon. 
+  À la suite de mes études d'architecte à l'université, 
+  j'ai travaillé dans un atelier d'architectes à Kyoto. 
+  Au même moment, je suis devenu barista café professionnelle par passion. 
+  Puis, j'ai quitté ma vie sédentaire pour devenir nomade. 
+  Je n'aurais jamais imaginé me marier avant de rencontrer Fab durant mon voyage en bikepacking. 
+  J'ai visité plus de 60 pays jusqu'à présent...
+  Nager en pleine nature est une de mes activités favorites. 
+  Autrement, j'apprécie flâner et manger. 
+  C'est pourquoi je pense qu'être le stoker sur un tandem semi-couché est l'idéal !
+  "
+  
+
+# About MINA
+- id: about_mina
+  translation: "Je suie né à Nouméa, Nouvelle-Calédonie. 
+  J'ai fait des études supérieures en informatique en France et au Canada. 
+  Après quelques années à travailler en Nouvelle-Calédonie, 
+  j'ai décidé de devenir un voyageur à temps plein. 
+  J'ai commencé ce périple par traverser la Nouvelle-Zélande en vélo, 
+  l'endroit où j'ai rencontré Mina.
+  En dehors du voyage, 
+  j'aime joué au jeux vidéos rétro (ce qui m'a inspiré le visuel de ce site), 
+  gratter mon ukulele et pratiquer diverses activités en extérieur. 
+  Aussi, je suis végétarien. 
+  J'espère ainsi pouvoir fournir de bonnes recommandations à mes amis veggies.
+  "
+
+# About FAB AND MINA
+- id: about_fab_mina
+  translation: "Nous sommes un couple qui a décidé de faire du voyage un mode de vie. 
+  Nous nous sommes rencontrés en Nouvelle-Zélande et avons visité quelques pays depuis. 
+  Nous utilisons principalement des moyens de transports lents. 
+  Cela rend nos excursions plus fun et intéressantes.
+  Nous sommes curieux et aventureux, 
+  mais ce que nous aimons par dessus tout est faire de nouvelles expériences culinaires !
+  "

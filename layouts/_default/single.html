@@ -1,14 +1,13 @@
 
 {{define "main"}}
-    <h1>
+    <h1 style="margin: 0;">
 	{{ if eq (i18n .Title) ("")}}
 	{{ .Title }}
 	{{ else }}
 	{{ i18n .Title }}
 	{{ end }}
-    {{- partial "written-by.html" . -}}
     </h1> 
-    <h4>{{- partial "subtitle.html" . -}}</h4>
+    <h4 style="margin: 0;">{{- partial "subtitle.html" . -}}</h4>
     {{/*  {{- partial "toc.html" . -}}  */}}
 <div class="thumbnail-single">
     {{- partial "thumbnail.html" . -}}
@@ -18,6 +17,4 @@
     {{.Content}}
     {{- partial "flickr.html" . -}}
     {{- partial "map.html" . -}}
-<hr>
-{{/*  <div class="postfooter">{{- partial "postfooter.html" . -}}</div>  */}}
 {{end}}

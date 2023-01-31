@@ -1,6 +1,13 @@
 <!--This partial only gets written when you have subtitle set in your frontmatter-->
 {{ with .Params.subtitle }}
-<div class="subtitle">
+<span class="subtitle">
 {{- . -}}
-</div>
+</span>
 {{ end }}
+
+<style>
+.subtitle {
+    display: inline-block;
+    font-style: oblique 15deg;
+}
+</style>

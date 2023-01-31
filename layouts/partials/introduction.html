@@ -1,6 +1,18 @@
 <!--This partiol only gets written when you have introduction set in your frontmatter-->
-{{ with .Params.introduction }}
+
 <div class="introduction">
+{{ with .Params.introduction }}
 {{- . -}}
+{{ end }}{{- partial "written-by.html" . -}}
 </div>
-{{ end }}
+
+<style>
+.introduction {
+font-size: 1rem;
+font-style: oblique 15deg;
+margin: 1rem auto;
+min-height: 1rem;
+position: relative;
+text-align: center;
+}
+</style>

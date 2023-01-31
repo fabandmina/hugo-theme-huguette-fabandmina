@@ -9,3 +9,34 @@
 <a class="cta-button cta-button cta-primary" href="{{- . -}}">{{- T "flickr_album" -}}</a>
 </div>
 {{ end }}
+
+<style>
+.flickr-album {
+margin: .3rem 0rem;
+text-align: right;
+}
+.flickr-iframe {
+display: flex;
+height: auto;
+margin: 2px 0;
+min-height: 500px;
+overflow: scroll;
+position: relative;
+width: 100%;
+}
+
+@media only screen and (max-width: 830px) {
+.flickr-iframe, body.dark-mode .flickr-iframe {
+  height: 50vw;
+}
+.flickr-album{
+  text-align: center;
+  margin: .5rem 0;
+}
+.flickr-album a {
+  margin: auto 0;
+  width: 100%;
+  align-self: center;
+}
+}
+</style>
