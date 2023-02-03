@@ -1,7 +1,14 @@
 
 <!--This partial writes a Table of contents when your article is longer than 400 words -->
-{{ if (gt .WordCount 400 ) }}
-<aside>
+{{/*  {{ if and (.Params.toc) (gt .WordCount 400 ) }}
     {{.TableOfContents}}
-</aside>
-{{ end }}
+{{ end }}  */}}
+<div id="toc">{{ .Page.TableOfContents}}</div>
+
+<style>
+    #toc {
+        background-color: white;
+        padding: 10px;
+        display: inline-flex;
+    }
+</style>

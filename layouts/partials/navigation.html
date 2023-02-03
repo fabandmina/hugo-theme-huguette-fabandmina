@@ -156,10 +156,10 @@
       position: fixed;
       flex-direction: row;
       height: 50px;
-      {{/*  justify-content: safe;  */}}
       width: 100%;
       z-index: 1000;
       opacity: 1;
+      transition: top 0.3s;
     }
     header .active {
       background-color: {{ $.Site.Params.theme.light.color_header_highlight }};
