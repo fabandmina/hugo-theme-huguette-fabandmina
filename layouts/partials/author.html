@@ -15,7 +15,6 @@
 <style>
     #author-{{ .bio }} {
         display: flex;
-        {{/*  border-top: 1px solid {{ .Site.Params.theme.light.color_hr }};  */}}
         background-color: {{ .Site.Params.theme.light.color_content }};
         margin: 0 auto;
         min-height: 200px;
@@ -29,7 +28,6 @@
     }
     body.dark-mode #author-{{ .bio }} {
         background-color: {{ .Site.Params.theme.dark.color_content }};
-        border-top: 1px solid {{ .Site.Params.theme.dark.color_hr }};
     }
     #author-{{ .bio }} span a {
         color: {{ $.Site.Params.theme.light.color_font_default }};
