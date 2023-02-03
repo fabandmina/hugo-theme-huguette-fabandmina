@@ -1,58 +1,61 @@
-{{ if eq .Type "blogs" }}
-<div id="author">
+<div id="author-{{ .bio }}">
     <div class="author-content">
         <div class="author-portrait">
         <a href="{{ absLangURL "about" }}" target="_blank" rel="noopener noreferrer">
-        <img src="{{ $.Site.Params.portrait_fabandmina }}" title="{{ i18n "fab_mina" }}" alt="{{ i18n "fab_mina" }}">
+        <img src="{{ .portrait }}" title="{{ i18n .name }}" alt="{{ i18n .name }}">
         </a>
-        <div class="author-name">{{ i18n "fab_mina" }}
-            <span class="media">|{{- partial "media.html" $ -}}</span>
+        <div class="author-name">{{ i18n .name }}
+            <span class="media">{{- partial "media.html" .context -}}</span>
         </div>
         </div>
-        <div class="author-bio">{{ i18n "about_fab_mina"}}</div>
+        <div class="author-bio">{{ i18n .bio }}</div>
     </div>
 </div>
 
 <style>
-    #author {
+    #author-{{ .bio }} {
         display: flex;
-        background-color: {{ .Site.Params.theme.light.color_overlay }};
+        border-top: 1px solid {{ .Site.Params.theme.light.color_hr }};
+        background-color: {{ .Site.Params.theme.light.color_content }};
         margin: 0 auto;
         min-height: 200px;
-        width: 60%;
+        width: 830px;
         align-items: center;
         justify-content: center;
     }
-    #author span.media {
+    #author-{{ .bio }} span.media {
         font-size: 1.5rem;
+        display: block;
     }
-    body.dark-mode #author {
-        background-color: {{ .Site.Params.theme.dark.color_overlay }};
+    body.dark-mode #author-{{ .bio }} {
+        background-color: {{ .Site.Params.theme.dark.color_content }};
+        border-top: 1px solid {{ .Site.Params.theme.dark.color_hr }};
     }
-    #author span a {
+    #author-{{ .bio }} span a {
         color: {{ $.Site.Params.theme.light.color_font_default }};
     }
-    body.dark-mode #author span a {
+    body.dark-mode #author-{{ .bio }} span a {
         color: {{ $.Site.Params.theme.dark.color_font_default }};
     }
-    #author span ul {
+    #author-{{ .bio }} span ul {
         margin-left: 0;
         display: inline-block;
     }
-    #author span ul li {
+    #author-{{ .bio }} span ul li {
         display: inline-block;
     }
     .author-name {
         font-size: 1rem;
         font-weight: bolder;
         text-align: center;
+        margin: 10px;
     }
     .author-content {
         color: {{ .Site.Params.theme.light.color_overlay_font }};
         border-radius: 15px;
         display: inline-flex;
         align-items: center;
-        width: 80%;
+        width: 100%;
         margin: 15px;
     }
     body.dark-mode .author-content {
@@ -70,17 +73,17 @@
     .author-portrait {
         margin: 20px;
     }
-    #author img {
+    #author-{{ .bio }} img {
         height: 130px;
         width: 130px;
         border-radius: 100px;
         object-fit: cover;
     }
-    body.dark-mode #author img:hover {
+    body.dark-mode #author-{{ .bio }} img:hover {
         filter: brightness(100%);
     }
     @media only screen and (max-width: 830px) {
-        #author {
+        #author-{{ .bio }} {
             width: 100%;
         }
         .author-content {
@@ -88,10 +91,9 @@
             align-items: center;
             width: 100%;
         }
-        #author img {
+        #author-{{ .bio }} img {
             margin: auto;
             display: block;
         }
       }
 </style>
-{{ end }}

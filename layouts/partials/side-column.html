@@ -1,0 +1,27 @@
+{{ if eq .Type "blogs" }}
+<div class="side-column">
+    <div class="toc-column">
+        toc
+    </div>
+    <div class="about-column">
+         {{- partial "author.html" . -}}
+    </div>
+    <div class="social-column">
+        test
+    </div>
+</div>
+
+<style>
+    .side-column {      
+        border-radius: 15px;
+        background-color: white;
+        display: flex;
+        padding: 10px 10px;
+        width: 100%;
+    }
+    @media only screen and (max-width: 830px) {
+        .side-column {
+        }
+    }
+</style>
+{{ end }}

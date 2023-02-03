@@ -6,8 +6,9 @@
 	{{ else }}
 	{{ i18n .Title }}
 	{{ end }}
-    </h1> 
+    </h1>   
     <h4 style="margin: 0;">{{- partial "subtitle.html" . -}}</h4>
+    {{- partial "written-by.html" . -}} 
     {{/*  {{- partial "toc.html" . -}}  */}}
 <div class="thumbnail-single">
     {{- partial "thumbnail.html" . -}}

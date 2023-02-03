@@ -11,7 +11,12 @@
 		{{- block "main" . }}
 		{{- end }}
 	</div>
-	{{- partial "author.html" . -}}
+	{{ $portrait := $.Site.Params.portrait_fabandmina }}
+    {{ $name := "fab_mina" }}
+	{{ $bio := "about_fab_mina" }}
+	{{ if eq .Type "blogs" }}
+	{{- partial "author.html" (dict "context" . "portrait" $portrait "name" $name "bio" $bio) -}}
+	{{ end }}
 	{{/*  <div class="share-button">
 		<h1 class="">{{ i18n "please_share" }}</h1>
 		{{- partial "share-buttons.html" . -}}
