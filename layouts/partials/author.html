@@ -1,5 +1,5 @@
 <div id="author-{{ .bio }}">
-    <div class="author-content">
+    <div class="author-content" id="{{ .name }}">
         <div class="author-portrait">
         <a href="{{ absLangURL "about" }}" target="_blank" rel="noopener noreferrer">
         <img src="{{ .portrait }}" title="{{ i18n .name }}" alt="{{ i18n .name }}">
