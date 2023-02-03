@@ -12,8 +12,21 @@
 		{{- end }}
 	</div>
 	{{ $portrait := $.Site.Params.portrait_fabandmina }}
-    {{ $name := "fab_mina" }}
+	{{ $name := "fab_mina" }}
 	{{ $bio := "about_fab_mina" }}
+	{{/* configure author according to params*/}}
+	{{ with .Page.Params.Author }}
+	{{ if eq . "fab"}}
+	{{ $portrait = $.Site.Params.portrait_fab }}
+	{{ $name = "fab" }}
+	{{ $bio = "about_fab" }}
+	{{ else if eq . "mina"}}
+	{{ $portrait = $.Site.Params.portrait_mina }}
+	{{ $name = "mina" }}
+	{{ $bio = "about_mina" }}
+	{{ end }}
+	{{ end }}
+	{{/* END*/}}
 	{{ if eq .Type "blogs" }}
 	{{- partial "author.html" (dict "context" . "portrait" $portrait "name" $name "bio" $bio) -}}
 	{{ end }}
