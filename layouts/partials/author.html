@@ -26,6 +26,11 @@
         font-size: 1.5rem;
         display: block;
     }
+
+    #author-{{ .bio }} span.media li {
+        margin: 0px 2.5px;
+    }
+
     body.dark-mode #author-{{ .bio }} {
         background-color: {{ .Site.Params.theme.dark.color_content }};
     }
