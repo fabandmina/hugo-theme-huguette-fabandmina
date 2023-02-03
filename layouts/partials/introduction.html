@@ -2,7 +2,11 @@
 
 <div class="introduction">
 {{ with .Params.introduction }}
-{{- . -}}
+{{ if eq (i18n .) ("")}}
+{{ . }}
+{{ else }}
+{{ i18n . }}
+{{ end }}
 {{ end }}
 </div>
 

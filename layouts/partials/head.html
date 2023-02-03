@@ -20,7 +20,13 @@ links to CSS and the javascript for NetlifyCMS. -->
     {{ end }}
     : {{- .Params.subtitle -}}  | {{ .Site.Title }}</title>
   {{ with .Params.introduction }}
-  <meta name="description" content="{{- . -}}">
+  <meta name="description" content="
+{{ if eq (i18n .) ("")}}
+{{ . }}
+{{ else }}
+{{ i18n . }}
+{{ end }}
+  ">
   {{ end }}
   {{ if .IsHome }}
   {{ with .Site.Params.netlifycms }}
