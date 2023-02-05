@@ -191,8 +191,8 @@
 - id: Japan
   translation: Japon
 
-# About FAB
-- id: about_fab
+# About MINA
+- id: about_mina
   translation: "Je suis née à Tokyo, Japon. 
   À la suite de mes études d'architecte à l'université, 
   j'ai travaillé dans un atelier d'architectes à Kyoto. 
@@ -206,8 +206,8 @@
   "
   
 
-# About MINA
-- id: about_mina
+# About FAB
+- id: about_fab
   translation: "Je suie né à Nouméa, Nouvelle-Calédonie. 
   J'ai fait des études supérieures en informatique en France et au Canada. 
   Après quelques années à travailler en Nouvelle-Calédonie, 
