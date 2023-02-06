@@ -1,0 +1,54 @@
+{{ if $.Page.Params.album }}
+{{ if eq $.Page.Type "blogs" }}
+<h2>Photos</h2>
+{{ end }}
+<div class="gallery">
+{{ $current_page_title := .Title }}
+{{ range index $.Site.Data.photos $current_page_title }}
+<figure class="gallery-item">
+<a href="{{ $.Page.Params.album }}/{{ . }}" target="_blank" rel="noopener noreferrer">
+<img src="{{ $.Page.Params.album }}/tr:w-300,h-300/{{ . }}" class="gallery-item__image">
+</a>
+</figure>
+{{ end }}
+</div>
+
+<style>
+    .gallery{
+        display:flex;
+        flex-flow: wrap;
+        margin: 20px 20px;
+    }
+
+    .gallery-item{
+        flex-grow: 1;
+        min-width: 200px;
+        border:1px solid {{ $.Site.Params.theme.light.color_content }};
+        position: relative;
+    }
+
+    body.dark-mode .gallery-item {
+        border:1px solid {{ $.Site.Params.theme.dark.color_content }};
+    }
+
+    .gallery-item a:hover .gallery-item__image{
+        filter: brightness(110%);
+    }
+
+    .gallery-item:before{
+        content: "";
+        padding-top: 100%;
+        display: block;
+    }
+
+    .gallery-item__image{
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+{{ end}}

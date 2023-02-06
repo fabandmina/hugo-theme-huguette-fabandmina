@@ -19,7 +19,9 @@
   translation: "Blog"
 - id: wishlist
   translation: "Liste de souhaits"
-
+- id: photos
+  translation: "Photos"
+  
 # flickr
 - id: flickr_album
   translation: " Album Flickr"

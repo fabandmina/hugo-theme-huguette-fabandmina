@@ -17,6 +17,8 @@
   translation: "Blog"
 - id: wishlist
   translation: "Wishlist"
+- id: photos
+  translation: "Photos"
 
 # Trip singles
 - id: stats

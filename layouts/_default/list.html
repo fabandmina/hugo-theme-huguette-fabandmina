@@ -1,24 +1,8 @@
 
-{{/*  {{define "main"}}
-	{{ if eq (i18n .Title) ("")}}
-	<h1>{{ .Title }}</h1>
-	{{ else }}
-	<h1>{{ i18n .Title }}</h1>
-	{{ end }}
-<!--$paginator-->
-{{$p := .Pages}}
-{{$paginator := .Paginate $p}}
-<!--list-->
-<div class="list-grid">
-	{{range $paginator.Pages}}
-	{{- partial "list-items.html" . -}}
-	{{end}}
-</div>
-<!--pagination-->
-{{template "_internal/pagination.html" .}}
-{{end}}  */}}
   {{ define "main" }}
+  {{/*  Display categories if blog  */}}
   <h1>{{ i18n .Type }}</h1>
+  {{ if or (in .Title $.Site.Params.blog_pages) (eq .Title "blogs") }}
   <div class="taxonomy-container">
     <ul>
       <li>
@@ -37,13 +21,14 @@
       {{ end }}
     </ul>
   </div>
-<!--$paginator-->
-{{/*  {{$p := .Data.Pages.ByDate.Reverse}}  */}}
-<!--list-->
+  {{ end }}
+
 <div class="list-grid">
+  {{/*  List all pages inside blogs/ if current page is blogs/  */}}
 	{{ if eq (.Name) ("blogs") }}
 	{{$current_language_pages := slice }}
 	{{ range where .Site.Pages ".Params.tags" "in" .Site.Params.blog_pages}}
+  {{/* List all pages from current language */}}
 	{{ if eq (.Language) (.Site.Language) }}
 	{{ $current_language_pages = $current_language_pages | append (.) }}
 	{{ end }}
@@ -53,6 +38,7 @@
 	{{ range $spaginator.Pages.ByDate.Reverse }}
 	{{- partial "list-items.html" . -}}
 	{{ end }}
+  {{/* List only pages from current language  and direct children of the current collection */}}
 	{{ else }}
 	{{$p := .Pages}}
 	{{$paginator := .Paginate $p}}
@@ -61,6 +47,9 @@
 	{{end}}
 	{{end}}
 </div>
+
+
+
 <!--pagination-->
 {{template "_internal/pagination.html" .}}
 
