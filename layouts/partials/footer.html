@@ -2,10 +2,14 @@
 <!--This footer example shows how to replace :CURRENTYEAR: from the copyright statement in config.toml with the current year.-->
 <footer>
   <div>
-    <h4>Sponsors</h4>
+    <h4>Languages</h4>
+  {{- partial "language-switcher-footer.html" . -}}
   </div>
+  <break></break>
+  <div>
+    <h4>Sponsors</h4>
     {{- partial "sponsors.html" . -}}
-  
+  </div>
   <break></break>
 	<div>
     <h4>Follow us!</h4>
