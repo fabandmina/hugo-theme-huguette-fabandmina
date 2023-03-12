@@ -147,6 +147,10 @@
 - id: cyprus
   translation: "Cyprus"
 
+# Okinawa
+- id: okinawa
+  translation: "Okinawa Islands"
+
 # Eurasia
 - id: wish_eurasia
   translation: "Eurasia by tandem bicycle"

@@ -151,6 +151,10 @@
 - id: cyprus
   translation: "Chypre"
 
+# Okinawa
+- id: okinawa
+  translation: "Les Îles d'Okinawa"
+
 # Eurasia
 - id: wish_eurasia
   translation: "L'Eurasie en tandem"

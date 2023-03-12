@@ -152,6 +152,10 @@
 - id: cyprus
   translation: "キプロス"
 
+# Okinawa
+- id: okinawa
+  translation: "沖縄"  
+
 # Eurasia
 - id: wish_eurasia
   translation: ユーラシア横断byタンデム自転車
