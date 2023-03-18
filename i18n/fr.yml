@@ -163,6 +163,10 @@
 - id: bicycle
   translation: "Vélo"
 
+# Cooking kit
+- id: cooking-kit
+  translation: "Équipements de cuisine"
+
 # Countries
 - id: France
   translation: France

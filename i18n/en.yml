@@ -159,6 +159,10 @@
 - id: bicycle
   translation: "Bicycle"
 
+# Cooking kit
+- id: cooking-kit
+  translation: "Cooking Kit"
+
 # Countries
 - id: France
   translation: France
