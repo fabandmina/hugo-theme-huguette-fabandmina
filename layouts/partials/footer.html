@@ -3,7 +3,9 @@
 <footer>
   <div>
     <h4>Languages</h4>
-  {{- partial "language-switcher-footer.html" . -}}
+    <div class="media-language">
+    {{- partial "language-switcher-footer.html" . -}}
+    </div>
   </div>
   <break></break>
   <div>
@@ -13,7 +15,9 @@
   <break></break>
 	<div>
     <h4>Follow us!</h4>
+    <div class="media-footer">
     {{- partial "media.html" . -}}
+    </div>
   </div>
   
   <div class="powered-by">
@@ -95,10 +99,21 @@
     margin: 0 8px;
   }
   
-  footer ul li a,
+  footer ul li a {
+    color: {{ $.Site.Params.theme.light.color_footer_font }};
+    cursor: pointer;
+  }
+
   body.dark-mode footer ul li a {
     color: {{ $.Site.Params.theme.dark.color_footer_font }};
-    cursor: pointer;
+  }
+
+  .media-footer {
+    font-size: 30px;
+  }
+
+  .media-language {
+    font-size: 1.2rem;
   }
 
   footer .powered-by {
@@ -139,7 +154,6 @@
       padding: 20px 2rem 100px 2rem;
       position: relative;
       width: 100%;
-      font-size: .9rem;
       flex-direction: column;
     }
     footer div, footer .powered-by  {
@@ -148,6 +162,9 @@
       border-bottom: solid {{ $.Site.Params.theme.dark.color_footer_separator }} 2px;
       border-right: none;
       border-left: none;
+    }
+    .media-language {
+      font-size: 1.2rem;
     }
   }
 
