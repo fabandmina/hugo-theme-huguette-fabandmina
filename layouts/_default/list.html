@@ -2,7 +2,7 @@
   {{ define "main" }}
   {{/*  Display categories if blog  */}}
   <h1>{{ i18n .Type }}</h1>
-  {{ if or (in .Title $.Site.Params.blog_pages) (eq .Title "blogs") }}
+  {{/*  {{ if or (in .Title $.Site.Params.blog_pages) (eq .Title "blogs") }}  */}}
   <div class="taxonomy-container">
     <ul>
       <li>
@@ -21,7 +21,7 @@
       {{ end }}
     </ul>
   </div>
-  {{ end }}
+  {{/*  {{ end }}  */}}
 
 <div class="list-grid">
   {{/*  List all pages inside blogs/ if current page is blogs/  */}}
