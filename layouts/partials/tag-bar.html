@@ -1,11 +1,18 @@
-<h4>Tags:</h4>
+    <hr>
     <div class="taxonomy-container">
-        <ul>
+        <ul class="tag-bar">
     {{ range $tag := .Params.tags }}
           <li>
-            <a href="{{ "/blog/" | relLangURL }}{{ $tag | urlize }}">{{ i18n $tag | default $tag | humanize }}</a>
+            <a href="{{ "/blog/" | relLangURL }}{{ $tag | urlize }}"><i class="fa-solid fa-tags"></i> {{ i18n $tag | default $tag | humanize }}</a>
           </li>
     {{ end }}
         </ul>
     </div>
 {{- partial "tags-style.html" . -}}
+<style>
+    .tag-bar {
+        padding: 10px 0px 15px 0px;
+        {{/*  background-color: {{ $.Site.Params.theme.dark.color_h2 }};  */}}
+        border-bottom: solid 3px {{ $.Site.Params.theme.light.color_h2 }};
+    }
+</style>

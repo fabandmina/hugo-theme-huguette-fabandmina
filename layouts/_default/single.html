@@ -22,5 +22,7 @@
     {{- partial "map.html" . -}}
 
 {{/*  Tag bar  */}}
+{{ if eq .Type "blog" }}
 {{- partial "tag-bar.html" . -}}
+{{ end }}
 {{end}}
