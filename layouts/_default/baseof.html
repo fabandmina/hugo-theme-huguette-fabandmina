@@ -7,7 +7,6 @@
 <body>
 	{{- partial "headerimage.html" . -}}
 	<div class="content">
-		{{- partial "breadcrumbs.html" . -}}
 		{{- block "main" . }}
 		{{- end }}
 	</div>
@@ -27,7 +26,7 @@
 	{{ end }}
 	{{ end }}
 	{{/* END*/}}
-	{{ if eq .Type "blogs" }}
+	{{ if eq .Type "blog" }}
 	{{- partial "author.html" (dict "context" . "portrait" $portrait "name" $name "bio" $bio) -}}
 	{{ end }}
 	{{/*  <div class="share-button">

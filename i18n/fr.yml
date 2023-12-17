@@ -158,6 +158,8 @@
 # Eurasia
 - id: wish_eurasia
   translation: "L'Eurasie en tandem"
+- id: eurasia
+  translation: "Eurasie"
 
 # Bicycle
 - id: bicycle

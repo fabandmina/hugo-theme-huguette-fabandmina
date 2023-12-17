@@ -1,5 +1,6 @@
 
-{{define "main"}}
+{{define "main"}}    
+    {{- partial "breadcrumbs.html" . -}}
     <h1 style="margin: 0;">
 	{{ if eq (i18n .Title) ("")}}
 	{{ .Title }}
@@ -19,4 +20,7 @@
     <hr>
     {{/*  {{- partial "photo-gallery.html" . -}}  */}}
     {{- partial "map.html" . -}}
+
+{{/*  Tag bar  */}}
+{{- partial "tag-bar.html" . -}}
 {{end}}

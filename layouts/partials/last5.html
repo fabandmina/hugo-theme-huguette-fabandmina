@@ -2,7 +2,7 @@
 <!--This partial links the last 5 articles from the "trip" section -->
 
 {{$current_language_pages := slice }}
-{{ range where .Site.Pages ".Params.tags" "in" .Site.Params.blog_pages}}
+{{ range where .Site.Pages "Type" "blog"}}
 {{ if eq (.Language) (.Site.Language) }}
 {{ $current_language_pages = $current_language_pages | append (.) }}
 {{ end }}

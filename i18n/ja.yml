@@ -21,6 +21,9 @@
   translation: "ウィッシュリスト"
 - id: photos
   translation: "写真"
+- id: tags
+  translation: "タグ"
+  
 
 # Trip singles
 - id: stats
@@ -157,6 +160,8 @@
   translation: "沖縄"  
 
 # Eurasia
+- id: eurasia
+  translation: ユーラシア
 - id: wish_eurasia
   translation: ユーラシア横断byタンデム自転車
 

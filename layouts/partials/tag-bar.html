@@ -1,0 +1,11 @@
+<h4>Tags:</h4>
+    <div class="taxonomy-container">
+        <ul>
+    {{ range $tag := .Params.tags }}
+          <li>
+            <a href="{{ "/blog/" | relLangURL }}{{ $tag | urlize }}">{{ i18n $tag | default $tag | humanize }}</a>
+          </li>
+    {{ end }}
+        </ul>
+    </div>
+{{- partial "tags-style.html" . -}}
