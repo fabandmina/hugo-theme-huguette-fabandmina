@@ -55,14 +55,14 @@
     }
     .author-content {
         color: {{ .Site.Params.theme.light.color_overlay_font }};
-        border-top: solid 3px {{ $.Site.Params.theme.light.color_h2 }};
+        border-top: solid 3px #ddd;
         display: inline-flex;
         align-items: center;
         width: 100%;
         margin: 0 15px;
     }
     body.dark-mode .author-content {
-        border-top: solid 3px {{ $.Site.Params.theme.dark.color_h2 }};
+        border-top: solid 3px #4e5070;
         color: {{ .Site.Params.theme.dark.color_overlay_font }};
     }
     .author-bio {
