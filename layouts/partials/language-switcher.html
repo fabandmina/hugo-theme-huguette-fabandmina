@@ -9,7 +9,7 @@
             </li>
             {{ range $.Translations }}
             <li class="other-language">
-                <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+                <a title="{{ .Language.LanguageName }}" href="{{ .RelPermalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
             </li>
             {{ end }}
         </ul>
