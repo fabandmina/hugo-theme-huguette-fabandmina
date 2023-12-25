@@ -115,6 +115,7 @@
     width: 150px;
   }
 
+
   @media only screen and (max-width: 830px) {
     html {
       font-size: 16px;
@@ -176,11 +177,20 @@
   body.dark-mode .content {
     background-color: {{ $.Site.Params.theme.dark.color_content }};
   }
+
+  .content p {
+    padding: 5px 0;
+    hyphens: auto;
+  }
+
+  .content li {
+    padding: 5px;
+  }
+
   
   @media only screen and (max-width: 830px) {
     .content {
       width: 100%;
-      padding: 0px 20px;
     }
   }
   
