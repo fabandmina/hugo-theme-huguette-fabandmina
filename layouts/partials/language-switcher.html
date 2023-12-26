@@ -56,10 +56,15 @@
           }
         .dropdown-language {
             top: 0;
+            right: -25%;
             position: relative;
             margin-left: 0;
             visibility: inherit;
             opacity: 1;
+            width: 75%;
+            border: none;
+            margin-top: 40px;
+            font-size: 16px;
         }
         .selected-language {
             display: block;
@@ -70,9 +75,10 @@
         .selected-language-link, .current-language {
             display: block;
             background-color: rgba(2, 18, 37, .7);
+            
         }
         body.dark-mode .selected-language-link {
-            background-color: #1a1919;
+            background-color:{{ .Site.Params.theme.dark.color_header }};
         }
         .current-language {
             display: none;
@@ -84,7 +90,7 @@
     
         body.dark-mode #current-language,
         body.dark-mode .current-language {
-            background-color: #1a1919;
+            background-color:{{ .Site.Params.theme.dark.color_header }};
         }
     }
 </style>
