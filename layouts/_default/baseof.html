@@ -26,7 +26,10 @@
 	{{ end }}
 	{{ end }}
 	{{/* END*/}}
-	{{ if eq .Type "blog" }}
+	{{ if or 
+		(eq .Type "blog")
+		(eq .Kind "taxonomy")
+		(eq .Kind "term") }}
 	{{- partial "author.html" (dict "context" . "portrait" $portrait "name" $name "bio" $bio) -}}
 	{{ end }}
 	{{/*  <div class="share-button">
