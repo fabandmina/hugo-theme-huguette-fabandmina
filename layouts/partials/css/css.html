@@ -68,6 +68,7 @@
   }
   
   h1 {
+    margin-bottom: 20px;
     font-size: 2.5rem;
     border-bottom: solid 3px {{ $.Site.Params.theme.light.color_h2 }};
   }
@@ -113,6 +114,7 @@
     margin: 20px auto;
     width: 150px;
   }
+
 
   @media only screen and (max-width: 830px) {
     html {
@@ -168,18 +170,27 @@
   .content {
     background-color: {{ $.Site.Params.theme.light.color_content }};
     margin: 0 auto;
-    padding: 20px 10px;
+    padding: 0px 10px;
     width: 830px;
   }
   
   body.dark-mode .content {
     background-color: {{ $.Site.Params.theme.dark.color_content }};
   }
+
+  .content p {
+    padding: 5px 0;
+    hyphens: auto;
+  }
+
+  .content li {
+    padding: 5px;
+  }
+
   
   @media only screen and (max-width: 830px) {
     .content {
       width: 100%;
-      padding: 20px 20px;
     }
   }
   

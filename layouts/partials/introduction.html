@@ -3,9 +3,9 @@
 <div class="introduction">
 {{ with .Params.introduction }}
 {{ if eq (i18n .) ("")}}
-{{ . }}
+{{ . | safeHTML }}
 {{ else }}
-{{ i18n . }}
+{{ i18n . | safeHTML }}
 {{ end }}
 {{ end }}
 </div>

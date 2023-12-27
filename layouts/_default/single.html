@@ -1,5 +1,6 @@
 
-{{define "main"}}
+{{define "main"}}    
+    {{- partial "breadcrumbs.html" . -}}
     <h1 style="margin: 0;">
 	{{ if eq (i18n .Title) ("")}}
 	{{ .Title }}
@@ -14,9 +15,15 @@
     {{- partial "thumbnail.html" . -}}
 </div>
     {{- partial "introduction.html" . -}}
+    <div class="content">
     {{.Content}}
+    </div>
     {{- partial "flickr.html" . -}}
-    <hr>
     {{/*  {{- partial "photo-gallery.html" . -}}  */}}
     {{- partial "map.html" . -}}
+
+{{/*  Tag bar  */}}
+{{ if eq .Type "blog" }}
+{{- partial "tag-bar.html" . -}}
+{{ end }}
 {{end}}

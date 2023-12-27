@@ -1,13 +1,25 @@
 <ul class="breadcrumb">
+  {{ if eq .Kind "page" }}
     {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+  {{ else }}
+  <li>
+  <a href="{{ .Site.Home.RelPermalink }}">
+    <label title="{{ i18n "home" }}"><i class="fa-solid fa-house-chimney"></i> ❱</label>
+  </a>
+  <li><a href="{{ relLangURL "blog" }}">
+    <label title="{{ i18n "blog" }}">{{ i18n "blog" }} ❱</label>
+  </a>
+  </li>
+  </li>
+  {{ end }}
   </ul>
   
   {{ define "breadcrumbnav" }}
-    {{ if .p1.Parent }}
+  {{ if .p1.Parent }}
       {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )}}
-    {{ else if not .p1.IsHome }}
+  {{ else if not .p1.IsHome }}
       {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )}}
-    {{ end }}
+  {{ end }}
     <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
       <a href="{{ .p1.RelPermalink }}">
         {{ if eq (lower (.p1.Title)) ("home")}}
@@ -20,7 +32,6 @@
       </a>
     </li>
   {{ end }}
-
   <style>
     {{/*  .breadcrumb {
       list-style: none;
@@ -56,6 +67,7 @@
     }
     .breadcrumb li { 
       float: left;
+      padding: 0px;
     }
     .breadcrumb li a label {
       cursor: pointer;

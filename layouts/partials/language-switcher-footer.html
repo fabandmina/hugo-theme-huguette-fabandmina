@@ -8,7 +8,7 @@
             </li>
             {{ range $.Translations }}
             <li>
-                <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+                <a title="{{ .Language.LanguageName }}" href="{{ .RelPermalink }}" aria-label="{{ i18n "ariaTranslation" }}{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
             </li>
             {{ end }}
         </ul>
@@ -17,9 +17,7 @@
 {{ end }}
 </div>
 <style>
-    .footer-lang, .footer-lang ul, .footer-lang li, .footer-lang a {
-        font-size: 1.2rem;
-    }
+
     .footer-lang {
         display: inline;
         flex-flow: column;
@@ -33,9 +31,7 @@
     }
 
     @media only screen and (max-width: 830px) {
-        .footer-lang, .footer-lang ul, .footer-lang li, .footer-lang a {
-            font-size: 1rem;
-        }
+
         .footer-lang ul{
             display: inline;
         }

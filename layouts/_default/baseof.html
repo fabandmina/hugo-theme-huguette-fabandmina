@@ -8,7 +8,6 @@
 	{{- partial "search.html" . -}}
 	{{- partial "headerimage.html" . -}}
 	<div class="content">
-		{{- partial "breadcrumbs.html" . -}}
 		{{- block "main" . }}
 		{{- end }}
 	</div>
@@ -28,7 +27,10 @@
 	{{ end }}
 	{{ end }}
 	{{/* END*/}}
-	{{ if eq .Type "blogs" }}
+	{{ if or 
+		(eq .Type "blog")
+		(eq .Kind "taxonomy")
+		(eq .Kind "term") }}
 	{{- partial "author.html" (dict "context" . "portrait" $portrait "name" $name "bio" $bio) -}}
 	{{ end }}
 	{{/*  <div class="share-button">
