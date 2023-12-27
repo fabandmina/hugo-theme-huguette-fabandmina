@@ -1,6 +1,7 @@
 
   {{ define "main" }}
-  <h1>{{ i18n "blog" | default "Blog"}}</h1>
+  {{- partial "breadcrumbs.html" . -}}
+  <h1 style="margin: 0;">{{ i18n "blog" | default "Blog"}}</h1>
   {{/*  Display categories if blog  */}}
   <div class="taxonomy-container">
     <ul>
