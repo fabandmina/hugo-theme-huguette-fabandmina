@@ -1,46 +1,16 @@
-<h1>{{ .Title }}</h1>
-{{ if site.Params.search }}
-<input
-  id="search"
-  class="form-control"
-  type="text"
-  aria-label="Case-insensitive search by title, content, or publish date"
-  placeholder="Disabled ..."
-  disabled>
-<div id="search_form">
-  <div class="form-check">
-    <input id="enable_search" class="form-check-input" type="checkbox">
-    <label class="form-check-label" for="enable_search">
-      Enable search
-    </label>
-  </div>
-  <div class="form-check">
-    <input id="regex_mode" class="form-check-input" type="checkbox">
-    <label class="form-check-label" for="regex_mode">
-      Regex mode
-    </label>
-  </div>
-</div>
-{{ end }}
-<p id="search-count">
-  Count: {{ len .Pages }}
-</p>
-<ul id="search-list">
-  {{/*  {{ range .Pages.ByPublishDate.Reverse }}
-  <li>
-    <span>{{ .PublishDate.Format "2006-01-02" }}</span>
-    {{ if eq (i18n .Title) ("") }}
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ else }}
-    <a href="{{ .RelPermalink }}">{{ .Title | i18n }}</a>
-    {{ end }}
-  </li>
-  {{ end }}  */}}
-</ul>
+{{/*  Search Bar  
+  This partial depends on assets/js/search.js
+  NPM dependencies:
+    - fuse.js@6
+  */}}
+<span id="search">
+  <input type='search' placeholder='{{ i18n "search" | default "Search" }}'>
+  <div></div>
+</span>
 
-{{ if site.Params.search }}
-  {{ $searchJs := resources.Get "js/search.js"
-    | resources.ExecuteAsTemplate "js/search.js" .
-    | fingerprint }}
-  <script src="{{ $searchJs.RelPermalink }}"></script>
-{{ end }}
+{{/*  Define BASE_URL to make sure search.js finds the JSON index
+Define REMOVE_FORM_ON_SUBMISSION in case the JSON index is missing  */}}
+{{ $defines := dict 
+  "REMOVE_FORM_ON_SUBMISSION" (default "false" 
+          (site.Param "RemoveFormOnSubmission")) 
+  "BASE_URL" (print "\"" site.BaseURL "\"") }}     

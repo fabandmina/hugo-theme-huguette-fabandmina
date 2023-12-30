@@ -1,143 +1,78 @@
-(function () {
-    const SEARCH_ID = 'search';
-    const ENABLE_SEARCH_ID = 'enable_search';
-    const REGEX_MODE_ID = 'regex_mode';
-    const COUNT_ID = 'search-count';
-    const LIST_ID = 'search-list';
-  
-    let list = null;
-    let filteredList = null;
-  
-    const logPerformance = (work, startTime, endTime) => {
-      const duration = (endTime - startTime).toFixed(2);
-      console.log(`${work} took ${duration} ms`);
-    };
-  
-    const getSearchEl = () => document.getElementById(SEARCH_ID);
-    const getEnableSearchEl = () => document.getElementById(ENABLE_SEARCH_ID);
-    const getRegexModeEl = () => document.getElementById(REGEX_MODE_ID);
-    const getCountEl = () => document.getElementById(COUNT_ID);
-    const getListEl = () => document.getElementById(LIST_ID);
-  
-    const disableSearchEl = placeholder => {
-      getSearchEl().disabled = true;
-      getSearchEl().placeholder = placeholder;
-    };
-  
-    const enableSearchEl = () => {
-      getSearchEl().disabled = false;
-      getSearchEl().placeholder =
-        'Case-insensitive search by title, content, or publish date';
-    };
-  
-    const disableRegexModeEl = () => {
-      getRegexModeEl().disabled = true;
-    };
-  
-    const enableRegexModeEl = () => {
-      getRegexModeEl().disabled = false;
-    };
-  
-    const fetchJsonIndex = () => {
-      const startTime = performance.now();
-      disableSearchEl('Loading ...');
-      const url = `${window.location.origin}/index.json`;
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          list = data.blog;
-          filteredList = data.blog;
-          enableSearchEl();
-          logPerformance('fetchJsonIndex', startTime, performance.now());
-        })
-        .catch(error =>
-          console.error(`Failed to fetch JSON index: ${error.message}`)
-        );
-    };
-  
-    const filterList = regexMode => {
-      const regexQuery = new RegExp(getSearchEl().value, 'i');
-      const query = getSearchEl().value.toUpperCase();
-      filteredList = list.filter(item => {
-        const title = item.Title.toUpperCase();
-        const content = item.PlainContent.toUpperCase();
-        const publishDate = item.PublishDateFormatted.toUpperCase();
-        if (regexMode) {
-          return (
-            regexQuery.test(title) ||
-            regexQuery.test(content) ||
-            regexQuery.test(publishDate)
-          );
-        } else {
-          return (
-            title.includes(query) ||
-            content.includes(query) ||
-            publishDate.includes(query)
-          );
-        }
-      });
-    };
-  
-    const renderCount = () => {
-      const count = `Count: ${filteredList.length}`;
-      getCountEl().textContent = count;
-    };
-  
-    const renderList = () => {
-      const newList = document.createElement('ul');
-      newList.id = LIST_ID;
-  
-      filteredList.forEach(item => {
-        const li = document.createElement('li');
-  
-        const publishDate = document.createElement('span');
-        publishDate.textContent = item.PublishDateFormatted;
-  
-        const titleLink = document.createElement('a');
-        titleLink.href = item.RelPermalink;
-        titleLink.textContent = item.Title;
+import Fuse from 'fuse.js'
+import AcmeSearchSupport from "searchSupport.js"
 
-        li.appendChild(publishDate);
-        li.appendChild(document.createTextNode(' '));
-        li.appendChild(titleLink);
-  
-        newList.appendChild(li);
-      });
-  
-      const oldList = getListEl();
-      oldList.replaceWith(newList);
-    };
-  
-    const handleSearchEvent = () => {
-      const startTime = performance.now();
-      const regexMode = getRegexModeEl().checked;
-      filterList(regexMode);
-      renderCount();
-      renderList();
-      logPerformance('handleSearchEvent', startTime, performance.now());
-    };
-  
-    const handleEnableSearchEvent = () => {
-      if (getEnableSearchEl().checked) {
-        fetchJsonIndex();
-        enableRegexModeEl();
-      } else {
-        disableSearchEl('Disabled ...');
-        disableRegexModeEl();
-      }
-    };
-  
-    const addEventListeners = () => {
-      getEnableSearchEl().addEventListener('change', handleEnableSearchEvent);
-      getSearchEl().addEventListener('keyup', handleSearchEvent);
-      getRegexModeEl().addEventListener('change', handleSearchEvent);
-    };
-  
-    const main = () => {
-      if (getSearchEl()) {
-        addEventListeners();
-      }
-    };
-  
-    main();
-  })();
+let index = null;
+const MAX_SEARCH_RESULTS =5;
+
+export default { 
+    async init() { 
+    // Try to get the JSON index hosted as a pseudo-API on the website
+      try { 
+        const response = 
+          await window.fetch(BASE_URL + "/index.json");    
+        if (!response.ok) {                     
+          this.removeSearch(); 
+          return;
+        
+        // Keyboard Handling
+        AcmeSearchSupport(); 
+        } 
+        let data = await response.json();
+        
+        // Init Query Fuse search library    
+        index= new Fuse(data, {                      
+            keys: [{ 
+              name: 'title',                           
+              weight: 20 
+            }, { 
+              name: 'tag', 
+              weight: 5 
+            }, { 
+              name: 'content'                          
+            }] 
+          });
+        // Just to test. Do not leave in code. 
+        console.log(index.search('acme'));
+      } 
+
+    // Remove the Search bar on error
+      catch(e) { 
+        this.removeSearch();                    
+      } 
+
+    // Event Listeners
+        document.addEventListener("input",                       
+            this.showResults);
+
+    }, 
+    
+    // Methods
+    removeSearch() { 
+        document.querySelector("#search")?.remove(); 
+    },
+    
+
+    // Event Listeners methods
+    showResults(event) { 
+        const searchBox = document.querySelector("search input"); 
+        if (event.target !== searchBox) { 
+          return; 
+        } 
+        const result = document.querySelector("#search div"); 
+        result.style.display = "block"; 
+        if (searchBox.value.length > 0) { 
+          const results = index.search(searchBox.value); 
+          result.innerHTML = results                             
+            .slice(0, MAX_SEARCH_RESULTS)                                                
+            .map(x => `<a href="${x.item.url}"> 
+              <img src="${x.item.cover || ""}" 
+                 width="40" height="40"> 
+              <h3>${x.item.title}</h3> 
+              <span>${x.item.content.substr(0,40)}</span> 
+            </a>`)                                               
+            .join(""); 
+        } else { 
+          result.innerHTML = ''; 
+        } 
+    } 
+  } 
