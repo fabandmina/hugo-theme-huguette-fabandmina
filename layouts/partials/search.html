@@ -14,3 +14,7 @@ Define REMOVE_FORM_ON_SUBMISSION in case the JSON index is missing  */}}
   "REMOVE_FORM_ON_SUBMISSION" (default "false" 
           (site.Param "RemoveFormOnSubmission")) 
   "BASE_URL" (print "\"" site.BaseURL "\"") }}     
+
+{{/*  Build JS from assets  */}}
+{{ $js := resources.Get "/js/index.js" 
+  | js.Build (dict "defines" $defines )}}

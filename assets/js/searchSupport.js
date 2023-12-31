@@ -3,7 +3,7 @@ const SearchSupport = () => {
   
     // In case there text already in search box (like when you refresh the page),
     // on hover, trigger the input event.
-    document.addEventListener("focusin", e=> {
+    document.addEventListener("focusin", event=> {
       const searchBox = document.querySelector("#search input");
       if (event.target === searchBox) {
         searchBox.dispatchEvent(new Event("input", {bubbles: true}));
@@ -11,7 +11,7 @@ const SearchSupport = () => {
     });
   
     // Keyboard handling
-    document.addEventListener("keyup", e => {
+    document.addEventListener("keyup", event => {
       const searchBox = document.querySelector("#search input");
       if (event.target !== searchBox) {
         return;
